@@ -3,7 +3,7 @@
 PacletObject[
   <|
     "Name" -> "KirillBelov/WAEXLink",
-    "Description" -> "Wolfram Language client for WAEX API.",
+    "Description" -> "Wolfram Language client for WAEX API",
     "Creator" -> "Kirill Belov",
     "Version" -> "1.0.0",
     "WolframVersion" -> "14+",
