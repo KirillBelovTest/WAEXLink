@@ -1,6 +1,6 @@
 (* :Package: *)
 
-BeginPackage["KirillBelov`WaexLink`RealTime`"]; 
+BeginPackage["KirillBelov`WAEXLink`RealTime`"]; 
 
 (* :Private: *)
 

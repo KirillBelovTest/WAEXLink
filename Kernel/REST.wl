@@ -1,34 +1,34 @@
 (* :Package: *)
 
-BeginPackage["KirillBelov`WaexLink`REST`"];
+BeginPackage["KirillBelov`WAEXLink`REST`"];
 
 
-WaexExchanges::usage = 
-"WaexExchanges[] - returns list of available exchanges."; 
+WAEXExchanges::usage = 
+"WAEXExchanges[] - returns list of available exchanges."; 
 
 
-WaexMarkets::usage = 
-"WaexMarkets[] - returns list of available markets."; 
+WAEXMarkets::usage = 
+"WAEXMarkets[] - returns list of available markets."; 
 
 
-WaexTokens::usage = 
-"WaexTokens[] - returns list of available tokens.";
+WAEXTokens::usage = 
+"WAEXTokens[] - returns list of available tokens.";
 
 
-WaexOrderBooks::usage = 
-"WaexOrderBooks[pair] - order books for a given pair.";
+WAEXOrderBooks::usage = 
+"WAEXOrderBooks[pair] - order books for a given pair.";
 
 
-WaexTrades::usage = 
-"WaexTrades[pair] - trades for a given pair.";
+WAEXTrades::usage = 
+"WAEXTrades[pair] - trades for a given pair.";
 
 
-WaexTickers::usage = 
-"WaexTickers[pair] - tickers for a given pair.";
+WAEXTickers::usage = 
+"WAEXTickers[pair] - tickers for a given pair.";
 
 
-WaexCandleSticks::usage = 
-"WaexCandleSticks[pair] - candle sticks for a given pair.";
+WAEXCandleSticks::usage = 
+"WAEXCandleSticks[pair] - candle sticks for a given pair.";
 
 
 Begin["`Private`"];
@@ -37,18 +37,18 @@ Begin["`Private`"];
 (* :Internal: *)
 
 
-Options[waexRequest] = {
-    "Endpoint" :> "https://access.ccdb.waexservices.com", 
+Options[WAEXRequest] = {
+    "Endpoint" :> "https://access.ccdb.WAEXservices.com", 
     "APIToken" :> SystemCredential["WAEX_API_TOKEN"], 
     "HTTPMethod" :> "GET"
 };
 
 
-waexRequest[path_, query: _Association: <||>, opts: OptionsPattern[{}]] := 
+WAEXRequest[path_, query: _Association: <||>, opts: OptionsPattern[{}]] := 
 Module[{
-    endpoint = OptionValue[waexRequest, FilterRules[Flatten[{opts}], Options[waexRequest]], "Endpoint"], 
-    apiToken = OptionValue[waexRequest, FilterRules[Flatten[{opts}], Options[waexRequest]], "APIToken"], 
-    httpMethod = OptionValue[waexRequest, FilterRules[Flatten[{opts}], Options[waexRequest]], "HTTPMethod"]
+    endpoint = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "Endpoint"], 
+    apiToken = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "APIToken"], 
+    httpMethod = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "HTTPMethod"]
 }, 
     encodedQuery = encode[query]; 
 
@@ -81,28 +81,28 @@ encode[value_List] :=
 StringRiffle[Map[encode, value], ","]; 
 
 
-Options[WaexExchanges] = {
+Options[WAEXExchanges] = {
     "search" :> Automatic, 
     "limit" :> Automatic, 
     "offset" :> Automatic
 };
 
 
-SyntaxInformation[WaexExchanges] = {
+SyntaxInformation[WAEXExchanges] = {
     "ArgumentsPattern" -> {OptionsPattern[]}, 
     "OptionNames" -> {"\"search\"", "\"limit\"", "\"offset\""}
 };
 
 
-WaexExchanges[opts: OptionsPattern[{waexRequest, WaexExchanges}]] := 
-waexRequest["/api/v1/crypto/exchanges", <|
+WAEXExchanges[opts: OptionsPattern[{WAEXRequest, WAEXExchanges}]] := 
+WAEXRequest["/api/v1/crypto/exchanges", <|
     "search" -> OptionValue["search"], 
     "limit" -> OptionValue["limit"], 
     "offset" -> OptionValue["offset"]
 |>, opts]; 
 
 
-Options[WaexMarkets] = {
+Options[WAEXMarkets] = {
     "offset" :> Automatic, 
     "limit" :> Automatic, 
     "exchangeNames" :> Automatic, 
@@ -111,14 +111,14 @@ Options[WaexMarkets] = {
 };
 
 
-SyntaxInformation[WaexMarkets] = {
+SyntaxInformation[WAEXMarkets] = {
     "ArgumentsPattern" -> {OptionsPattern[]}, 
     "OptionNames" -> {"\"limit\"", "\"offset\"", "\"exchangeNames\"", "\"tokenSymbols\"", "\"active\""}
 };
 
 
-WaexMarkets[opts: OptionsPattern[{waexRequest, WaexMarkets}]] := 
-waexRequest["/api/v1/crypto/markets", <|
+WAEXMarkets[opts: OptionsPattern[{WAEXRequest, WAEXMarkets}]] := 
+WAEXRequest["/api/v1/crypto/markets", <|
     "offset" -> OptionValue["offset"], 
     "limit" -> OptionValue["limit"], 
     "exchangeNames[]" -> OptionValue["exchangeNames"], 
@@ -127,7 +127,7 @@ waexRequest["/api/v1/crypto/markets", <|
 |>, opts]; 
 
 
-Options[WaexTokens] = {
+Options[WAEXTokens] = {
     "offset" :> Automatic, 
     "limit" :> Automatic, 
     "names" :> Automatic, 
@@ -137,14 +137,14 @@ Options[WaexTokens] = {
 };
 
 
-SyntaxInformation[WaexTokens] = {
+SyntaxInformation[WAEXTokens] = {
     "ArgumentsPattern" -> {OptionsPattern[]}, 
     "OptionNames" -> {"\"offset\"", "\"limit\"", "\"names\"", "\"symbols\"", "\"active\"", "\"itins\""}
 };
 
 
-WaexTokens[opts: OptionsPattern[{waexRequest, WaexTokens}]] := 
-waexRequest["/api/v1/crypto/tokens", <|
+WAEXTokens[opts: OptionsPattern[{WAEXRequest, WAEXTokens}]] := 
+WAEXRequest["/api/v1/crypto/tokens", <|
     "offset" -> OptionValue["offset"], 
     "limit" -> OptionValue["limit"], 
     "names[]" -> OptionValue["names"], 
@@ -154,7 +154,7 @@ waexRequest["/api/v1/crypto/tokens", <|
 |>, opts]; 
 
 
-Options[WaexOrderBooks] = {
+Options[WAEXOrderBooks] = {
     "offset" :> Automatic, 
     "limit" :> Automatic, 
     "rangeDateStart" :> Automatic, 
@@ -164,14 +164,14 @@ Options[WaexOrderBooks] = {
 };
 
 
-SyntaxInformation[WaexOrderBooks] = {
+SyntaxInformation[WAEXOrderBooks] = {
     "ArgumentsPattern" -> {_., OptionsPattern[]}, 
     "OptionNames" -> {"\"offset\"", "\"limit\"", "\"rangeDateStart\"", "\"rangeDateEnd\"", "\"exchangeNames\"", "\"symbol\""}
 };
 
 
-WaexOrderBooks[opts: OptionsPattern[{waexRequest, WaexOrderBooks}]] := 
-waexRequest["/api/v1/crypto/order-books", <|
+WAEXOrderBooks[opts: OptionsPattern[{WAEXRequest, WAEXOrderBooks}]] := 
+WAEXRequest["/api/v1/crypto/order-books", <|
     "offset" -> OptionValue["offset"], 
     "limit" -> OptionValue["limit"], 
     "rangeDateStart" -> OptionValue["rangeDateStart"], 
@@ -181,11 +181,11 @@ waexRequest["/api/v1/crypto/order-books", <|
 |>, opts]; 
 
 
-WaexOrderBooks[symbol_String, opts: OptionsPattern[{waexRequest, WaexOrderBooks}]] := 
-WaexOrderBooks["symbol" -> symbol, opts]; 
+WAEXOrderBooks[symbol_String, opts: OptionsPattern[{WAEXRequest, WAEXOrderBooks}]] := 
+WAEXOrderBooks["symbol" -> symbol, opts]; 
 
 
-Options[WaexTrades] = {
+Options[WAEXTrades] = {
     "offset" :> Automatic, 
     "limit" :> Automatic, 
     "rangeDateStart" :> Automatic, 
@@ -195,14 +195,14 @@ Options[WaexTrades] = {
 };
 
 
-SyntaxInformation[WaexTrades] = {
+SyntaxInformation[WAEXTrades] = {
     "ArgumentsPattern" -> {_., OptionsPattern[]}, 
     "OptionNames" -> {"\"offset\"", "\"limit\"", "\"rangeDateStart\"", "\"rangeDateEnd\"", "\"exchangeNames\"", "\"symbol\""}
 };
 
 
-WaexTrades[opts: OptionsPattern[{waexRequest, WaexTrades}]] := 
-waexRequest["/api/v1/crypto/trades", <|
+WAEXTrades[opts: OptionsPattern[{WAEXRequest, WAEXTrades}]] := 
+WAEXRequest["/api/v1/crypto/trades", <|
     "offset" -> OptionValue["offset"], 
     "limit" -> OptionValue["limit"], 
     "rangeDateStart" -> OptionValue["rangeDateStart"], 
@@ -212,11 +212,11 @@ waexRequest["/api/v1/crypto/trades", <|
 |>, opts]; 
 
 
-WaexTrades[symbol_String, opts: OptionsPattern[{waexRequest, WaexTrades}]] := 
-WaexTrades["symbol" -> symbol, opts]; 
+WAEXTrades[symbol_String, opts: OptionsPattern[{WAEXRequest, WAEXTrades}]] := 
+WAEXTrades["symbol" -> symbol, opts]; 
 
 
-Options[WaexTickers] = {
+Options[WAEXTickers] = {
     "offset" :> Automatic, 
     "limit" :> Automatic, 
     "rangeDateStart" :> Automatic, 
@@ -226,14 +226,14 @@ Options[WaexTickers] = {
 };
 
 
-SyntaxInformation[WaexTickers] = {
+SyntaxInformation[WAEXTickers] = {
     "ArgumentsPattern" -> {_., OptionsPattern[]}, 
     "OptionNames" -> {"\"offset\"", "\"limit\"", "\"rangeDateStart\"", "\"rangeDateEnd\"", "\"exchangeNames\"", "\"symbol\""}
 };
 
 
-WaexTickers[opts: OptionsPattern[{waexRequest, WaexTickers}]] := 
-waexRequest["/api/v1/crypto/tickers", <|
+WAEXTickers[opts: OptionsPattern[{WAEXRequest, WAEXTickers}]] := 
+WAEXRequest["/api/v1/crypto/tickers", <|
     "offset" -> OptionValue["offset"], 
     "limit" -> OptionValue["limit"], 
     "rangeDateStart" -> OptionValue["rangeDateStart"], 
@@ -243,11 +243,11 @@ waexRequest["/api/v1/crypto/tickers", <|
 |>, opts]; 
 
 
-WaexTickers[symbol_String, opts: OptionsPattern[{waexRequest, WaexTickers}]] := 
-WaexTickers["symbol" -> symbol, opts];
+WAEXTickers[symbol_String, opts: OptionsPattern[{WAEXRequest, WAEXTickers}]] := 
+WAEXTickers["symbol" -> symbol, opts];
 
 
-Options[WaexCandleSticks] = {
+Options[WAEXCandleSticks] = {
     "offset" :> Automatic, 
     "limit" :> Automatic, 
     "rangeDateStart" :> Automatic, 
@@ -257,14 +257,14 @@ Options[WaexCandleSticks] = {
 };
 
 
-SyntaxInformation[WaexCandleSticks] = {
+SyntaxInformation[WAEXCandleSticks] = {
     "ArgumentsPattern" -> {_., OptionsPattern[]}, 
     "OptionNames" -> {"\"offset\"", "\"limit\"", "\"rangeDateStart\"", "\"rangeDateEnd\"", "\"exchangeNames\"", "\"symbol\""}
 };
 
 
-WaexCandleSticks[opts: OptionsPattern[{waexRequest, WaexCandleSticks}]] := 
-waexRequest["/api/v1/crypto/candle-sticks", <|
+WAEXCandleSticks[opts: OptionsPattern[{WAEXRequest, WAEXCandleSticks}]] := 
+WAEXRequest["/api/v1/crypto/candle-sticks", <|
     "offset" -> OptionValue["offset"], 
     "limit" -> OptionValue["limit"], 
     "rangeDateStart" -> OptionValue["rangeDateStart"], 
@@ -274,8 +274,8 @@ waexRequest["/api/v1/crypto/candle-sticks", <|
 |>, opts]; 
 
 
-WaexCandleSticks[symbol_String, opts: OptionsPattern[{waexRequest, WaexCandleSticks}]] := 
-WaexCandleSticks["symbol" -> symbol, opts]; 
+WAEXCandleSticks[symbol_String, opts: OptionsPattern[{WAEXRequest, WAEXCandleSticks}]] := 
+WAEXCandleSticks["symbol" -> symbol, opts]; 
 
 
 End[];

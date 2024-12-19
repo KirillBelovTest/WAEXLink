@@ -1,9 +1,9 @@
-# WaexLink
+# WAEXLink
 
-Wolfram Language client for Waex API.
+Wolfram Language client for WAEX API.
 
 ## Installation
 
 ```wolfram
-PacletInstall["KirillBelov/WaexLink"]
+PacletInstall["KirillBelov`WAEXLink`"]
 ```

@@ -1,10 +1,10 @@
 (* :Package: *)
 
-BeginPackage["KirillBelov`WaexLink`"];
+BeginPackage["KirillBelov`WAEXLink`"];
 
 
 EndPackage[];
 
 
-Get["KirillBelov`WaexLink`REST`"];
-Get["KirillBelov`WaexLink`RealTime`"];
+Get["KirillBelov`WAEXLink`REST`"];
+Get["KirillBelov`WAEXLink`RealTime`"];
