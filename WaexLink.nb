@@ -1,0 +1,290 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[     10791,        269]
+NotebookOptionsPosition[     10427,        251]
+NotebookOutlinePosition[     10860,        268]
+CellTagsIndexPosition[     10817,        265]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"$HistoryLength", " ", "=", " ", "0"}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetDirectory", "[", 
+    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{"Get", "[", "\"\<KirillBelov`WaexLink`\>\"", "]"}], ";"}]}], "Code",
+ CellLabel->"In[33]:=",ExpressionUUID->"5fc2ba0d-53d0-3f49-99ba-51875f9470a2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WaexExchanges", "[", 
+  RowBox[{
+   RowBox[{"\"\<search\>\"", " ", "->", " ", "\"\<bin\>\""}], ",", " ", 
+   RowBox[{"\"\<limit\>\"", "->", "1"}], ",", " ", 
+   RowBox[{"\"\<offset\>\"", " ", "->", " ", "0"}]}], "]"}]], "Code",
+ CellLabel->"In[36]:=",ExpressionUUID->"b356b305-e9e2-834d-9116-7e08762f16fa"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"data\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"\<\"id\"\>", "\[Rule]", "1"}], ",", 
+       RowBox[{"\<\"externalExchangeId\"\>", "\[Rule]", "\<\"binance\"\>"}], 
+       ",", 
+       RowBox[{"\<\"dataSource\"\>", "\[Rule]", "\<\"binance\"\>"}], ",", 
+       RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CEX\"\>"}], ",", 
+       RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Binance\"\>"}], ",", 
+       RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"createdAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:19:34.614Z\"\>"}], ",", 
+       RowBox[{"\<\"updatedAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:19:34.614Z\"\>"}]}], 
+      "\[RightAssociation]"}], "}"}]}], ",", 
+   RowBox[{"\<\"meta\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"fetchCount\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"totalCount\"\>", "\[Rule]", "1"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[36]=",ExpressionUUID->"71a1742e-356a-1046-926e-f8859bdfc752"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WaexMarkets", "[", 
+  RowBox[{
+   RowBox[{"\"\<limit\>\"", " ", "->", " ", "1"}], ",", " ", 
+   RowBox[{"\"\<tokenSymbols\>\"", " ", "->", " ", "\"\<EUR\>\""}]}], 
+  "]"}]], "Code",
+ CellLabel->"In[37]:=",ExpressionUUID->"031e0ec9-9cca-404f-820d-fcc5bae468ea"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"data\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"\<\"id\"\>", "\[Rule]", "2"}], ",", 
+       RowBox[{"\<\"externalMarketId\"\>", "\[Rule]", "\<\"BTCEUR\"\>"}], ",", 
+       RowBox[{"\<\"baseId\"\>", "\[Rule]", "1"}], ",", 
+       RowBox[{"\<\"quoteId\"\>", "\[Rule]", "3"}], ",", 
+       RowBox[{"\<\"exchangeId\"\>", "\[Rule]", "2"}], ",", 
+       RowBox[{"\<\"meta\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"baseMeta\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"quoteMeta\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"active\"\>", "\[Rule]", "True"}], ",", 
+       RowBox[{"\<\"historical\"\>", "\[Rule]", "True"}], ",", 
+       RowBox[{"\<\"exchange\"\>", "\[Rule]", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"id\"\>", "\[Rule]", "2"}], ",", 
+          
+          RowBox[{"\<\"externalExchangeId\"\>", 
+           "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"dataSource\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CEX\"\>"}], ",", 
+          RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+          RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+          
+          RowBox[{"\<\"createdAt\"\>", 
+           "\[Rule]", "\<\"2024-09-24T12:19:35.311Z\"\>"}], ",", 
+          
+          RowBox[{"\<\"updatedAt\"\>", 
+           "\[Rule]", "\<\"2024-10-18T12:28:26.656Z\"\>"}]}], 
+         "\[RightAssociation]"}]}], ",", 
+       RowBox[{"\<\"baseToken\"\>", "\[Rule]", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"id\"\>", "\[Rule]", "1"}], ",", 
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC\"\>"}], ",", 
+          RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Bitcoin\"\>"}], ",", 
+          RowBox[{"\<\"itin\"\>", "\[Rule]", "Null"}], ",", 
+          RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+          RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+          
+          RowBox[{"\<\"createdAt\"\>", 
+           "\[Rule]", "\<\"2024-09-24T12:19:47.676Z\"\>"}], ",", 
+          
+          RowBox[{"\<\"updatedAt\"\>", 
+           "\[Rule]", "\<\"2024-09-24T12:19:56.481Z\"\>"}]}], 
+         "\[RightAssociation]"}]}], ",", 
+       RowBox[{"\<\"quoteToken\"\>", "\[Rule]", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"id\"\>", "\[Rule]", "3"}], ",", 
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"EUR\"\>"}], ",", 
+          RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Euro\"\>"}], ",", 
+          RowBox[{"\<\"itin\"\>", "\[Rule]", "Null"}], ",", 
+          RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+          RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+          
+          RowBox[{"\<\"createdAt\"\>", 
+           "\[Rule]", "\<\"2024-09-24T12:19:47.815Z\"\>"}], ",", 
+          
+          RowBox[{"\<\"updatedAt\"\>", 
+           "\[Rule]", "\<\"2024-09-24T12:19:56.560Z\"\>"}]}], 
+         "\[RightAssociation]"}]}], ",", 
+       RowBox[{"\<\"createdAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:19:47.867Z\"\>"}], ",", 
+       RowBox[{"\<\"updatedAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:20:44.921Z\"\>"}]}], 
+      "\[RightAssociation]"}], "}"}]}], ",", 
+   RowBox[{"\<\"meta\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"fetchCount\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"totalCount\"\>", "\[Rule]", "67"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[37]=",ExpressionUUID->"537515b8-d1c8-8840-b284-e70d2574d312"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WaexTokens", "[", 
+  RowBox[{"\"\<limit\>\"", " ", "->", " ", "1"}], "]"}]], "Code",
+ CellLabel->"In[40]:=",ExpressionUUID->"3a0863ce-8c0c-a546-a364-8b9ec446366d"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"data\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"\<\"id\"\>", "\[Rule]", "7"}], ",", 
+       RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"CNHT\"\>"}], ",", 
+       RowBox[{"\<\"name\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"itin\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"createdAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:19:48.090Z\"\>"}], ",", 
+       RowBox[{"\<\"updatedAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:19:48.090Z\"\>"}]}], 
+      "\[RightAssociation]"}], "}"}]}], ",", 
+   RowBox[{"\<\"meta\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"fetchCount\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"totalCount\"\>", "\[Rule]", "1976"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[40]=",ExpressionUUID->"69708e9c-7dcf-484c-986c-f982570004e7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WaexOrderBooks", "[", 
+  RowBox[{"\"\<BTC/USDT\>\"", ",", " ", "\n", "\t", 
+   RowBox[{"\"\<exchangeNames\>\"", " ", "->", " ", "\"\<Binance\>\""}], ",", 
+   " ", "\n", "\t", 
+   RowBox[{"\"\<rangeDateStart\>\"", "->", 
+    RowBox[{"DateObject", "[", 
+     RowBox[{"{", 
+      RowBox[{"2024", ",", " ", "12", ",", " ", "16"}], "}"}], "]"}]}], ",", 
+   " ", "\n", "\t", 
+   RowBox[{"\"\<rangeDateEnd\>\"", "->", 
+    RowBox[{"DateObject", "[", 
+     RowBox[{"{", 
+      RowBox[{"2024", ",", " ", "12", ",", " ", "19"}], "}"}], "]"}]}]}], 
+  "\n", "]"}]], "Code",
+ CellLabel->"In[47]:=",ExpressionUUID->"e7dff346-e4dc-d24b-875d-41f51b9d9a44"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"data\"\>", "\[Rule]", 
+    RowBox[{"{", "}"}]}], ",", 
+   RowBox[{"\<\"meta\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"fetchCount\"\>", "\[Rule]", "0"}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[47]=",ExpressionUUID->"0ff9473b-a5ff-5446-a801-7aca368714fc"]
+}, Open  ]]
+},
+WindowSize->{738, 657},
+WindowMargins->{{Automatic, -5.25}, {-5.25, Automatic}},
+TrackCellChangeTimes->False,
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"389df1e0-905a-9944-9a01-c8ce5b17522e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[1460, 33, 402, 10, 85, "Code",ExpressionUUID->"5fc2ba0d-53d0-3f49-99ba-51875f9470a2"],
+Cell[CellGroupData[{
+Cell[1887, 47, 330, 6, 50, "Code",ExpressionUUID->"b356b305-e9e2-834d-9116-7e08762f16fa"],
+Cell[2220, 55, 1297, 28, 89, "Output",ExpressionUUID->"71a1742e-356a-1046-926e-f8859bdfc752"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3554, 88, 284, 6, 50, "Code",ExpressionUUID->"031e0ec9-9cca-404f-820d-fcc5bae468ea"],
+Cell[3841, 96, 3995, 83, 298, "Output",ExpressionUUID->"537515b8-d1c8-8840-b284-e70d2574d312"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7873, 184, 187, 3, 50, "Code",ExpressionUUID->"3a0863ce-8c0c-a546-a364-8b9ec446366d"],
+Cell[8063, 189, 1184, 26, 89, "Output",ExpressionUUID->"69708e9c-7dcf-484c-986c-f982570004e7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9284, 220, 664, 15, 120, "Code",ExpressionUUID->"e7dff346-e4dc-d24b-875d-41f51b9d9a44"],
+Cell[9951, 237, 460, 11, 32, "Output",ExpressionUUID->"0ff9473b-a5ff-5446-a801-7aca368714fc"]
+}, Open  ]]
+}
+]
+*)
+
