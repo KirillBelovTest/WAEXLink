@@ -1,0 +1,236 @@
+{
+ "cells": [
+  {
+   "kind": 2,
+   "value": "<<KirillBelov`WAEXLink`",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1734633413378,
+     "endTime": 1734633413451
+    },
+    "executionOrder": 2,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "WAEXExchanges[\"limit\" -> 1]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb></wb><wrow><w></w><wrow><w></w><w>data</w><w class=\"symbol\"></w><wrow><w></w><wb>{</wb><wrow><w></w><wb></wb><wrow><w></w><wrow><w></w><w>id</w><w class=\"symbol\"></w><w>1</w></wrow><w>,</w><wrow><w></w><w>externalExchangeId</w><w class=\"symbol\"></w><w>binance</w></wrow><w>,</w><wrow><w></w><w>dataSource</w><w class=\"symbol\"></w><w>binance</w></wrow><w>,</w><wrow><w></w><w>type</w><w class=\"symbol\"></w><w>CEX</w></wrow><w>,</w><wrow><w></w><w>name</w><w class=\"symbol\"></w><w>Binance</w></wrow><w>,</w><wrow><w></w><w>description</w><w class=\"symbol\"></w><w>Null</w></wrow><w>,</w><wrow><w></w><w>imageUrl</w><w class=\"symbol\"></w><w>Null</w></wrow><w>,</w><wrow><w></w><w>createdAt</w><w class=\"symbol\"></w><w>2024-09-24T12:19:34.614Z</w></wrow><w>,</w><wrow><w></w><w>updatedAt</w><w class=\"symbol\"></w><w>2024-09-24T12:19:34.614Z</w></wrow></wrow><wb></wb></wrow><wb>}</wb></wrow></wrow><w>,</w><wrow><w></w><w>meta</w><w class=\"symbol\"></w><wrow><w></w><wb></wb><wrow><w></w><wrow><w></w><w>fetchCount</w><w class=\"symbol\"></w><w>1</w></wrow><w>,</w><wrow><w></w><w>totalCount</w><w class=\"symbol\"></w><w>22</w></wrow></wrow><wb></wb></wrow></wrow><w>,</w><wrow><w></w><w>status</w><w class=\"symbol\"></w><w>1</w></wrow></wrow><wb></wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "Association[\"data\" -> {Association[\"id\" -> 1, \"externalExchangeId\" -> \"binance\", \"dataSource\" -> \"binance\", \"type\" -> \"CEX\", \"name\" -> \"Binance\", \"description\" -> Null, \"imageUrl\" -> Null, \"createdAt\" -> \"2024-09-24T12:19:34.614Z\", \"updatedAt\" -> \"2024-09-24T12:19:34.614Z\"]}, \"meta\" -> Association[\"fetchCount\" -> 1, \"totalCount\" -> 22], \"status\" -> 1]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "c1e70c88-7cbc-4b7e-b9db-eb08ac4f0067",
+     "metadata": {
+      "cellLabel": "Out[6]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1734633704068,
+     "endTime": 1734633704767
+    },
+    "executionOrder": 6,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "SystemCredential[\"WAEX_API_TOKEN\"] = \"ajzFBTnXbMkvLSSGBO0mloSBzsbTS7BE_f_KbGPlndsKsx1CD8zukZ1Pw8mWgVbb-btd1O6tSbIxPk6TjSs6eg\"",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1734633699237,
+     "endTime": 1734633699305
+    },
+    "executionOrder": 5,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "$response",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><w>HTTPResponse</w><wrow><w></w><wb>[</wb><wrow><w></w><wrow><w></w><w>ByteArray</w><wrow><w></w><wb>[</wb><wgraph class=\"resizable\" style=\"width:81px;height:40px;\" aspect-ratio=\"0.493827\" tabIndex=\"-1\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAAAoCAIAAAAJwIFoAAAA0XpUWHRSYXcgcHJvZmlsZSB0eXBl\nIGV4aWYAAHjabU9BbgQhDLvzij4hJMGB5zC7rNQf9Pl1FtpqpEaa2DF2Bsr6+nyVjyytUrxFxwCE\n5cOHTpIuuzZWGe/+rnaQ800vekJ1Ump/B1hHv+56YCNz90Wim1j+gdz8BM4i063Xuefr+HX2fl90\ngj8F+b36v7NbKBpqOLurRGCQ90JKQFNpgRceAI0VTxV/EBciGEOkw2YGs3TF3b0KjMIzn2D5uU2r\nxOxDU0nunKY1XuaiKz1i+ZxvEIpajPlXZ8QAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAA8dEVYdFNv\nZnR3YXJlAENyZWF0ZWQgd2l0aCB0aGUgV29sZnJhbSBMYW5ndWFnZSA6IHd3dy53b2xmcmFtLmNv\nbVyipoUAAAAhdEVYdENyZWF0aW9uIFRpbWUAMjAyNDoxMjoxOSAyMjo0MTo1NwpzcCIAAAOqSURB\nVGiB7Zq/T/pOGMefuzaBLhpHJ9Oy0dXJVbqZJgyEiYnYFePK4mLiRGDVuNTJdCBhPUgcSP8D3bSD\ngyOmSxsod9/h+Xpp+CUfvvL1E+A1HXfPXZ93n3ueK8kRIQQAAMBwOByNRpxz2DgopaqqZjIZ/EmE\nEJzzMAyTJKGUUkp/1791wDnnnCuKsre3pygKEUJ8fn5yzrPZ7EYKRjjncRwTQg4ODuhwOEySZLMF\nAwClVNO08XgcxzEdjUabuqUnIIQoipIkCeWcb4NghBAihNgWtWl2mreDnebtYKd5O9hp3g52mreD\npTSbpqlpmqZppmmm+4Mg0L7wPC9tKWk0GukpnufZtv2DAlbge82e593d3UVRFEVRoVCQHgdBkM/n\ne70eDpVKJQB4fn6Ovnh5eQGAy8vLlZ3Dd7ry9Hl8r7lUKp2cnGC7XC6/vr5iu1arua4rh6ZpNpuu\n6/6Ilz/L6vnMGMPYziQIgm63O8/A87x0smA8gyCQBpqmXV9f5/N5bMvNJXOnVqvJB83Lo3n8meab\nm5tqtQoAvu8bhtFoNGbmOQA0m020nIYx1u/3cf/ncjnbtnVddxyn3W6jged5lmXV63XMjiiKOp0O\nANi2XSgUcGK328UKcnZ25roudi6p4g80m6ap67rMz7e3N3RoIs+R29vbYrE4cx3DMFqtFrZbrRZj\nDADK5fL9/T12Pjw8VCqViVm+7zPG5MSrq6t+vw8AuVzu/f0dO5esHeoyRrJcTWSvfMbFxQXuQwQD\npev6zNVyudx0J67s+/7h4SFjDAM7TbqkWZYFAJ1OxzTNer1uWda8WRN8H2cUHEVRWvCC0gVzAjWT\nj48PwzCwXa1WHx8f2+224zgzjQ3DiFJIhXhY6Louk3wx32ueV34dx5HPqNVqaUcZY8fHx/MWZIxh\nKgLA+fm5TPtisdjtdp+ensrlctoeaxu+5ekqJXuOjo7SVXARYRgOBoNoPriF0siaIYccx5H2vV5v\nIiBpXNe1LEu+oPREXNCyrHQPWsrOtBv4aSC3CXwVlwUMBoMwDEkYhuPxOJvNLvWG1oxt25VKZcER\n+B+J41hRlL9Is+/7p6en0dJHzgqg5qXq9v8AFmQ8kNfN36J5reGdYPdfcjvYad4OKKV0I+9TzEQI\nQQihqqri1YPf9mftCCHG47GqqjSTySiKEsexvEyzkQgh4jimlGYyGYLq8WtMURRCyG+79/OgRkrp\n/v7+v3docCCO4yRJNjLahBC8K4UR/Qd+bmW/ORurQgAAAABJRU5ErkJggg==\n\" /></wgraph><wb>]</wb></wrow></wrow><w>,</w><wrow><w></w><wb></wb><wrow><w></w><wrow><w></w><w>Headers</w><w class=\"symbol\"></w><wrow><w></w><wb>{</wb><wrow><w></w><wrow><w></w><wb>{</wb><wrow><w></w><w>Date</w><w>,</w><w>Thu, 19 Dec 2024 18:41:45 GMT</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>Content-Type</w><w>,</w><w>application/json; charset=utf-8</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>Content-Length</w><w>,</w><w>267</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>Connection</w><w>,</w><w>keep-alive</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>Vary</w><w>,</w><w>Origin</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>Access-Control-Allow-Credentials</w><w>,</w><w>true</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>Content-Security-Policy</w><w>,</w><w>default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>Cross-Origin-Embedder-Policy</w><w>,</w><w>require-corp</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>Cross-Origin-Opener-Policy</w><w>,</w><w>same-origin</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>Cross-Origin-Resource-Policy</w><w>,</w><w>same-origin</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>Origin-Agent-Cluster</w><w>,</w><w>?1</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>Referrer-Policy</w><w>,</w><w>no-referrer</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>Strict-Transport-Security</w><w>,</w><w>max-age=31536000; includeSubDomains</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>X-Content-Type-Options</w><w>,</w><w>nosniff</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>X-DNS-Prefetch-Control</w><w>,</w><w>off</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>X-Download-Options</w><w>,</w><w>noopen</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>X-Frame-Options</w><w>,</w><w>SAMEORIGIN</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>X-Permitted-Cross-Domain-Policies</w><w>,</w><w>none</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>X-XSS-Protection</w><w>,</w><w>0</w></wrow><wb>}</wb></wrow><w>,</w><wrow><w></w><wb>{</wb><wrow><w></w><w>ETag</w><w>,</w><w>W/\"10b-UBT4KfAE42tV3jKkrtXF+TO62tU\"</w></wrow><wb>}</wb></wrow></wrow><wb>}</wb></wrow></wrow><w>,</w><wrow><w></w><w>StatusCode</w><w class=\"symbol\"></w><w>200</w></wrow><w>,</w><wrow><w></w><w>Cookies</w><w class=\"symbol\"></w><wrow><w></w><wb>{</wb><wb>}</wb></wrow></wrow></wrow><wb></wb></wrow><w>,</w><wrow><w></w><w>CharacterEncoding</w><w class=\"symbol\"></w><w>Automatic</w></wrow></wrow><wb>]</wb></wrow></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "HTTPResponse[ByteArray[\"eyJkYXRhIjpbeyJpZCI6MSwiZXh0ZXJuYWxFeGNoYW5nZUlkIjoiYmluYW5jZSIsImRhdGFTb3VyY2UiOiJiaW5hbmNlIiwidHlwZSI6IkNFWCIsIm5hbWUiOiJCaW5hbmNlIiwiZGVzY3JpcHRpb24iOm51bGwsImltYWdlVXJsIjpudWxsLCJjcmVhdGVkQXQiOiIyMDI0LTA5LTI0VDEyOjE5OjM0LjYxNFoiLCJ1cGRhdGVkQXQiOiIyMDI0LTA5LTI0VDEyOjE5OjM0LjYxNFoifV0sIm1ldGEiOnsiZmV0Y2hDb3VudCI6MSwidG90YWxDb3VudCI6MjJ9LCJzdGF0dXMiOjF9\"], Association[\"Headers\" -> {{\"Date\", \"Thu, 19 Dec 2024 18:41:45 GMT\"}, {\"Content-Type\", \"application/json; charset=utf-8\"}, {\"Content-Length\", \"267\"}, {\"Connection\", \"keep-alive\"}, {\"Vary\", \"Origin\"}, {\"Access-Control-Allow-Credentials\", \"true\"}, {\"Content-Security-Policy\", \"default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests\"}, {\"Cross-Origin-Embedder-Policy\", \"require-corp\"}, {\"Cross-Origin-Opener-Policy\", \"same-origin\"}, {\"Cross-Origin-Resource-Policy\", \"same-origin\"}, {\"Origin-Agent-Cluster\", \"?1\"}, {\"Referrer-Policy\", \"no-referrer\"}, {\"Strict-Transport-Security\", \"max-age=31536000; includeSubDomains\"}, {\"X-Content-Type-Options\", \"nosniff\"}, {\"X-DNS-Prefetch-Control\", \"off\"}, {\"X-Download-Options\", \"noopen\"}, {\"X-Frame-Options\", \"SAMEORIGIN\"}, {\"X-Permitted-Cross-Domain-Policies\", \"none\"}, {\"X-XSS-Protection\", \"0\"}, {\"ETag\", \"W/\\\"10b-UBT4KfAE42tV3jKkrtXF+TO62tU\\\"\"}}, \"StatusCode\" -> 200, \"Cookies\" -> {}], CharacterEncoding -> Automatic]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "e2b5c62e-e8dd-475f-9a3c-1635f42ac702",
+     "metadata": {
+      "cellLabel": "Out[7]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1734633712971,
+     "endTime": 1734633718058
+    },
+    "executionOrder": 7,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "cookies = \"ccdb.sid=s%3AZ2RG_8xV2vnQNxqmGa9mcBbtPOUlAG3k.C74vOokYFUaUbBVC1VYwKaN0J9Y6gkKFXENGU7HgFfI\"; ",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1734633876686,
+     "endTime": 1734633876762
+    },
+    "executionOrder": 8,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "csrfToken = \"PA6XsmyV\"; ",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1734633905517,
+     "endTime": 1734633905595
+    },
+    "executionOrder": 9,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "PacletInstall[\"KirillBelov/WebSocketLink\"]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><w>PacletObject</w><wrow><w></w><wb>[</wb><wgraph class=\"resizable\" style=\"width:280px;height:57px;\" aspect-ratio=\"0.203571\" tabIndex=\"-1\"><img src=\"data:image/png;base64,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\nC8H2/A+/ASJrK3Tu0wAAAABJRU5ErkJggg==\n\" /></wgraph><wb>]</wb></wrow></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "PacletObject[Association[\"Name\" -> \"KirillBelov/WebSocketLink\", \"Description\" -> \"Web socket connection client\", \"Creator\" -> \"Kirill Belov\", \"License\" -> \"MIT\", \"PublisherID\" -> \"KirillBelov\", \"Version\" -> \"1.0.2\", \"WolframVersion\" -> \"13+\", \"Dependencies\" -> {\"KirillBelov/Objects\" -> \">=1.0.5\"}, \"Extensions\" -> {{\"Kernel\", \"Root\" -> \"Kernel\", \"Context\" -> {{\"KirillBelov`WebSocketLink`\", \"WebSocketLink.wl\"}}, \"Symbols\" -> {}}, {\"Documentation\", \"Language\" -> \"English\"}, {\"Asset\", \"Assets\" -> {{\"License\", \"./LICENSE\"}, {\"ReadMe\", \"./README.md\"}, {\"Images\", \"./Images\"}, {\"Java\", \"./Java\"}}}}, \"Location\" -> \"C:\\\\Users\\\\Kirill\\\\AppData\\\\Roaming\\\\WolframEngine\\\\Paclets\\\\Repository\\\\KirillBelov__WebSocketLink-1.0.2\"]]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "055557d1-a936-4005-8877-4197b85fd805",
+     "metadata": {
+      "cellLabel": "Out[10]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1734633935579,
+     "endTime": 1734633941321
+    },
+    "executionOrder": 10,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "<<KirillBelov`WebSocketLink`",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1734634016093,
+     "endTime": 1734634016526
+    },
+    "executionOrder": 11,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "connection = WebSocketConnect[\"wss://access.ccdb.waexservices.com:443\"]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<pre><span class=\"wl-message\">WebSocketConnect::notopened</span>: Connection not opened</pre>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "WebSocketConnect::notopened: Connection not opened",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "d652f42c-cbfa-44c7-8977-e8ac2c43ad26",
+     "metadata": {
+      "cellLabel": "",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><w>WebSocketConnectionObject</w><wrow><w></w><wb>[</wb><w>KirillBelov`WebSocketLink`WebSocketConnectionObject`$11</w><wb>]</wb></wrow></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "WebSocketConnectionObject[KirillBelov`WebSocketLink`WebSocketConnectionObject`$11]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "ab035ab9-7b22-429a-ad87-fd603db7a216",
+     "metadata": {
+      "cellLabel": "Out[13]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1734634129393,
+     "endTime": 1734634136595
+    },
+    "executionOrder": 13,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  }
+ ]
+}

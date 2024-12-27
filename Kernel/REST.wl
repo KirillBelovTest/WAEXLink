@@ -60,7 +60,7 @@ Module[{
         "ContentType" -> "application/json"
     |>]; 
 
-    response = URLRead[request]; 
+    Global`$response = response = URLRead[request]; 
 
     ImportString[response["Body"], "RawJSON"]
 ];
