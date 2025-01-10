@@ -1,0 +1,161 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[      5410,        140]
+NotebookOptionsPosition[      5266,        130]
+NotebookOutlinePosition[      5674,        146]
+CellTagsIndexPosition[      5631,        143]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "$WAEXAPI", " ", "=", " ", "\"\<access.ccdb.waexservices.com\>\""}], ";"}],
+   " "}]], "Input",
+ CellChangeTimes->{{3.9455002412681007`*^9, 3.9455002526234455`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"e2b98156-5193-7742-be15-49ead462ccc3"],
+
+Cell[BoxData[
+ RowBox[{"Global`WAEXLogin", "//", "Remove"}]], "Input",
+ CellChangeTimes->{{3.945501245103382*^9, 3.945501258040104*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"752c26f5-134f-404e-87be-f5227320378f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"WAEXLogin", "[", 
+   RowBox[{"login_", ",", " ", "password_"}], "]"}], " ", ":=", " ", 
+  "\[IndentingNewLine]", 
+  RowBox[{"ImportString", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"URLRead", "[", 
+      RowBox[{"HTTPRequest", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+         "StringTemplate", "[", "\"\<https://`1`/api/v1/auth/local\>\"", 
+          "]"}], "[", "$WAEXAPI", "]"}], ",", " ", 
+        RowBox[{"<|", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Method", " ", "->", " ", "\"\<POST\>\""}], ",", " ", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+          "\"\<ContentType\>\"", " ", "->", " ", "\"\<application/json\>\""}],
+           ",", " ", "\[IndentingNewLine]", 
+          RowBox[{"\"\<Body\>\"", " ", "->", " ", 
+           RowBox[{"ExportString", "[", 
+            RowBox[{
+             RowBox[{"<|", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"\"\<login\>\"", " ", "->", " ", "login"}], ",", " ", 
+               "\[IndentingNewLine]", 
+               RowBox[{"\"\<password\>\"", " ", "->", " ", "password"}]}], 
+              "\[IndentingNewLine]", "|>"}], ",", " ", "\"\<RawJSON\>\""}], 
+            "]"}]}]}], "\[IndentingNewLine]", "|>"}]}], "]"}], "]"}], "[", 
+     "\"\<Body\>\"", "]"}], ",", " ", "\"\<RawJSON\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9455002636803017`*^9, 3.9455004177163754`*^9}, {
+  3.9455004793199787`*^9, 3.9455004840802536`*^9}, {3.9455005178232174`*^9, 
+  3.945500562794033*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"95421f8d-dc0a-9d45-8e05-53c731cb48c9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"<<", "KirillBelov`WAEXLink`"}], "\[IndentingNewLine]", 
+ RowBox[{"login", " ", "=", " ", 
+  RowBox[{"WAEXLogin", "[", 
+   RowBox[{
+   "\"\<kirillbelovtest@gmail.com\>\"", ",", " ", "\"\<1234asdf\>\""}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.9455003885701027`*^9, 3.945500430318451*^9}, {
+  3.945501288264097*^9, 3.945501288696188*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"921b5b13-3250-a84f-8a79-f101897bc40e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import", "jsonhintposandchar", 
+   "\"An error occurred near character \
+'\\!\\(\\*RowBox[{\\\"\\\\\\\"!\\\\\\\"\\\"}]\\)', at line \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\):\\!\\(\\*RowBox[{\\\"3\\\"}]\\)\"", 2, 27, 7, 
+   22060773261688288674, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.9455012708033466`*^9, 3.9455012961411266`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[26]:=",ExpressionUUID->"18239b69-4c7f-1a4d-97c2-386ab3705786"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{
+  3.945500431818531*^9, {3.945500475213167*^9, 3.9455004973039036`*^9}, {
+   3.9455005317979794`*^9, 3.945500564042057*^9}, {3.945501270809948*^9, 
+   3.945501296146118*^9}},
+ CellLabel->"Out[27]=",ExpressionUUID->"61cc4d0c-b4ca-084a-9576-6582817a2c32"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.945501225122635*^9, 3.945501234871649*^9}, 
+   3.9455012865047836`*^9},ExpressionUUID->"af8a0817-650e-c940-a839-\
+2b60c3fedac8"],
+
+Cell[BoxData[
+ RowBox[{"WAEXLogin", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.9455012632178116`*^9, 
+  3.9455012654405003`*^9}},ExpressionUUID->"26e40b28-3ed6-6f43-92b7-\
+08bf1ce06782"]
+},
+WindowSize->{569.25, 624.75},
+WindowMargins->{{Automatic, 340.5}, {174, Automatic}},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"9db1fb26-09a8-cc42-8b41-d685f8f6d012"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[1460, 33, 293, 7, 28, "Input",ExpressionUUID->"e2b98156-5193-7742-be15-49ead462ccc3"],
+Cell[1756, 42, 215, 3, 28, "Input",ExpressionUUID->"752c26f5-134f-404e-87be-f5227320378f"],
+Cell[1974, 47, 1625, 36, 256, "Input",ExpressionUUID->"95421f8d-dc0a-9d45-8e05-53c731cb48c9"],
+Cell[CellGroupData[{
+Cell[3624, 87, 447, 9, 47, "Input",ExpressionUUID->"921b5b13-3250-a84f-8a79-f101897bc40e"],
+Cell[4074, 98, 495, 11, 26, "Message",ExpressionUUID->"18239b69-4c7f-1a4d-97c2-386ab3705786"],
+Cell[4572, 111, 308, 5, 32, "Output",ExpressionUUID->"61cc4d0c-b4ca-084a-9576-6582817a2c32"]
+}, Open  ]],
+Cell[4895, 119, 177, 3, 28, "Input",ExpressionUUID->"af8a0817-650e-c940-a839-2b60c3fedac8"],
+Cell[5075, 124, 187, 4, 28, "Input",ExpressionUUID->"26e40b28-3ed6-6f43-92b7-08bf1ce06782"]
+}
+]
+*)
+

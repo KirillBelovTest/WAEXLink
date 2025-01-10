@@ -3,6 +3,10 @@
 BeginPackage["KirillBelov`WAEXLink`REST`"];
 
 
+WAEXLogin::usage = 
+"WAEXLogin[login, password] login to WAEX."; 
+
+
 WAEXExchanges::usage = 
 "WAEXExchanges[] - returns list of available exchanges."; 
 
@@ -44,21 +48,28 @@ Options[WAEXRequest] = {
 };
 
 
-WAEXRequest[path_, query: _Association: <||>, opts: OptionsPattern[{}]] := 
+WAEXRequest[path_, query: _Association: <||>, body: _Association: <||>, opts: OptionsPattern[{}]] := 
 Module[{
     endpoint = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "Endpoint"], 
     apiToken = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "APIToken"], 
-    httpMethod = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "HTTPMethod"]
+    httpMethod = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "HTTPMethod"], 
+    metadata, url, encodedQuery
 }, 
     encodedQuery = encode[query]; 
 
     url = URLBuild[{endpoint, path}, encodedQuery]; 
 
-    request = HTTPRequest[url, <|
+    metadata = <|
         Method -> httpMethod, 
         "Headers" -> {"access_token" -> apiToken}, 
         "ContentType" -> "application/json"
-    |>]; 
+    |>; 
+
+    If[Length[body] =!= 0, 
+        metadata["Body"] = ExportString[body, "RawJSON"]; 
+    ]; 
+
+    request = HTTPRequest[url, metadata]; 
 
     Global`$response = response = URLRead[request]; 
 
@@ -79,6 +90,10 @@ DateString[date, "ISODateTimeMillisecond"] <> "Z";
 
 encode[value_List] := 
 StringRiffle[Map[encode, value], ","]; 
+
+
+WAEXLogin[login_String, password_String] := 
+WAEXRequest["/api/v1/auth/local", <||>, <|"login" -> login, "password" -> password|>]; 
 
 
 Options[WAEXExchanges] = {
