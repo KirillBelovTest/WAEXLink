@@ -93,7 +93,7 @@ StringRiffle[Map[encode, value], ","];
 
 
 WAEXLogin[login_String, password_String] := 
-WAEXRequest["/api/v1/auth/local", <||>, <|"login" -> login, "password" -> password|>]; 
+WAEXRequest["/api/v1/auth/local", <||>, <|"login" -> login, "password" -> password|>, "HTTPMethod" -> "POST"]; 
 
 
 Options[WAEXExchanges] = {
