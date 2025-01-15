@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1060,         20]
-NotebookDataLength[    159354,       2851]
-NotebookOptionsPosition[    156616,       2796]
-NotebookOutlinePosition[    157020,       2812]
-CellTagsIndexPosition[    156977,       2809]
+NotebookDataLength[    162006,       2918]
+NotebookOptionsPosition[    158590,       2851]
+NotebookOutlinePosition[    158994,       2867]
+CellTagsIndexPosition[    158951,       2864]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2747,9 +2747,8 @@ Cell[BoxData[
   "IO`socket", "[", "\"\<wss://echo.websocket.org/.ws\>\"", "]"}]}]], "Input",
  CellChangeTimes->{{3.945759753319044*^9, 3.945759757694538*^9}, {
   3.9457598480870323`*^9, 3.9457598562542133`*^9}, {3.9457600204563656`*^9, 
-  3.945760060590229*^9}, {3.9457602171738396`*^9, 
-  3.9457602192368317`*^9}},ExpressionUUID->"592b85d7-7c0b-eb4e-a504-\
-c851d7fd2821"],
+  3.945760060590229*^9}, {3.9457602171738396`*^9, 3.9457602192368317`*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"592b85d7-7c0b-eb4e-a504-c851d7fd2821"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -2757,9 +2756,10 @@ Cell[BoxData[
    RowBox[{"JavaObject", "[", 
     RowBox[{"io", ".", "socket", ".", "client", ".", "Socket"}], "]"}], 
    "\[RightGuillemet]"}],
-  JLink`Objects`vm8`JavaObject23400822574415873]], "Output",
- CellChangeTimes->{3.9457597585698185`*^9, 3.9457600615565434`*^9},
- CellLabel->"Out[21]=",ExpressionUUID->"c64b14d3-afd2-4744-8e50-5876ba5ad16c"]
+  JLink`Objects`vm8`JavaObject3555869878910977]], "Output",
+ CellChangeTimes->{3.9457597585698185`*^9, 3.9457600615565434`*^9, 
+  3.9457602293362656`*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"a66d5658-5e83-7743-b3a4-ef7b4ade5bcf"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2768,20 +2768,22 @@ Cell[BoxData[
  RowBox[{"socket", "@", 
   RowBox[{"isActive", "[", "]"}]}]], "Input",
  CellChangeTimes->{{3.9457601623106003`*^9, 3.9457601676445847`*^9}},
- CellLabel->"In[24]:=",ExpressionUUID->"8dcce335-10b8-784e-a407-b4a384622945"],
+ CellLabel->"In[28]:=",ExpressionUUID->"8dcce335-10b8-784e-a407-b4a384622945"],
 
 Cell[BoxData["True"], "Output",
- CellChangeTimes->{{3.945760167992651*^9, 3.945760178239708*^9}},
- CellLabel->"Out[24]=",ExpressionUUID->"11609850-27f8-764b-beab-6d4fe28e9042"]
+ CellChangeTimes->{{3.945760167992651*^9, 3.945760178239708*^9}, {
+  3.945760230410534*^9, 3.9457602330470047`*^9}},
+ CellLabel->"Out[28]=",ExpressionUUID->"92e4a493-2228-9e4a-ac55-65da6feb2bf2"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"socket", "@", 
-  RowBox[{"open", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.9457601752382393`*^9, 3.9457601757339993`*^9}},
- CellLabel->"In[23]:=",ExpressionUUID->"7ed3e031-945b-f540-b862-1669be4c9561"],
+  RowBox[{"connect", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.9457601752382393`*^9, 3.9457601757339993`*^9}, {
+  3.9457602562944584`*^9, 3.945760265061983*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"7ed3e031-945b-f540-b862-1669be4c9561"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -2789,9 +2791,62 @@ Cell[BoxData[
    RowBox[{"JavaObject", "[", 
     RowBox[{"io", ".", "socket", ".", "client", ".", "Socket"}], "]"}], 
    "\[RightGuillemet]"}],
-  JLink`Objects`vm8`JavaObject23400822574415873]], "Output",
- CellChangeTimes->{3.9457601760609493`*^9},
- CellLabel->"Out[23]=",ExpressionUUID->"0e20b3cf-a32a-7a4c-92c9-5aeba5f4c571"]
+  JLink`Objects`vm8`JavaObject3555869878910977]], "Output",
+ CellChangeTimes->{
+  3.9457601760609493`*^9, {3.945760231069998*^9, 3.9457602653462505`*^9}},
+ CellLabel->"Out[31]=",ExpressionUUID->"cc2397c1-bf3f-b446-a536-1f799d3b3658"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ShowJavaConsole", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.9457602378222485`*^9, 3.945760240932722*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"fbe902ee-5653-b94a-bdd2-ed18bbb0010e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "com", ".", "wolfram", ".", "jlink", ".", "ui", ".", "ConsoleWindow"}], 
+    "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm8`JavaObject28490972329410561]], "Output",
+ CellChangeTimes->{3.945760241718643*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"758a0d15-3dda-7147-a5c8-e57902cdfbb1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"socket", "@", 
+  RowBox[{"connected", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.9457602704613457`*^9, 3.9457602719728374`*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"ac1956f4-d6e9-574c-902e-9cbfa3955be2"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.9457602723120193`*^9},
+ CellLabel->"Out[32]=",ExpressionUUID->"8c76b919-118a-2348-a6cc-eb7dacd199bc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"socket", "@", 
+  RowBox[{"io", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.9457602704613457`*^9, 3.9457602719728374`*^9}, {
+  3.9457603071590347`*^9, 3.945760308382452*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"5dd26dd7-1059-5146-99d8-24da0bc5fdc8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"io", ".", "socket", ".", "client", ".", "Manager"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm8`JavaObject25448056300240897]], "Output",
+ CellChangeTimes->{3.94576030868927*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"0012a872-7f8e-1141-82b2-45c0bc8ceb29"]
 }, Open  ]]
 },
 WindowSize->{793.5, 795},
@@ -2855,16 +2910,28 @@ Cell[153752, 2720, 405, 7, 28, "Input",ExpressionUUID->"4cfd2484-a04d-6043-b147-
 Cell[154160, 2729, 484, 9, 32, "Output",ExpressionUUID->"90681d5b-12d6-4b4c-b903-6de8492dee4c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[154681, 2743, 418, 8, 28, "Input",ExpressionUUID->"592b85d7-7c0b-eb4e-a504-c851d7fd2821"],
-Cell[155102, 2753, 402, 8, 32, "Output",ExpressionUUID->"c64b14d3-afd2-4744-8e50-5876ba5ad16c"]
+Cell[154681, 2743, 437, 7, 28, "Input",ExpressionUUID->"592b85d7-7c0b-eb4e-a504-c851d7fd2821"],
+Cell[155121, 2752, 428, 9, 32, "Output",ExpressionUUID->"a66d5658-5e83-7743-b3a4-ef7b4ade5bcf"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[155541, 2766, 233, 4, 28, "Input",ExpressionUUID->"8dcce335-10b8-784e-a407-b4a384622945"],
-Cell[155777, 2772, 176, 2, 32, "Output",ExpressionUUID->"11609850-27f8-764b-beab-6d4fe28e9042"]
+Cell[155586, 2766, 233, 4, 28, "Input",ExpressionUUID->"8dcce335-10b8-784e-a407-b4a384622945"],
+Cell[155822, 2772, 227, 3, 32, "Output",ExpressionUUID->"92e4a493-2228-9e4a-ac55-65da6feb2bf2"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[155990, 2779, 229, 4, 28, "Input",ExpressionUUID->"7ed3e031-945b-f540-b862-1669be4c9561"],
-Cell[156222, 2785, 378, 8, 32, "Output",ExpressionUUID->"0e20b3cf-a32a-7a4c-92c9-5aeba5f4c571"]
+Cell[156086, 2780, 283, 5, 28, "Input",ExpressionUUID->"7ed3e031-945b-f540-b862-1669be4c9561"],
+Cell[156372, 2787, 428, 9, 32, "Output",ExpressionUUID->"cc2397c1-bf3f-b446-a536-1f799d3b3658"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[156837, 2801, 210, 3, 28, "Input",ExpressionUUID->"fbe902ee-5653-b94a-bdd2-ed18bbb0010e"],
+Cell[157050, 2806, 401, 9, 32, "Output",ExpressionUUID->"758a0d15-3dda-7147-a5c8-e57902cdfbb1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[157488, 2820, 234, 4, 28, "Input",ExpressionUUID->"ac1956f4-d6e9-574c-902e-9cbfa3955be2"],
+Cell[157725, 2826, 155, 2, 32, "Output",ExpressionUUID->"8c76b919-118a-2348-a6cc-eb7dacd199bc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[157917, 2833, 278, 5, 28, "Input",ExpressionUUID->"5dd26dd7-1059-5146-99d8-24da0bc5fdc8"],
+Cell[158198, 2840, 376, 8, 32, "Output",ExpressionUUID->"0012a872-7f8e-1141-82b2-45c0bc8ceb29"]
 }, Open  ]]
 }
 ]
