@@ -1770,8 +1770,7 @@ Cell[BoxData[
       RowBox[{"\[LeftAssociation]", 
        RowBox[{
         RowBox[{"\<\"id\"\>", "\[Rule]", "5"}], ",", 
-        RowBox[{"\<\"externalExchangeId\"\>", "\[Rule]", "\<\"bybit\"\>"}], 
-        ",", 
+        RowBox[{"\<\"externalExchangeId\"\>", "\[Rule]", "\<\"bybit\"\>"}], ",", 
         RowBox[{"\<\"dataSource\"\>", "\[Rule]", "\<\"bybit\"\>"}], ",", 
         RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CEX\"\>"}], ",", 
         RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Bybit\"\>"}], ",", 
@@ -1819,8 +1818,7 @@ Cell[BoxData[
       RowBox[{"\[LeftAssociation]", 
        RowBox[{
         RowBox[{"\<\"id\"\>", "\[Rule]", "6"}], ",", 
-        RowBox[{"\<\"externalMarketId\"\>", "\[Rule]", "\<\"BTC:CNHT\"\>"}], 
-        ",", 
+        RowBox[{"\<\"externalMarketId\"\>", "\[Rule]", "\<\"BTC:CNHT\"\>"}], ",", 
         RowBox[{"\<\"baseId\"\>", "\[Rule]", "1"}], ",", 
         RowBox[{"\<\"quoteId\"\>", "\[Rule]", "7"}], ",", 
         RowBox[{"\<\"exchangeId\"\>", "\[Rule]", "2"}], ",", 
@@ -1890,8 +1888,7 @@ Cell[BoxData[
       RowBox[{"\[LeftAssociation]", 
        RowBox[{
         RowBox[{"\<\"id\"\>", "\[Rule]", "3"}], ",", 
-        RowBox[{"\<\"externalMarketId\"\>", "\[Rule]", "\<\"BTCJPY\"\>"}], 
-        ",", 
+        RowBox[{"\<\"externalMarketId\"\>", "\[Rule]", "\<\"BTCJPY\"\>"}], ",", 
         RowBox[{"\<\"baseId\"\>", "\[Rule]", "1"}], ",", 
         RowBox[{"\<\"quoteId\"\>", "\[Rule]", "4"}], ",", 
         RowBox[{"\<\"exchangeId\"\>", "\[Rule]", "2"}], ",", 
@@ -2101,15 +2098,13 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"connection", " ", "=", " ", 
   RowBox[{"WebSocketConnect", "[", 
-   RowBox[{
-   "\"\<wss://access.ccdb.waexservices.com/\>\"", ",", " ", 
+   RowBox[{"\"\<wss://access.ccdb.waexservices.com/\>\"", ",", " ", 
     "\[IndentingNewLine]", 
     RowBox[{"\"\<HTTPHeaders\>\"", " ", "->", " ", 
      RowBox[{"<|", "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{
-       "\"\<Cookie\>\"", " ", "->", " ", 
-        "\"\<ccdb.sid=s%3A4l2i9gjX5y1Yug4WbOn9gNLvDhoU2QpQ.\
+       RowBox[{"\"\<Cookie\>\"", " ", "->", 
+        " ", "\"\<ccdb.sid=s%3A4l2i9gjX5y1Yug4WbOn9gNLvDhoU2QpQ.\
 U0hrGavq2hWPvRmazqjisoJTGrPLdGo7pkRK4I9bV9c\>\""}], ",", " ", 
        "\[IndentingNewLine]", 
        RowBox[{"\"\<csrf_token\>\"", " ", "->", " ", "\"\<9TPwgpzJ\>\""}]}], 
@@ -4653,30 +4648,28 @@ Cell[BoxData[
   RowBox[{"URLRead", "[", 
    RowBox[{
     RowBox[{"HTTPRequest", "[", 
-     RowBox[{
-     "\"\<https://access.ccdb.waexservices.com/api/v1/auth/local\>\"", ",", 
-      " ", "\[IndentingNewLine]", 
+     RowBox[{"\"\<https://access.ccdb.waexservices.com/api/v1/auth/local\>\"",
+       ",", " ", "\[IndentingNewLine]", 
       RowBox[{"<|", "\[IndentingNewLine]", 
        RowBox[{
         RowBox[{"Method", " ", "->", " ", "\"\<POST\>\""}], ",", " ", 
         "\[IndentingNewLine]", 
-        RowBox[{
-        "\"\<ContentType\>\"", " ", "->", " ", "\"\<application/json\>\""}], 
-        ",", " ", "\[IndentingNewLine]", 
+        RowBox[{"\"\<ContentType\>\"", " ", "->", 
+         " ", "\"\<application/json\>\""}], ",", " ", "\[IndentingNewLine]", 
         RowBox[{"\"\<Body\>\"", " ", "->", " ", 
          RowBox[{"ExportString", "[", 
           RowBox[{
            RowBox[{"<|", "\[IndentingNewLine]", 
             RowBox[{
-             RowBox[{
-             "\"\<login\>\"", " ", "->", " ", 
-              "\"\<kirillbelovtest@gmail.com\>\""}], ",", " ", 
+             
+             RowBox[{"\"\<login\>\"", " ", "->", 
+              " ", "\"\<kirillbelovtest@gmail.com\>\""}], ",", " ", 
              "\[IndentingNewLine]", 
-             RowBox[{
-             "\"\<password\>\"", " ", "->", " ", "\"\<1234asdf\>\""}]}], 
-            "\[IndentingNewLine]", "|>"}], ",", " ", "\"\<RawJSON\>\""}], 
-          "]"}]}]}], "\[IndentingNewLine]", "|>"}]}], "\[IndentingNewLine]", 
-     "]"}], ",", " ", 
+             
+             RowBox[{"\"\<password\>\"", " ", "->", 
+              " ", "\"\<1234asdf\>\""}]}], "\[IndentingNewLine]", "|>"}], ",",
+            " ", "\"\<RawJSON\>\""}], "]"}]}]}], "\[IndentingNewLine]", 
+       "|>"}]}], "\[IndentingNewLine]", "]"}], ",", " ", 
     RowBox[{"CookieFunction", "\[Rule]", "Print"}]}], "]"}]}]], "Input",
  CellLabel->"In[61]:=",
  CellID->175487954,ExpressionUUID->"8490fd22-6f59-a648-933a-a7bd7040a65d"],
@@ -4879,8 +4872,8 @@ Cell[BoxData[
   RowBox[{
    RowBox[{"ImportString", "[", 
     RowBox[{
-     RowBox[{"response", "[", "\"\<Body\>\"", "]"}], ",", " ", 
-     "\"\<RawJSON\>\""}], "]"}], "[", 
+     RowBox[{"response", "[", "\"\<Body\>\"", "]"}], ",", 
+     " ", "\"\<RawJSON\>\""}], "]"}], "[", 
    RowBox[{"\"\<meta\>\"", ",", " ", "\"\<csrfToken\>\""}], "]"}]}]], "Input",
  CellLabel->"In[63]:=",
  CellID->151266581,ExpressionUUID->"27b0a000-a4b8-934b-a1a9-2039fe2d0046"],
@@ -4924,8 +4917,7 @@ data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src \
    RowBox[{"\<\"referrer-policy\"\>", "\[Rule]", "\<\"no-referrer\"\>"}], ",", 
    RowBox[{"\<\"strict-transport-security\"\>", 
     "\[Rule]", "\<\"max-age=31536000; includeSubDomains\"\>"}], ",", 
-   RowBox[{"\<\"x-content-type-options\"\>", "\[Rule]", "\<\"nosniff\"\>"}], 
-   ",", 
+   RowBox[{"\<\"x-content-type-options\"\>", "\[Rule]", "\<\"nosniff\"\>"}], ",", 
    RowBox[{"\<\"x-dns-prefetch-control\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
    RowBox[{"\<\"x-download-options\"\>", "\[Rule]", "\<\"noopen\"\>"}], ",", 
    RowBox[{"\<\"x-frame-options\"\>", "\[Rule]", "\<\"SAMEORIGIN\"\>"}], ",", 
@@ -4949,8 +4941,8 @@ Cell[BoxData[
  RowBox[{"headers", " ", "=", " ", 
   RowBox[{"<|", "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"\"\<Sec-WebSocket-Version\>\"", " ", "->", " ", "\"\<13\>\""}], 
-    ",", " ", "\[IndentingNewLine]", 
+    RowBox[{"\"\<Sec-WebSocket-Version\>\"", " ", "->", " ", "\"\<13\>\""}], ",",
+     " ", "\[IndentingNewLine]", 
     RowBox[{"\"\<Sec-WebSocket-Key\>\"", " ", "->", " ", 
      RowBox[{"BaseEncode", "[", 
       RowBox[{
@@ -4969,13 +4961,12 @@ Cell[BoxData[
     "\[IndentingNewLine]", 
     RowBox[{"\"\<csrf_token\>\"", " ", "->", " ", "csrfToken"}], ",", 
     "\[IndentingNewLine]", 
-    RowBox[{
-    "\"\<Sec-WebSocket-Extensions\>\"", " ", "->", " ", 
-     "\"\<permessage-deflate; client_max_window_bits\>\""}], ",", " ", " ", 
+    RowBox[{"\"\<Sec-WebSocket-Extensions\>\"", " ", "->", 
+     " ", "\"\<permessage-deflate; client_max_window_bits\>\""}], ",", " ", 
+    " ", "\[IndentingNewLine]", 
+    RowBox[{"\"\<Host\>\"", " ", "->", 
+     " ", "\"\<access.ccdb.waexservices.com\>\""}], ",", " ", 
     "\[IndentingNewLine]", 
-    RowBox[{
-    "\"\<Host\>\"", " ", "->", " ", "\"\<access.ccdb.waexservices.com\>\""}], 
-    ",", " ", "\[IndentingNewLine]", 
     RowBox[{"\"\<access_token\>\"", " ", "->", " ", 
      RowBox[{"SystemCredential", "[", "\"\<WAEX_API_TOKEN\>\"", "]"}]}]}], 
    "\[IndentingNewLine]", "|>"}]}]], "Input",
@@ -5012,8 +5003,7 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"connection", " ", "=", " ", 
   RowBox[{"WebSocketConnect", "[", 
-   RowBox[{
-   "\"\<ws://access.ccdb.waexservices.com\>\"", ",", " ", 
+   RowBox[{"\"\<ws://access.ccdb.waexservices.com\>\"", ",", " ", 
     "\[IndentingNewLine]", 
     RowBox[{"\"\<HTTPHeaders\>\"", " ", "->", " ", "headers"}]}], 
    "\[IndentingNewLine]", "]"}]}]], "Input",
@@ -7541,8 +7531,7 @@ Cell[BoxData[
  RowBox[{"response", " ", "=", " ", 
   RowBox[{"URLRead", "[", 
    RowBox[{"HTTPRequest", "[", 
-    RowBox[{
-    "\"\<access.ccdb.waexservices.com:80\>\"", ",", " ", 
+    RowBox[{"\"\<access.ccdb.waexservices.com:80\>\"", ",", " ", 
      "\[IndentingNewLine]", 
      RowBox[{"<|", "\[IndentingNewLine]", 
       RowBox[{"\"\<Headers\>\"", " ", "->", " ", "headers"}], 
@@ -9641,7 +9630,7 @@ Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
 CreateCellID->True,
 DynamicEvaluationTimeout->60,
 TrackCellChangeTimes->False,
-FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+FrontEndVersion->"14.2 for Microsoft Windows (64-bit) (December 26, 2024)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[StyleDefinitions -> "Default.nb"]], 
@@ -17454,7 +17443,7 @@ GRPf1sw3cDj8VSOm/5G9w5vAHXKt3IZQ/0HDoQHBFwFFwBcEHxR9zQlGcP3o
    Cell[
     StyleData["AttachedMessage"], Deletable -> True, 
     CellMargins -> {{60, 40}, {15, 5}}]}, Visible -> False, FrontEndVersion -> 
-  "14.1 for Microsoft Windows (64-bit) (July 16, 2024)", StyleDefinitions -> 
+  "14.2 for Microsoft Windows (64-bit) (December 26, 2024)", StyleDefinitions -> 
   "PrivateStylesheetFormatting.nb"],
 ExpressionUUID->"5caa80fd-ed75-964b-af7e-33d202a766fc"
 ]
