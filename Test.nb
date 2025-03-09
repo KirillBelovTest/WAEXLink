@@ -23,87 +23,33 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1060,         20]
-NotebookDataLength[    162006,       2918]
-NotebookOptionsPosition[    158590,       2851]
-NotebookOutlinePosition[    158994,       2867]
-CellTagsIndexPosition[    158951,       2864]
+NotebookDataLength[    127612,       2193]
+NotebookOptionsPosition[    126443,       2164]
+NotebookOutlinePosition[    126845,       2180]
+CellTagsIndexPosition[    126802,       2177]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
  RowBox[{"<<", "KirillBelov`WAEXLink`"}]], "Input",
- CellLabel->"In[3]:=",ExpressionUUID->"9e26da5f-da3c-7c49-a279-56a87e9959d3"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"login", " ", "=", " ", 
-  RowBox[{"WAEXLogin", "[", 
-   RowBox[{
-   "\"\<kirillbelovtest@gmail.com\>\"", ",", " ", "\"\<1234asdf\>\""}], 
-   "]"}]}]], "Input",
- CellLabel->"In[13]:=",ExpressionUUID->"e53ead0c-7a4e-0044-b882-5fce33a31705"],
-
-Cell[BoxData[
- RowBox[{"\[LeftAssociation]", 
-  RowBox[{
-   RowBox[{"\<\"data\"\>", "\[Rule]", 
-    RowBox[{"\[LeftAssociation]", 
-     RowBox[{
-      RowBox[{"\<\"id\"\>", "\[Rule]", "9"}], ",", 
-      RowBox[{"\<\"email\"\>", 
-       "\[Rule]", "\<\"kirillbelovtest@gmail.com\"\>"}], ",", 
-      RowBox[{"\<\"username\"\>", "\[Rule]", "\<\"krillbelov\"\>"}], ",", 
-      RowBox[{"\<\"firstName\"\>", "\[Rule]", "\<\"Krill\"\>"}], ",", 
-      RowBox[{"\<\"middleName\"\>", "\[Rule]", "Null"}], ",", 
-      RowBox[{"\<\"lastName\"\>", "\[Rule]", "\<\"Belov\"\>"}], ",", 
-      RowBox[{"\<\"roleId\"\>", "\[Rule]", "4"}], ",", 
-      RowBox[{"\<\"avatarUrl\"\>", "\[Rule]", "Null"}], ",", 
-      RowBox[{"\<\"role\"\>", "\[Rule]", 
-       RowBox[{"\[LeftAssociation]", 
-        RowBox[{
-         RowBox[{"\<\"id\"\>", "\[Rule]", "4"}], ",", 
-         RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"CRYPTO_ANALYST\"\>"}], ",", 
-         RowBox[{"\<\"rateLimit\"\>", "\[Rule]", "100000"}], ",", 
-         RowBox[{"\<\"description\"\>", 
-          "\[Rule]", "\<\"User with the basic crypto information retrieval \
-and aggregation permissions\"\>"}], ",", 
-         RowBox[{"\<\"createdAt\"\>", 
-          "\[Rule]", "\<\"2024-09-24T12:22:43.140Z\"\>"}], ",", 
-         RowBox[{"\<\"updatedAt\"\>", 
-          "\[Rule]", "\<\"2024-10-18T12:28:55.354Z\"\>"}]}], 
-        "\[RightAssociation]"}]}], ",", 
-      RowBox[{"\<\"createdAt\"\>", 
-       "\[Rule]", "\<\"2024-12-19T17:50:16.971Z\"\>"}], ",", 
-      RowBox[{"\<\"updatedAt\"\>", 
-       "\[Rule]", "\<\"2024-12-19T17:50:16.971Z\"\>"}]}], 
-     "\[RightAssociation]"}]}], ",", 
-   RowBox[{"\<\"meta\"\>", "\[Rule]", 
-    RowBox[{"\[LeftAssociation]", 
-     RowBox[{
-      RowBox[{"\<\"csrfToken\"\>", "\[Rule]", "\<\"G6fxbNyN\"\>"}], ",", 
-      RowBox[{"\<\"useragent\"\>", "\[Rule]", 
-       RowBox[{"\[LeftAssociation]", 
-        RowBox[{
-         RowBox[{"\<\"ip\"\>", "\[Rule]", "\<\"10.244.1.40\"\>"}], ",", 
-         RowBox[{"\<\"browser\"\>", "\[Rule]", "\<\"unknown\"\>"}], ",", 
-         RowBox[{"\<\"version\"\>", "\[Rule]", "\<\"unknown\"\>"}], ",", 
-         RowBox[{"\<\"os\"\>", "\[Rule]", "\<\"unknown\"\>"}], ",", 
-         RowBox[{"\<\"platform\"\>", "\[Rule]", "\<\"unknown\"\>"}]}], 
-        "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]}], ",", 
-   RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
-  "\[RightAssociation]"}]], "Output",
- CellChangeTimes->{
-  3.945741030417387*^9, {3.945741441106558*^9, 3.9457414656118298`*^9}, 
-   3.945748339453556*^9, 3.945748753850628*^9},
- CellLabel->"Out[13]=",ExpressionUUID->"6ba45d3c-2585-5d48-b6f5-412e84a8121a"]
-}, Open  ]],
+ CellLabel->"In[1]:=",ExpressionUUID->"9e26da5f-da3c-7c49-a279-56a87e9959d3"],
 
 Cell[BoxData[
  RowBox[{"<<", "KirillBelov`WebSocketLink`"}]], "Input",
  CellChangeTimes->{{3.9457416705943527`*^9, 3.945741683351837*^9}},
- CellLabel->"In[12]:=",ExpressionUUID->"acef88ed-50bc-024b-aec6-f65a6e028260"],
+ CellLabel->"In[2]:=",ExpressionUUID->"acef88ed-50bc-024b-aec6-f65a6e028260"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"login", " ", "=", " ", 
+    RowBox[{"WAEXLogin", "[", 
+     RowBox[{
+     "\"\<kirillbelovtest@gmail.com\>\"", ",", " ", "\"\<1234asdf\>\""}], 
+     "]"}]}], ";"}], " "}]], "Input",
+ CellChangeTimes->{{3.9463837643715897`*^9, 3.9463837658392487`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"e53ead0c-7a4e-0044-b882-5fce33a31705"],
 
 Cell[CellGroupData[{
 
@@ -114,15 +60,15 @@ Cell[BoxData[
     RowBox[{"$response", "[", "\"\<Headers\>\"", "]"}], "|>"}], "[", 
    "\"\<set-cookie\>\"", "]"}]}]], "Input",
  CellChangeTimes->{{3.9457416444651833`*^9, 3.945741662480654*^9}, {
-  3.94574169346406*^9, 3.9457416948405457`*^9}},
- CellLabel->"In[14]:=",ExpressionUUID->"8565daae-6932-6645-9e77-5c52b46bc157"],
+  3.94574169346406*^9, 3.9457416948405457`*^9}, {3.946383771574192*^9, 
+  3.946383771653551*^9}, {3.9463867328840847`*^9, 3.9463867337355957`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"8565daae-6932-6645-9e77-5c52b46bc157"],
 
-Cell[BoxData["\<\"ccdb.sid=s%3AqboYwpwvutsCYpxfzkARgn-ryigWgIow.25o%\
-2FOPnHwBOKVMhi5FrHq2j3s0mM%2FI1ND8%2BOrAWH6WU; Path=/; Expires=Mon, 13 Jan \
-2025 21:19:12 GMT; HttpOnly; SameSite=Strict\"\>"], "Output",
- CellChangeTimes->{{3.9457416472138863`*^9, 3.945741662788126*^9}, 
-   3.9457416955358334`*^9, 3.945748379869238*^9, 3.945748755089205*^9},
- CellLabel->"Out[14]=",ExpressionUUID->"6dd67dbb-c655-4945-8bd3-7f76da01a354"]
+Cell[BoxData["\<\"ccdb.sid=s%3AuX13sqZTywjWewcE6FdazH5oytDLAIxS.\
+0ZXFUd1iKHzJWvxyHajs3QRcKIUENCWATpopEdwc7wg; Path=/; Expires=Tue, 21 Jan 2025 \
+06:31:14 GMT; HttpOnly; SameSite=Strict\"\>"], "Output",
+ CellChangeTimes->{3.9463867343932858`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"685c118a-b1de-db41-8727-471b2e5c3f79"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -131,13 +77,14 @@ Cell[BoxData[
  RowBox[{"csrfToken", " ", "=", " ", 
   RowBox[{"login", "[", 
    RowBox[{"\"\<meta\>\"", ",", " ", "\"\<csrfToken\>\""}], "]"}]}]], "Input",
- CellChangeTimes->{{3.9457417105212326`*^9, 3.945741718680401*^9}},
- CellLabel->"In[15]:=",ExpressionUUID->"b831b77b-0c7b-8f4a-8996-59c7afa8f7fb"],
+ CellChangeTimes->{{3.9457417105212326`*^9, 3.945741718680401*^9}, {
+  3.946383774767277*^9, 3.946383774862278*^9}, {3.9463867368128605`*^9, 
+  3.946386737118271*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"b831b77b-0c7b-8f4a-8996-59c7afa8f7fb"],
 
-Cell[BoxData["\<\"G6fxbNyN\"\>"], "Output",
- CellChangeTimes->{{3.94574171489839*^9, 3.945741718952305*^9}, 
-   3.9457483837300777`*^9, 3.9457487565762615`*^9},
- CellLabel->"Out[15]=",ExpressionUUID->"682edd9c-9e89-a745-aee1-b16904ddf5a2"]
+Cell[BoxData["\<\"XW9sXJMZ\"\>"], "Output",
+ CellChangeTimes->{3.9463867375858936`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"d4b76180-7fe8-ce4c-8a88-137e169cbfcc"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -145,9 +92,7 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"connection", " ", "=", " ", 
   RowBox[{"WebSocketConnect", "[", 
-   RowBox[{
-   "\"\<https://access.ccdb.waexservices.com/socket.io/?EIO=4&transport=\
-websocket\>\"", ",", " ", 
+   RowBox[{"\"\<wss://access.ccdb.waexservices.com\>\"", ",", " ", 
     RowBox[{"\"\<HTTPHeaders\>\"", " ", "->", " ", 
      RowBox[{"<|", "\[IndentingNewLine]", 
       RowBox[{
@@ -157,22 +102,26 @@ websocket\>\"", ",", " ",
       "\[IndentingNewLine]", "|>"}]}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.9457417266663475`*^9, 3.945741802321026*^9}, {
    3.9457418826813564`*^9, 3.945741887480343*^9}, {3.945748720650131*^9, 
-   3.945748742033003*^9}, 3.9457488542021084`*^9, 3.9457492102507133`*^9},
- CellLabel->"In[23]:=",ExpressionUUID->"cdcf029f-6617-564d-9340-00853103a54a"],
+   3.945748742033003*^9}, 3.9457488542021084`*^9, 3.9457492102507133`*^9, 
+   3.9463839239944916`*^9, {3.946386448016836*^9, 3.946386448288372*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"cdcf029f-6617-564d-9340-00853103a54a"],
 
 Cell[BoxData[
  TemplateBox[{
   "WebSocketConnect", "notopened", 
    "\"Connection not opened on url = \
-\\!\\(\\*RowBox[{\\\"\\\\\\\"https://access.ccdb.waexservices.com/socket.io/?\
-EIO=4&transport=websocket\\\\\\\"\\\"}]\\)\"", 2, 23, 5, 22062397910810683990,
-    "Local", "KirillBelov`WebSocketLink`WebSocketConnect"},
+\\!\\(\\*RowBox[{\\\"\\\\\\\"wss://access.ccdb.waexservices.com\\\\\\\"\\\"}]\
+\\)\"", 2, 8, 2, 31900928466496523968, "Local", 
+   "KirillBelov`WebSocketLink`WebSocketConnect"},
   "MessageTemplate2"]], "Message", "MSG",
- CellChangeTimes->{3.9457419056297016`*^9, 3.945748775316635*^9, 
-  3.9457492285426483`*^9},
+ CellChangeTimes->{
+  3.9457419056297016`*^9, 3.945748775316635*^9, 3.9457492285426483`*^9, 
+   3.9463837805551662`*^9, 3.9463839246694145`*^9, 3.946385822296688*^9, 
+   3.9463860946202183`*^9, 3.9463864637818794`*^9, 3.946386531178547*^9, {
+   3.9463867556494617`*^9, 3.9463867854129047`*^9}},
  CellLabel->
   "During evaluation of \
-In[23]:=",ExpressionUUID->"e5d34f87-58cb-454d-9c22-7c84ea0e97f5"],
+In[8]:=",ExpressionUUID->"457acb9b-e7c7-3d44-ac4e-80a467660d01"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -2132,677 +2081,20 @@ mWWWWWbZf6n9P9y86Dg=
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{3.9457418025550003`*^9, 3.9457419056419945`*^9, 
-  3.9457487753335247`*^9, 3.9457492285511456`*^9},
- CellLabel->"Out[23]=",ExpressionUUID->"3197df7f-0849-dd4a-bc05-af047421332d"]
-}, Open  ]],
-
-Cell[BoxData["\"\<https://web.postman.co/workspace/Test~9cf47576-f5f8-41ad-\
-8906-3ad8f0fae94c/ws-socketio-request/677f70a6a80cbe69081d7f2f\>\""], "Input",
- CellChangeTimes->{{3.945748431179901*^9, 
-  3.945748431494478*^9}},ExpressionUUID->"37263e43-ebb5-4145-bd2e-\
-d7f6bb587a38"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"request", " ", "=", " ", 
-  RowBox[{"HTTPRequest", "[", 
-   RowBox[{
-   "\"\<https://access.ccdb.waexservices.com/socket.io/?transport=websocket\>\
-\"", ",", " ", 
-    RowBox[{"<|", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"\"\<Method\>\"", " ", "->", " ", "\"\<GET\>\""}], ",", " ", 
-      "\[IndentingNewLine]", 
-      RowBox[{"\"\<Headers\>\"", " ", "->", " ", 
-       RowBox[{"{", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"\"\<cookie\>\"", " ", "->", " ", "cookie"}], ",", " ", 
-         "\[IndentingNewLine]", 
-         RowBox[{"\"\<csrf_token\>\"", " ", "->", " ", "csrfToken"}], ",", 
-         " ", "\[IndentingNewLine]", 
-         RowBox[{"\"\<uUpgrade\>\"", " ", "->", " ", "\"\<websocket\>\""}], 
-         ",", " ", "\[IndentingNewLine]", 
-         RowBox[{"\"\<connection\>\"", " ", "->", " ", "\"\<upgrade\>\""}]}], 
-        "\[IndentingNewLine]", "}"}]}]}], "\[IndentingNewLine]", "|>"}]}], 
-   "]"}]}]], "Input",
- CellChangeTimes->{{3.9457488671301537`*^9, 3.945748980193529*^9}},
- CellLabel->"In[21]:=",ExpressionUUID->"b8ea8087-949f-7c4c-8804-231d9bcc55a2"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{
-   TagBox["HTTPRequest",
-    "SummaryHead"], "[", 
-   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
-    TemplateBox[{
-      PaneSelectorBox[{False -> GridBox[{{
-            GraphicsBox[{
-              RGBColor[0, 
-               NCache[
-                Rational[2, 3], 0.6666666666666666], 0], 
-              DiskBox[{0, 0}], 
-              InsetBox[
-               FormBox[
-                StyleBox["\"GET\"", 
-                 Directive[10, 
-                  GrayLevel[1], Bold], StripOnInput -> False], 
-                TraditionalForm], 
-               Scaled[{0.53, 0.48}]]}, ImageSize -> 
-             Dynamic[{
-               Automatic, (3 CurrentValue["FontCapHeight"])/
-                AbsoluteCurrentValue[Magnification]}], Background -> None], 
-            GridBox[{{
-               RowBox[{
-                 TagBox["\"URL: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox[
-                  TemplateBox[{
-                    TagBox[
-                    "\"https://access.ccdb.waexservices.com/socket.io/?\
-transport=websocket\"", Short], 
-                    "https://access.ccdb.waexservices.com/socket.io/?\
-transport=websocket"}, "HyperlinkURL"], "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"ContentType: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["None", "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}], True -> GridBox[{{
-            GraphicsBox[{
-              RGBColor[0, 
-               NCache[
-                Rational[2, 3], 0.6666666666666666], 0], 
-              DiskBox[{0, 0}], 
-              InsetBox[
-               FormBox[
-                StyleBox["\"GET\"", 
-                 Directive[10, 
-                  GrayLevel[1], Bold], StripOnInput -> False], 
-                TraditionalForm], 
-               Scaled[{0.53, 0.48}]]}, ImageSize -> 
-             Dynamic[{
-               Automatic, (3 CurrentValue["FontCapHeight"])/
-                AbsoluteCurrentValue[Magnification]}], Background -> None], 
-            GridBox[{{
-               RowBox[{
-                 TagBox["\"URL: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox[
-                  TemplateBox[{
-                    TagBox[
-                    "\"https://access.ccdb.waexservices.com/socket.io/?\
-transport=websocket\"", Short], 
-                    "https://access.ccdb.waexservices.com/socket.io/?\
-transport=websocket"}, "HyperlinkURL"], "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"ContentType: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["None", "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}]}, 
-       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
-     "SummaryPanel"],
-    DynamicModuleValues:>{}], "]"}],
-  HTTPRequest[
-  "https://access.ccdb.waexservices.com/socket.io/?transport=websocket", <|
-   "Method" -> "GET", 
-    "Headers" -> {
-     "cookie" -> 
-      "ccdb.sid=s%3AqboYwpwvutsCYpxfzkARgn-ryigWgIow.25o%\
-2FOPnHwBOKVMhi5FrHq2j3s0mM%2FI1ND8%2BOrAWH6WU; Path=/; Expires=Mon, 13 Jan \
-2025 21:19:12 GMT; HttpOnly; SameSite=Strict", "csrf_token" -> "G6fxbNyN", 
-      "uUpgrade" -> "websocket", "connection" -> "upgrade"}|>],
-  Editable->False,
-  SelectWithContents->True,
-  Selectable->False]], "Output",
- CellChangeTimes->{{3.9457489181752434`*^9, 3.945748930318077*^9}, 
-   3.945748980617153*^9},
- CellLabel->"Out[21]=",ExpressionUUID->"4bf3ec61-2cdb-744b-883b-c5446c5d44be"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"URLRead", "[", "request", "]"}]], "Input",
- CellChangeTimes->{{3.945748919530733*^9, 3.945748921754505*^9}},
- CellLabel->"In[22]:=",ExpressionUUID->"a62c2faf-66bc-6546-a052-813d98c93b2a"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{
-   TagBox["HTTPResponse",
-    "SummaryHead"], "[", 
-   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
-    TemplateBox[{
-      PaneSelectorBox[{False -> GridBox[{{
-            GraphicsBox[{
-              RGBColor[1, 0.5, 0], 
-              DiskBox[{0, 0}], 
-              InsetBox[
-               FormBox[
-                StyleBox["\"400\"", 
-                 Directive[10, 
-                  GrayLevel[1], Bold], StripOnInput -> False], 
-                TraditionalForm], 
-               Scaled[{0.53, 0.48}]]}, ImageSize -> 
-             Dynamic[{
-               Automatic, (3 CurrentValue["FontCapHeight"])/
-                AbsoluteCurrentValue[Magnification]}], Background -> None], 
-            GridBox[{{
-               RowBox[{
-                 TagBox["\"Status: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"Bad Request\"", "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"Content type: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"application/json\"", "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}], True -> GridBox[{{
-            GraphicsBox[{
-              RGBColor[1, 0.5, 0], 
-              DiskBox[{0, 0}], 
-              InsetBox[
-               FormBox[
-                StyleBox["\"400\"", 
-                 Directive[10, 
-                  GrayLevel[1], Bold], StripOnInput -> False], 
-                TraditionalForm], 
-               Scaled[{0.53, 0.48}]]}, ImageSize -> 
-             Dynamic[{
-               Automatic, (3 CurrentValue["FontCapHeight"])/
-                AbsoluteCurrentValue[Magnification]}], Background -> None], 
-            GridBox[{{
-               RowBox[{
-                 TagBox["\"Status: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"Bad Request\"", "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"Content type: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"application/json\"", "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}]}, 
-       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
-     "SummaryPanel"],
-    DynamicModuleValues:>{}], "]"}],
-  HTTPResponse[
-   ByteArray[{123, 34, 99, 111, 100, 101, 34, 58, 51, 44, 34, 109, 101, 115, 
-    115, 97, 103, 101, 34, 58, 34, 66, 97, 100, 32, 114, 101, 113, 117, 101, 
-    115, 116, 34, 125}], <|
-   "Headers" -> {{"Date", "Mon, 13 Jan 2025 09:23:00 GMT"}, {
-      "Content-Type", "application/json"}, {"Transfer-Encoding", "chunked"}, {
-      "Connection", "keep-alive"}, {"Vary", "Origin"}, {
-      "Strict-Transport-Security", "max-age=31536000; includeSubDomains"}}, 
-    "StatusCode" -> 400, "Cookies" -> {}|>, CharacterEncoding -> Automatic],
-  Editable->False,
-  SelectWithContents->True,
-  Selectable->False]], "Output",
- CellChangeTimes->{{3.9457489220796394`*^9, 3.945748931905922*^9}, 
-   3.9457489815461063`*^9},
- CellLabel->"Out[22]=",ExpressionUUID->"007caa13-e3de-fd41-8e70-3326cf71b683"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{"<<", "JLink`"}]], "Input",
- CellChangeTimes->{{3.9457594470254745`*^9, 3.94575944873304*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"52475b47-c3e9-034a-b17a-815f6bfd9787"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Options", "[", "ReinstallJava", "]"}]], "Input",
- CellChangeTimes->{{3.945759487569378*^9, 3.9457594898735332`*^9}},
- CellLabel->"In[3]:=",ExpressionUUID->"078ce606-bab1-c640-abbb-fd03324b7a90"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"ClassPath", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"CommandLine", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"JVMArguments", "\[Rule]", "None"}], ",", 
-   RowBox[{"ForceLaunch", "\[Rule]", "False"}], ",", 
-   RowBox[{"Default", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"CreateExtraLinks", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"\<\"Asynchronous\"\>", "\[Rule]", "Automatic"}]}], 
-  "}"}]], "Output",
- CellChangeTimes->{3.945759490183264*^9},
- CellLabel->"Out[3]=",ExpressionUUID->"30d7ec5d-da4c-c14b-b0f5-bfe3db02717b"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{"UninstallJava", "[", "]"}]], "Input",
- CellChangeTimes->{{3.9457596605375404`*^9, 3.945759665125391*^9}},
- CellLabel->"In[13]:=",ExpressionUUID->"6a2a7b82-0a26-d044-9fb1-d40546aa64a0"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"ReinstallJava", "[", "]"}]], "Input",
- CellChangeTimes->{{3.945759458209423*^9, 3.9457595966691017`*^9}, {
-  3.9457596588849583`*^9, 3.945759676700922*^9}, {3.945759708456661*^9, 
-  3.9457597149408607`*^9}},
- CellLabel->"In[14]:=",ExpressionUUID->"300b860a-486f-7b48-892f-e657ead068fd"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{
-   TagBox["LinkObject",
-    "SummaryHead"], "[", 
-   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
-    TemplateBox[{
-      PaneSelectorBox[{False -> GridBox[{{
-            PaneBox[
-             ButtonBox[
-              DynamicBox[
-               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
-              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
-              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
-              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
-             Dynamic[{
-               Automatic, 
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                 Magnification])}]], 
-            GraphicsBox[{
-              Thickness[0.038461538461538464`], {
-               FaceForm[{
-                 GrayLevel[0.93], 
-                 Opacity[1.]}], 
-               
-               FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {
-                1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{
-                25.499999999999996`, 2.5}, {25.499999999999996`, 
-                1.3953100000000003`}, {24.604699999999998`, 
-                0.49999999999999994`}, {23.5, 0.49999999999999994`}, {2.5, 
-                0.49999999999999994`}, {1.3953100000000003`, 
-                0.49999999999999994`}, {0.49999999999999994`, 
-                1.3953100000000003`}, {0.49999999999999994`, 2.5}, {
-                0.49999999999999994`, 23.5}, {0.49999999999999994`, 
-                24.604699999999998`}, {1.3953100000000003`, 
-                25.499999999999996`}, {2.5, 25.499999999999996`}, {23.5, 
-                25.499999999999996`}, {24.604699999999998`, 
-                25.499999999999996`}, {25.499999999999996`, 
-                24.604699999999998`}, {25.499999999999996`, 23.5}, {
-                25.499999999999996`, 2.5}}}]}, {
-               FaceForm[{
-                 RGBColor[0.5, 0.5, 0.5], 
-                 Opacity[1.]}], 
-               
-               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
-                0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{20.5426, 
-                19.116799999999998`}, {16.3832, 21.876199999999997`}, {
-                16.3832, 20.021499999999996`}, {6.930469999999999, 
-                20.021499999999996`}, {6.930469999999999, 
-                18.212100000000003`}, {16.3832, 18.212100000000003`}, {
-                16.3832, 16.357399999999995`}, {20.5426, 
-                19.116799999999998`}}}], 
-               
-               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
-                0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {
-                9.46445, 11.079700000000003`}, {9.46445, 
-                12.933999999999997`}, {18.917199999999998`, 
-                12.933999999999997`}, {18.917199999999998`, 14.7438}, {
-                9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 13.8391}}}], 
-               
-               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
-                0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {
-                9.46445, 11.079700000000003`}, {9.46445, 
-                12.933999999999997`}, {18.917199999999998`, 
-                12.933999999999997`}, {18.917199999999998`, 14.7438}, {
-                9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 13.8391}}}], 
-               
-               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
-                0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
-                0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0,
-                 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, CompressedData["
-1:eJxTTMoPSmVmYGBgBGIRIGYC4sIjUTVcAooO8+XdOPpnKDg8YkwNXuen7JA2
-W/qycJSgw5sbHEde31CB82PFhGf3n1V1aFVgVz0zR8oBrF9czWFHsFXE/9Wy
-Dje0Dj4qiFWDy7cVLYptDVKH65/g6Xbu0HMNOB9sn4I23H6w+SWacD5De8DS
-tDQNB7ldC/alskg4aD2+nx6joeFgnPFi/oMZog5B9vlaQa/UHao9k7f0KUhA
-+D/UUPVbqML5jCB+oIpDzJHypGv8Eg4eGad3ikiqwM2T57H5LndPGW6eya7m
-GzMvKcH1o4cXABG3d/Y=
-                "]], 
-               
-               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
-                0, 1, 0}, {0, 1, 0}}}, {{{14.163129999999999`, 
-                4.337966249999999}, {16.96813, 4.337966249999999}, {16.96813, 
-                5.047809999999999}, {14.98813, 5.047809999999999}, {14.98813, 
-                8.29796625}, {14.163129999999999`, 8.29796625}, {
-                14.163129999999999`, 4.337966249999999}}}]}}, Background -> 
-             GrayLevel[0.93], Axes -> False, AspectRatio -> 1, ImageSize -> 
-             Dynamic[{
-               Automatic, 
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                 Magnification])}], Frame -> True, FrameTicks -> None, 
-             FrameStyle -> Directive[
-               Thickness[Tiny], 
-               GrayLevel[0.7]]], 
-            GridBox[{{
-               RowBox[{
-                 TagBox["\"Name: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox[
-                  StyleBox[
-                   PaneBox[
-                   "\"\\\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\14.1\\\\SystemFiles\\\\Java\\\\Windows-x86-64\\\\bin\\\
-\\javaw.exe\\\" -classpath \\\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\14.1\\\\SystemFiles\\\\Links\\\\JLink\\\\JLink.jar\\\" \
--Xmx512m  @\\\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\14.1\\\\SystemFiles\\\\Links\\\\JLink\\\\jvmargs_win.\
-txt\\\"  com.wolfram.jlink.Install -init \\\"C:\\\\Users\\\\Kirill\\\\AppData\
-\\\\Local\\\\Temp\\\\m-da2cea98-08c5-43d1-9b04-297118601690\\\"\"", 
-                    ContentPadding -> False, FrameMargins -> 0, StripOnInput -> 
-                    True, BaselinePosition -> Baseline, 
-                    ImageSize -> {{1, 300}, Automatic}], LineBreakWithin -> 
-                   False], "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"Link mode: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["Listen", "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}], True -> GridBox[{{
-            PaneBox[
-             ButtonBox[
-              DynamicBox[
-               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
-              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
-              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
-              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
-             Dynamic[{
-               Automatic, 
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                 Magnification])}]], 
-            GraphicsBox[{
-              Thickness[0.038461538461538464`], {
-               FaceForm[{
-                 GrayLevel[0.93], 
-                 Opacity[1.]}], 
-               
-               FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {
-                1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{
-                25.499999999999996`, 2.5}, {25.499999999999996`, 
-                1.3953100000000003`}, {24.604699999999998`, 
-                0.49999999999999994`}, {23.5, 0.49999999999999994`}, {2.5, 
-                0.49999999999999994`}, {1.3953100000000003`, 
-                0.49999999999999994`}, {0.49999999999999994`, 
-                1.3953100000000003`}, {0.49999999999999994`, 2.5}, {
-                0.49999999999999994`, 23.5}, {0.49999999999999994`, 
-                24.604699999999998`}, {1.3953100000000003`, 
-                25.499999999999996`}, {2.5, 25.499999999999996`}, {23.5, 
-                25.499999999999996`}, {24.604699999999998`, 
-                25.499999999999996`}, {25.499999999999996`, 
-                24.604699999999998`}, {25.499999999999996`, 23.5}, {
-                25.499999999999996`, 2.5}}}]}, {
-               FaceForm[{
-                 RGBColor[0.5, 0.5, 0.5], 
-                 Opacity[1.]}], 
-               
-               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
-                0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{20.5426, 
-                19.116799999999998`}, {16.3832, 21.876199999999997`}, {
-                16.3832, 20.021499999999996`}, {6.930469999999999, 
-                20.021499999999996`}, {6.930469999999999, 
-                18.212100000000003`}, {16.3832, 18.212100000000003`}, {
-                16.3832, 16.357399999999995`}, {20.5426, 
-                19.116799999999998`}}}], 
-               
-               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
-                0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {
-                9.46445, 11.079700000000003`}, {9.46445, 
-                12.933999999999997`}, {18.917199999999998`, 
-                12.933999999999997`}, {18.917199999999998`, 14.7438}, {
-                9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 13.8391}}}], 
-               
-               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
-                0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {
-                9.46445, 11.079700000000003`}, {9.46445, 
-                12.933999999999997`}, {18.917199999999998`, 
-                12.933999999999997`}, {18.917199999999998`, 14.7438}, {
-                9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 13.8391}}}], 
-               
-               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
-                0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
-                0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0,
-                 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, CompressedData["
-1:eJxTTMoPSmVmYGBgBGIRIGYC4sIjUTVcAooO8+XdOPpnKDg8YkwNXuen7JA2
-W/qycJSgw5sbHEde31CB82PFhGf3n1V1aFVgVz0zR8oBrF9czWFHsFXE/9Wy
-Dje0Dj4qiFWDy7cVLYptDVKH65/g6Xbu0HMNOB9sn4I23H6w+SWacD5De8DS
-tDQNB7ldC/alskg4aD2+nx6joeFgnPFi/oMZog5B9vlaQa/UHao9k7f0KUhA
-+D/UUPVbqML5jCB+oIpDzJHypGv8Eg4eGad3ikiqwM2T57H5LndPGW6eya7m
-GzMvKcH1o4cXABG3d/Y=
-                "]], 
-               
-               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
-                0, 1, 0}, {0, 1, 0}}}, {{{14.163129999999999`, 
-                4.337966249999999}, {16.96813, 4.337966249999999}, {16.96813, 
-                5.047809999999999}, {14.98813, 5.047809999999999}, {14.98813, 
-                8.29796625}, {14.163129999999999`, 8.29796625}, {
-                14.163129999999999`, 4.337966249999999}}}]}}, Background -> 
-             GrayLevel[0.93], Axes -> False, AspectRatio -> 1, ImageSize -> 
-             Dynamic[{
-               Automatic, 
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                 Magnification])}], Frame -> True, FrameTicks -> None, 
-             FrameStyle -> Directive[
-               Thickness[Tiny], 
-               GrayLevel[0.7]]], 
-            GridBox[{{
-               RowBox[{
-                 TagBox["\"Name: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox[
-                  PaneBox[
-                  "\"\\\"C:\\\\Program Files\\\\Wolfram Research\\\\Wolfram\\\
-\\14.1\\\\SystemFiles\\\\Java\\\\Windows-x86-64\\\\bin\\\\javaw.exe\\\" \
--classpath \\\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\14.1\\\\SystemFiles\\\\Links\\\\JLink\\\\JLink.jar\\\" \
--Xmx512m  @\\\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\14.1\\\\SystemFiles\\\\Links\\\\JLink\\\\jvmargs_win.\
-txt\\\"  com.wolfram.jlink.Install -init \\\"C:\\\\Users\\\\Kirill\\\\AppData\
-\\\\Local\\\\Temp\\\\m-da2cea98-08c5-43d1-9b04-297118601690\\\"\"", 
-                   ImageSize -> {{1, 500}, Automatic}, BaselinePosition -> 
-                   Baseline, ContentPadding -> False, FrameMargins -> 0, 
-                   StripOnInput -> True], "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"Link mode: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["Listen", "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"Link protocol: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"SharedMemory\"", "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}]}, 
-       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
-     "SummaryPanel"],
-    DynamicModuleValues:>{}], "]"}],
-  LinkObject[
-  "\"C:\\Program Files\\Wolfram \
-Research\\Wolfram\\14.1\\SystemFiles\\Java\\Windows-x86-64\\bin\\javaw.exe\" \
--classpath \"C:\\Program Files\\Wolfram \
-Research\\Wolfram\\14.1\\SystemFiles\\Links\\JLink\\JLink.jar\" -Xmx512m  \
-@\"C:\\Program Files\\Wolfram \
-Research\\Wolfram\\14.1\\SystemFiles\\Links\\JLink\\jvmargs_win.txt\"  \
-com.wolfram.jlink.Install -init \
-\"C:\\Users\\Kirill\\AppData\\Local\\Temp\\m-da2cea98-08c5-43d1-9b04-\
-297118601690\"", 767, 34],
-  Editable->False,
-  SelectWithContents->True,
-  Selectable->False]], "Output",
  CellChangeTimes->{
-  3.945759482931427*^9, {3.9457595713364773`*^9, 3.945759597073683*^9}, {
-   3.9457596681179543`*^9, 3.945759677219303*^9}, 3.94575971539802*^9},
- CellLabel->"Out[14]=",ExpressionUUID->"9ea678f1-7cdd-1747-92f2-b0d7e163c178"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{
-   RowBox[{"AddToClassPath", " ", "/@", " ", 
-    RowBox[{"FileNames", "[", 
-     RowBox[{"\"\<*.jar\>\"", ",", " ", 
-      RowBox[{
-      "{", "\"\<C:\\\\Users\\\\Kirill\\\\Projects\\\\WebSocketLink\\\\Java\>\"\
-", "}"}]}], "]"}]}], ";"}], " "}]], "Input",
- CellChangeTimes->{{3.945759716959263*^9, 3.945759727885208*^9}},
- CellLabel->"In[16]:=",ExpressionUUID->"14a52bbe-b69e-2440-b4c9-76d38671e1f9"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"IOClass", " ", "=", " ", 
-  RowBox[{
-  "LoadJavaClass", "[", "\"\<io.socket.client.IO\>\"", "]"}]}]], "Input",
- CellChangeTimes->{{3.945759601370512*^9, 3.945759633005293*^9}, {
-   3.945759679526062*^9, 3.945759681420988*^9}, 3.945759734678768*^9, {
-   3.9457598385429535`*^9, 3.9457598454382343`*^9}},
- CellLabel->"In[20]:=",ExpressionUUID->"4cfd2484-a04d-6043-b147-9b6ba04f7b7a"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"JavaClass", "[", 
-   RowBox[{"io", ".", "socket", ".", "client", ".", "IO"}], ",", "<>", "]"}],
-  JLink`JavaClass["io.socket.client.IO", 8, {
-    JLink`JVM["vm8"]}, 1, "io`socket`client`IO`", False, True]]], "Output",
- CellChangeTimes->{
-  3.9457596333621464`*^9, 3.945759682071356*^9, {3.945759729470581*^9, 
-   3.945759735085903*^9}, 3.9457598458198376`*^9},
- CellLabel->"Out[20]=",ExpressionUUID->"90681d5b-12d6-4b4c-b903-6de8492dee4c"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"socket", " ", "=", " ", 
-  RowBox[{
-  "IO`socket", "[", "\"\<wss://echo.websocket.org/.ws\>\"", "]"}]}]], "Input",
- CellChangeTimes->{{3.945759753319044*^9, 3.945759757694538*^9}, {
-  3.9457598480870323`*^9, 3.9457598562542133`*^9}, {3.9457600204563656`*^9, 
-  3.945760060590229*^9}, {3.9457602171738396`*^9, 3.9457602192368317`*^9}},
- CellLabel->"In[25]:=",ExpressionUUID->"592b85d7-7c0b-eb4e-a504-c851d7fd2821"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\[LeftGuillemet]", 
-   RowBox[{"JavaObject", "[", 
-    RowBox[{"io", ".", "socket", ".", "client", ".", "Socket"}], "]"}], 
-   "\[RightGuillemet]"}],
-  JLink`Objects`vm8`JavaObject3555869878910977]], "Output",
- CellChangeTimes->{3.9457597585698185`*^9, 3.9457600615565434`*^9, 
-  3.9457602293362656`*^9},
- CellLabel->"Out[25]=",ExpressionUUID->"a66d5658-5e83-7743-b3a4-ef7b4ade5bcf"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"socket", "@", 
-  RowBox[{"isActive", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.9457601623106003`*^9, 3.9457601676445847`*^9}},
- CellLabel->"In[28]:=",ExpressionUUID->"8dcce335-10b8-784e-a407-b4a384622945"],
-
-Cell[BoxData["True"], "Output",
- CellChangeTimes->{{3.945760167992651*^9, 3.945760178239708*^9}, {
-  3.945760230410534*^9, 3.9457602330470047`*^9}},
- CellLabel->"Out[28]=",ExpressionUUID->"92e4a493-2228-9e4a-ac55-65da6feb2bf2"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"socket", "@", 
-  RowBox[{"connect", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.9457601752382393`*^9, 3.9457601757339993`*^9}, {
-  3.9457602562944584`*^9, 3.945760265061983*^9}},
- CellLabel->"In[31]:=",ExpressionUUID->"7ed3e031-945b-f540-b862-1669be4c9561"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\[LeftGuillemet]", 
-   RowBox[{"JavaObject", "[", 
-    RowBox[{"io", ".", "socket", ".", "client", ".", "Socket"}], "]"}], 
-   "\[RightGuillemet]"}],
-  JLink`Objects`vm8`JavaObject3555869878910977]], "Output",
- CellChangeTimes->{
-  3.9457601760609493`*^9, {3.945760231069998*^9, 3.9457602653462505`*^9}},
- CellLabel->"Out[31]=",ExpressionUUID->"cc2397c1-bf3f-b446-a536-1f799d3b3658"]
+  3.9457418025550003`*^9, 3.9457419056419945`*^9, 3.9457487753335247`*^9, 
+   3.9457492285511456`*^9, 3.9463837806526985`*^9, 3.946383924682804*^9, 
+   3.946385822529772*^9, 3.946386094727438*^9, 3.9463864638188267`*^9, 
+   3.946386531212721*^9, {3.946386755756199*^9, 3.9463867854367447`*^9}},
+ CellLabel->"Out[8]=",ExpressionUUID->"c2e89a8e-2cbf-7244-aacb-88b55376744b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"ShowJavaConsole", "[", "]"}]], "Input",
- CellChangeTimes->{{3.9457602378222485`*^9, 3.945760240932722*^9}},
- CellLabel->"In[29]:=",ExpressionUUID->"fbe902ee-5653-b94a-bdd2-ed18bbb0010e"],
+ CellChangeTimes->{{3.946386502261793*^9, 3.9463865055560474`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"d84f9807-ecf4-ce4e-8258-fc9fe9c6a023"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -2811,46 +2103,67 @@ Cell[BoxData[
     RowBox[{
     "com", ".", "wolfram", ".", "jlink", ".", "ui", ".", "ConsoleWindow"}], 
     "]"}], "\[RightGuillemet]"}],
-  JLink`Objects`vm8`JavaObject28490972329410561]], "Output",
- CellChangeTimes->{3.945760241718643*^9},
- CellLabel->"Out[29]=",ExpressionUUID->"758a0d15-3dda-7147-a5c8-e57902cdfbb1"]
+  JLink`Objects`vm2`JavaObject35461763742826497]], "Output",
+ CellChangeTimes->{3.946386506573086*^9, 3.9463867662446346`*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"2fb1be60-6f98-5644-a34c-9f93ed1d0ca2"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"socket", "@", 
-  RowBox[{"connected", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.9457602704613457`*^9, 3.9457602719728374`*^9}},
- CellLabel->"In[32]:=",ExpressionUUID->"ac1956f4-d6e9-574c-902e-9cbfa3955be2"],
-
-Cell[BoxData["False"], "Output",
- CellChangeTimes->{3.9457602723120193`*^9},
- CellLabel->"Out[32]=",ExpressionUUID->"8c76b919-118a-2348-a6cc-eb7dacd199bc"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"socket", "@", 
-  RowBox[{"io", "[", "]"}]}]], "Input",
- CellChangeTimes->{{3.9457602704613457`*^9, 3.9457602719728374`*^9}, {
-  3.9457603071590347`*^9, 3.945760308382452*^9}},
- CellLabel->"In[33]:=",ExpressionUUID->"5dd26dd7-1059-5146-99d8-24da0bc5fdc8"],
+ RowBox[{"system", " ", "=", " ", 
+  RowBox[{"LoadJavaClass", "[", 
+   RowBox[{"\"\<java.lang.System\>\"", ",", " ", 
+    RowBox[{"StaticsVisible", "->", "True"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9463875631807747`*^9, 3.946387638611988*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"eff76072-99df-8d4a-b46a-0c0690dd85d5"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\[LeftGuillemet]", 
-   RowBox[{"JavaObject", "[", 
-    RowBox[{"io", ".", "socket", ".", "client", ".", "Manager"}], "]"}], 
-   "\[RightGuillemet]"}],
-  JLink`Objects`vm8`JavaObject25448056300240897]], "Output",
- CellChangeTimes->{3.94576030868927*^9},
- CellLabel->"Out[33]=",ExpressionUUID->"0012a872-7f8e-1141-82b2-45c0bc8ceb29"]
+  RowBox[{"JavaClass", "[", 
+   RowBox[{"java", ".", "lang", ".", "System"}], ",", "<>", "]"}],
+  JLink`JavaClass["java.lang.System", 17, {
+    JLink`JVM["vm2"]}, 1, "java`lang`System`", False, True]]], "Output",
+ CellChangeTimes->{{3.9463875790515537`*^9, 3.9463876393631687`*^9}},
+ CellLabel->"Out[16]=",ExpressionUUID->"07f5e45e-c2b0-4e45-9bf5-3c0f415ba1a0"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{"out", "@", 
+    RowBox[{"println", "[", "\"\<1\>\"", "]"}]}], ",", " ", "100"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.946387677403866*^9, 3.946387714795889*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"366b9ae5-47ff-ea4c-80a6-be9a4f9277ac"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"system", "@", "out"}]], "Input",
+ CellChangeTimes->{{3.9463876127148914`*^9, 3.946387671493641*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"d91619d0-729b-ac42-9d10-6db670608a6a"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   RowBox[{"JavaClass", "[", 
+    RowBox[{"java", ".", "lang", ".", "System"}], ",", "<>", "]"}],
+   JLink`JavaClass["java.lang.System", 17, {
+     JLink`JVM["vm2"]}, 1, "java`lang`System`", False, True]], "[", 
+  InterpretationBox[
+   RowBox[{"\[LeftGuillemet]", 
+    RowBox[{"JavaObject", "[", 
+     RowBox[{
+     "com", ".", "wolfram", ".", "jlink", ".", "ui", ".", 
+      "ConsoleStream$ConsolePrintStream"}], "]"}], "\[RightGuillemet]"}],
+   JLink`Objects`vm2`JavaObject12498794411196417], "]"}]], "Output",
+ CellChangeTimes->{{3.9463876164352837`*^9, 3.9463876719603252`*^9}},
+ CellLabel->"Out[20]=",ExpressionUUID->"1637fe6b-f0a4-5f47-b57b-1b4110579525"]
 }, Open  ]]
 },
-WindowSize->{793.5, 795},
-WindowMargins->{{Automatic, 192}, {Automatic, 92.25}},
+WindowSize->{718.5, 735},
+WindowMargins->{{Automatic, -5.25}, {Automatic, 0}},
 FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"9db1fb26-09a8-cc42-8b41-d685f8f6d012"
@@ -2867,71 +2180,33 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[1460, 33, 143, 2, 28, "Input",ExpressionUUID->"9e26da5f-da3c-7c49-a279-56a87e9959d3"],
+Cell[1606, 37, 216, 3, 28, "Input",ExpressionUUID->"acef88ed-50bc-024b-aec6-f65a6e028260"],
+Cell[1825, 42, 376, 9, 28, "Input",ExpressionUUID->"e53ead0c-7a4e-0044-b882-5fce33a31705"],
 Cell[CellGroupData[{
-Cell[1628, 39, 262, 6, 28, "Input",ExpressionUUID->"e53ead0c-7a4e-0044-b882-5fce33a31705"],
-Cell[1893, 47, 2627, 52, 165, "Output",ExpressionUUID->"6ba45d3c-2585-5d48-b6f5-412e84a8121a"]
-}, Open  ]],
-Cell[4535, 102, 217, 3, 28, "Input",ExpressionUUID->"acef88ed-50bc-024b-aec6-f65a6e028260"],
-Cell[CellGroupData[{
-Cell[4777, 109, 388, 8, 28, "Input",ExpressionUUID->"8565daae-6932-6645-9e77-5c52b46bc157"],
-Cell[5168, 119, 427, 5, 51, "Output",ExpressionUUID->"6dd67dbb-c655-4945-8bd3-7f76da01a354"]
+Cell[2226, 55, 486, 9, 28, "Input",ExpressionUUID->"8565daae-6932-6645-9e77-5c52b46bc157"],
+Cell[2715, 66, 324, 4, 70, "Output",ExpressionUUID->"685c118a-b1de-db41-8727-471b2e5c3f79"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5632, 129, 302, 5, 28, "Input",ExpressionUUID->"b831b77b-0c7b-8f4a-8996-59c7afa8f7fb"],
-Cell[5937, 136, 239, 3, 32, "Output",ExpressionUUID->"682edd9c-9e89-a745-aee1-b16904ddf5a2"]
+Cell[3076, 75, 401, 7, 28, "Input",ExpressionUUID->"b831b77b-0c7b-8f4a-8996-59c7afa8f7fb"],
+Cell[3480, 84, 165, 2, 32, "Output",ExpressionUUID->"d4b76180-7fe8-ce4c-8a88-137e169cbfcc"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6213, 144, 842, 16, 142, "Input",ExpressionUUID->"cdcf029f-6617-564d-9340-00853103a54a"],
-Cell[7058, 162, 561, 12, 22, "Message",ExpressionUUID->"e5d34f87-58cb-454d-9c22-7c84ea0e97f5"],
-Cell[7622, 176, 118244, 1960, 113, "Output",ExpressionUUID->"3197df7f-0849-dd4a-bc05-af047421332d"]
-}, Open  ]],
-Cell[125881, 2139, 281, 4, 47, "Input",ExpressionUUID->"37263e43-ebb5-4145-bd2e-d7f6bb587a38"],
-Cell[CellGroupData[{
-Cell[126187, 2147, 1125, 23, 199, "Input",ExpressionUUID->"b8ea8087-949f-7c4c-8804-231d9bcc55a2"],
-Cell[127315, 2172, 4987, 111, 61, "Output",ExpressionUUID->"4bf3ec61-2cdb-744b-883b-c5446c5d44be"]
+Cell[3682, 91, 870, 15, 104, "Input",ExpressionUUID->"cdcf029f-6617-564d-9340-00853103a54a"],
+Cell[4555, 108, 722, 15, 26, "Message",ExpressionUUID->"457acb9b-e7c7-3d44-ac4e-80a467660d01"],
+Cell[5280, 125, 118439, 1963, 81, "Output",ExpressionUUID->"c2e89a8e-2cbf-7244-aacb-88b55376744b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[132339, 2288, 211, 3, 28, "Input",ExpressionUUID->"a62c2faf-66bc-6546-a052-813d98c93b2a"],
-Cell[132553, 2293, 4493, 95, 57, "Output",ExpressionUUID->"007caa13-e3de-fd41-8e70-3326cf71b683"]
-}, Open  ]],
-Cell[137061, 2391, 195, 3, 28, "Input",ExpressionUUID->"52475b47-c3e9-034a-b17a-815f6bfd9787"],
-Cell[CellGroupData[{
-Cell[137281, 2398, 218, 3, 28, "Input",ExpressionUUID->"078ce606-bab1-c640-abbb-fd03324b7a90"],
-Cell[137502, 2403, 582, 12, 51, "Output",ExpressionUUID->"30d7ec5d-da4c-c14b-b0f5-bfe3db02717b"]
-}, Open  ]],
-Cell[138099, 2418, 208, 3, 28, "Input",ExpressionUUID->"6a2a7b82-0a26-d044-9fb1-d40546aa64a0"],
-Cell[CellGroupData[{
-Cell[138332, 2425, 310, 5, 28, "Input",ExpressionUUID->"300b860a-486f-7b48-892f-e657ead068fd"],
-Cell[138645, 2432, 14630, 271, 61, "Output",ExpressionUUID->"9ea678f1-7cdd-1747-92f2-b0d7e163c178"]
-}, Open  ]],
-Cell[153290, 2706, 437, 10, 28, "Input",ExpressionUUID->"14a52bbe-b69e-2440-b4c9-76d38671e1f9"],
-Cell[CellGroupData[{
-Cell[153752, 2720, 405, 7, 28, "Input",ExpressionUUID->"4cfd2484-a04d-6043-b147-9b6ba04f7b7a"],
-Cell[154160, 2729, 484, 9, 32, "Output",ExpressionUUID->"90681d5b-12d6-4b4c-b903-6de8492dee4c"]
+Cell[123756, 2093, 209, 3, 28, "Input",ExpressionUUID->"d84f9807-ecf4-ce4e-8258-fc9fe9c6a023"],
+Cell[123968, 2098, 424, 9, 32, "Output",ExpressionUUID->"2fb1be60-6f98-5644-a34c-9f93ed1d0ca2"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[154681, 2743, 437, 7, 28, "Input",ExpressionUUID->"592b85d7-7c0b-eb4e-a504-c851d7fd2821"],
-Cell[155121, 2752, 428, 9, 32, "Output",ExpressionUUID->"a66d5658-5e83-7743-b3a4-ef7b4ade5bcf"]
+Cell[124429, 2112, 345, 6, 28, "Input",ExpressionUUID->"eff76072-99df-8d4a-b46a-0c0690dd85d5"],
+Cell[124777, 2120, 395, 7, 32, "Output",ExpressionUUID->"07f5e45e-c2b0-4e45-9bf5-3c0f415ba1a0"]
 }, Open  ]],
+Cell[125187, 2130, 303, 7, 28, "Input",ExpressionUUID->"366b9ae5-47ff-ea4c-80a6-be9a4f9277ac"],
 Cell[CellGroupData[{
-Cell[155586, 2766, 233, 4, 28, "Input",ExpressionUUID->"8dcce335-10b8-784e-a407-b4a384622945"],
-Cell[155822, 2772, 227, 3, 32, "Output",ExpressionUUID->"92e4a493-2228-9e4a-ac55-65da6feb2bf2"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[156086, 2780, 283, 5, 28, "Input",ExpressionUUID->"7ed3e031-945b-f540-b862-1669be4c9561"],
-Cell[156372, 2787, 428, 9, 32, "Output",ExpressionUUID->"cc2397c1-bf3f-b446-a536-1f799d3b3658"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[156837, 2801, 210, 3, 28, "Input",ExpressionUUID->"fbe902ee-5653-b94a-bdd2-ed18bbb0010e"],
-Cell[157050, 2806, 401, 9, 32, "Output",ExpressionUUID->"758a0d15-3dda-7147-a5c8-e57902cdfbb1"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[157488, 2820, 234, 4, 28, "Input",ExpressionUUID->"ac1956f4-d6e9-574c-902e-9cbfa3955be2"],
-Cell[157725, 2826, 155, 2, 32, "Output",ExpressionUUID->"8c76b919-118a-2348-a6cc-eb7dacd199bc"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[157917, 2833, 278, 5, 28, "Input",ExpressionUUID->"5dd26dd7-1059-5146-99d8-24da0bc5fdc8"],
-Cell[158198, 2840, 376, 8, 32, "Output",ExpressionUUID->"0012a872-7f8e-1141-82b2-45c0bc8ceb29"]
+Cell[125515, 2141, 203, 3, 28, "Input",ExpressionUUID->"d91619d0-729b-ac42-9d10-6db670608a6a"],
+Cell[125721, 2146, 706, 15, 51, "Output",ExpressionUUID->"1637fe6b-f0a4-5f47-b57b-1b4110579525"]
 }, Open  ]]
 }
 ]
