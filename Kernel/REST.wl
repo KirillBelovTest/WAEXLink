@@ -1,4 +1,4 @@
-(* :Package: *)
+(* ::Package:: *)
 
 BeginPackage["KirillBelov`WAEXLink`REST`"];
 
@@ -35,6 +35,10 @@ WAEXCandleSticks::usage =
 "WAEXCandleSticks[pair] - candle sticks for a given pair.";
 
 
+$WAEXCredentials::usage = 
+"User cookie and csrf token."; 
+
+
 Begin["`Private`"];
 
 
@@ -44,7 +48,8 @@ Begin["`Private`"];
 Options[WAEXRequest] = {
     "Endpoint" :> "https://access.ccdb.WAEXservices.com", 
     "APIToken" :> SystemCredential["WAEX_API_TOKEN"], 
-    "HTTPMethod" :> "GET"
+    "HTTPMethod" :> "GET", 
+    "ResponseHandler" :> Identity
 };
 
 
@@ -53,6 +58,8 @@ Module[{
     endpoint = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "Endpoint"], 
     apiToken = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "APIToken"], 
     httpMethod = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "HTTPMethod"], 
+    responseHandler = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "ResponseHandler"], 
+    request, response, 
     metadata, url, encodedQuery
 }, 
     encodedQuery = encode[query]; 
@@ -71,7 +78,9 @@ Module[{
 
     request = HTTPRequest[url, metadata]; 
 
-    Global`$response = response = URLRead[request]; 
+    response = URLRead[request]; 
+
+    responseHandler[response]; 
 
     ImportString[response["Body"], "RawJSON"]
 ];
@@ -92,8 +101,25 @@ encode[value_List] :=
 StringRiffle[Map[encode, value], ","]; 
 
 
+saveWAEXCredentials[response_HTTPResponse] := 
+Module[{
+    headers = response["Headers"], 
+    body = response["Body"], 
+    json
+}, 
+    cookie = Association[headers]["set-cookie"]; 
+    json = ImportString[body, "RawJSON"];
+    csrfToken = json["meta", "csrfToken"]; 
+
+    $WAEXCredentials = <|"Cookie" -> cookie, "csrf_token" -> csrfToken|>
+]; 
+
+
 WAEXLogin[login_String, password_String] := 
-WAEXRequest["/api/v1/auth/local", <||>, <|"login" -> login, "password" -> password|>, "HTTPMethod" -> "POST"]; 
+WAEXRequest["/api/v1/auth/local", <||>, <|"login" -> login, "password" -> password|>, 
+    "HTTPMethod" -> "POST", 
+    "ResponseHandler" -> saveWAEXCredentials
+]; 
 
 
 Options[WAEXExchanges] = {

@@ -1,4 +1,19 @@
-(* :Package: *)
+(* ::Package:: *)
+
+Once[
+	Map[
+		If[PacletFind[#] === {}, 
+			PacletInstall[#]
+		]&, 
+		{
+			"KirillBelov/CSockets", 
+			"KirillBelov/Objects", 
+			"KirillBelov/LTP", 
+			"KirillBelov/SocketIOLink"
+		}
+	]
+];
+
 
 BeginPackage["KirillBelov`WAEXLink`"];
 
