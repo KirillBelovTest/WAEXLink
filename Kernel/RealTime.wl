@@ -10,8 +10,16 @@ $WAEXSocketIO::usage =
 "Socket.IO connection singleton.";  
 
 
-WAEXStreamAggregateOHLCV::usage = 
-"WAEXStreamAggregateOHLCV[] subsribe to OHLCV events."; 
+WAEXEmitterSubscribe::usage =
+"WAEXEmitterSubscribe[emitter, payload] subscribes to the WAEX emitter.";
+
+
+WAEXEmitterUnsubscribe::usage =
+"WAEXEmitterUnsubscribe[emitter, payload] unsubscribes from the WAEX emitter.";
+
+
+WAEXSubscribeToAggregateOHLCV::usage = 
+"WAEXSubscribeToAggregateOHLCV[] collecting OHLCV events."; 
 
 
 Begin["`Private`"]; 
@@ -21,7 +29,12 @@ $WAEXSocketIO :=
 getSocketIOObject[]; 
 
 
-WAEXStreamAggregateOHLCV[] := 
+If[!AssociationQ[$WAEXSubscriptions], 
+    $WAEXSubscriptions = <||>
+]; 
+
+
+WAEXSubscribeToAggregateOHLCV[] := 
 With[{socketObj = getSocketIOObject[]}, 
     SocketIOListen[socketObj, "AggregateOHLCV"]; 
     SocketIOEmit[socketObj, "subscribe-to-emitter", 
@@ -31,7 +44,31 @@ With[{socketObj = getSocketIOObject[]},
 ]; 
 
 
-$socketIOObject = Null; 
+WAEXEmitterSubscribe[emitterName_String, payload: _Association: None] :=
+With[{socketObj = getSocketIOObject[]}, 
+    SocketIOListen[socketObj, emitterName]; 
+    SocketIOEmit[socketObj, "subscribe-to-emitter", 
+        If[AssociationQ[payload], 
+            <|"emitterName" -> emitterName, "payload" -> payload|>, 
+        (*Else*)
+            <|"emitterName" -> emitterName|>
+        ]
+    ];
+    socketObj
+];
+
+
+WAEXEmitterUnsubscribe[emitterName_String, payload_Association] := 
+With[{socketObj = getSocketIOObject[]}, 
+    SocketIOEmit[socketObj, "unsubscribe-to-emitter", 
+        <|"emitterName" -> emitterName, "payload" -> payload|>
+    ];
+    socketObj
+];
+
+
+$socketIOObject = 
+Null; 
 
 
 $waexEndpoint = 
@@ -66,6 +103,7 @@ Block[{connected},
 
     $socketIOObject
 ]; 
+
 
 End[]; 
 
