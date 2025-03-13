@@ -6,102 +6,65 @@ BeginPackage["KirillBelov`WAEXLink`RealTime`", {
 }]; 
 
 
-$WAEXSocketIO::usage = 
-"Socket.IO connection singleton.";  
+$WAEXConnection::usage = 
+"Socket.IO connection singleton to waexservices.";  
 
 
-WAEXEmitterSubscribe::usage =
-"WAEXEmitterSubscribe[emitter, payload] subscribes to the WAEX emitter.";
+WAEXSubscribe::usage =
+"WAEXSubscribe[emitter, payload] subscribes to the emitter.";
 
 
-WAEXEmitterUnsubscribe::usage =
-"WAEXEmitterUnsubscribe[emitter, payload] unsubscribes from the WAEX emitter.";
-
-
-WAEXSubscribeToAggregateOHLCV::usage = 
-"WAEXSubscribeToAggregateOHLCV[] collecting OHLCV events."; 
+WAEXUnsubscribe::usage =
+"WAEXUnsubscribe[emitter, payload] unsubscribes from the emitter.";
 
 
 Begin["`Private`"]; 
 
 
-$WAEXSocketIO := 
-getSocketIOObject[]; 
+$WAEXConnection := getConnection[]; 
 
 
-If[!AssociationQ[$WAEXSubscriptions], 
-    $WAEXSubscriptions = <||>
-]; 
-
-
-WAEXSubscribeToAggregateOHLCV[] := 
-With[{socketObj = getSocketIOObject[]}, 
-    SocketIOListen[socketObj, "AggregateOHLCV"]; 
-    SocketIOEmit[socketObj, "subscribe-to-emitter", 
-	    <|"emitterName" -> "AggregateOHLCVEmitter"|>
-    ];
-    socketObj
-]; 
-
-
-WAEXEmitterSubscribe[emitterName_String, payload: _Association: None] :=
-With[{socketObj = getSocketIOObject[]}, 
-    SocketIOListen[socketObj, emitterName]; 
-    SocketIOEmit[socketObj, "subscribe-to-emitter", 
-        If[AssociationQ[payload], 
-            <|"emitterName" -> emitterName, "payload" -> payload|>, 
-        (*Else*)
-            <|"emitterName" -> emitterName|>
-        ]
-    ];
-    socketObj
-];
+WAEXSubscribe[emitterName_String, payload: _Association: None] :=
+SocketIOEmit[$WAEXConnection, "subscribe-to-emitter", 
+    <|"emitterName" -> emitterName, "payload" -> payload|>
+];    
 
 
 WAEXEmitterUnsubscribe[emitterName_String, payload_Association] := 
-With[{socketObj = getSocketIOObject[]}, 
-    SocketIOEmit[socketObj, "unsubscribe-to-emitter", 
-        <|"emitterName" -> emitterName, "payload" -> payload|>
-    ];
-    socketObj
+SocketIOEmit[$WAEXConnection, "unsubscribe-from-emitter", 
+    <|"emitterName" -> emitterName, "payload" -> payload|>
 ];
 
 
-$socketIOObject = 
-Null; 
+$connection = Null; 
 
 
-$waexEndpoint = 
-"https://access.ccdb.waexservices.com"; 
+$waexEndpoint = "https://access.ccdb.waexservices.com"; 
 
 
-getSocketIOObject[] := 
+getConnection[] := 
 Block[{connected}, 
     If[
-        $socketIOObject === Null || 
+        $connection === Null || 
         And[
-            Heed[$socketIOObject] === SocketIOObject, 
-            Not[$socketIOObject["JavaIOSocket"] @ connected[]]
+            Heed[$connection] === SocketIOObject, 
+            Not[$connection["JavaIOSocket"] @ connected[]]
         ], 
 
-        $socketIOObject = SocketIOConnect[$waexEndpoint, 
+        $connection = SocketIOConnect[$waexEndpoint, 
             "HTTPHeaders" -> $WAEXCredentials
         ]; 
 
-        With[{
-            data = CreateDataStructure["DynamicArray"]
-        }, 
-            $socketIOObject["Data"] := Normal[data]; 
-            
-            $socketIOObject["Handler"] = Function[
-                data["Append", ImportString[#, "RawJSON"]]
-            ]; 
+        With[{data = CreateDataStructure["DynamicArray"]}, 
+            $connection["Data"] := Normal[data]; 
+            $connection["DataDynamicArray"] := data; 
+            SocketIOListenAll[$connection, data["Append", KeyDrop[#, "connection"]]&]; 
         ]; 
     ]; 
 
-    TimeConstrained[While[Not[$socketIOObject @ connected[]], Pause[0.01]], 5]; 
+    TimeConstrained[While[Not[$connection @ connected[]], Pause[0.01]], 5]; 
 
-    $socketIOObject
+    $connection
 ]; 
 
 
