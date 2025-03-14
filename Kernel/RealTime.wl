@@ -36,7 +36,7 @@ SocketIOEmit[$WAEXConnection, "unsubscribe-from-emitter",
 ];
 
 
-$connection = Null; 
+If[!ValueQ[$connection], $connection = Null]; 
 
 
 $waexEndpoint = "https://access.ccdb.waexservices.com"; 
@@ -46,10 +46,7 @@ getConnection[] :=
 Block[{connected}, 
     If[
         $connection === Null || 
-        And[
-            Heed[$connection] === SocketIOObject, 
-            Not[$connection["JavaIOSocket"] @ connected[]]
-        ], 
+        !$connection["JavaIOSocket"] @ connected[], 
 
         $connection = SocketIOConnect[$waexEndpoint, 
             "HTTPHeaders" -> $WAEXCredentials
