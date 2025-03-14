@@ -6,62 +6,150 @@ BeginPackage["KirillBelov`WAEXLink`RealTime`", {
 }]; 
 
 
-$WAEXConnection::usage = 
-"Socket.IO connection singleton to waexservices.";  
+WAEXConnect::usage = 
+"WAEXConnect[login, password] connect to WAEX Services and return socket io connection."; 
+
+
+WAEXConnections::usage = 
+"WAEXConnections[] returns list of all created connections."
 
 
 WAEXSubscribe::usage =
-"WAEXSubscribe[emitter, payload] subscribes to the emitter.";
+"WAEXSubscribe[connection, emitter, payload] subscribes to the emitter.";
 
 
 WAEXUnsubscribe::usage =
-"WAEXUnsubscribe[emitter, payload] unsubscribes from the emitter.";
+"WAEXUnsubscribe[connection, emitter, payload] unsubscribes from the emitter.";
+
+
+WAEXSubscribeToAggregateOHLCV::usage =
+"WAEXSubscribeToAggregateOHLCV[connection] subscribes to the AggregateOHLCV emitter.";
+
+
+WAEXSubscribeToPricing::usage =
+"WAEXSubscribeToPricing[connection, type, marketId] subscribes to the Pricing emitter.";
+
+
+WAEXUnsubscribeFromAggregateOHLCV::usage =
+"WAEXUnsubscribeFromAggregateOHLCV[connection] unsubscribes from the AggregateOHLCV emitter.";
+
+
+WAEXUnsubscribeFromPricing::usage =
+"WAEXUnsubscribeFromPricing[connection, type, marketId] unsubscribes from the Pricing emitter.";
 
 
 Begin["`Private`"]; 
 
 
-$WAEXConnection := getConnection[]; 
+Options[WAEXConnect] = {
+    "MessageHandler" -> Identity
+};
 
 
-WAEXSubscribe[emitterName_String, payload: _Association: None] :=
-SocketIOEmit[$WAEXConnection, "subscribe-to-emitter", 
-    <|"emitterName" -> emitterName, "payload" -> payload|>
-];    
+WAEXConnect[login_String, password_String, OptionsPattern[]] := 
+Module[{credentials, messageHandler = OptionValue["MessageHandler"]}, 
+    WAEXLogin[login, password, "CreadentialHandler" -> Function[credentials = #]]; 
+    
+    With[{connection = getConnection[credentials]},  
+        connection["MessageHandler"] = messageHandler; 
+        connection["Subscribtions"] = {}; 
+
+        (*Return*)
+        connection
+    ]
+]; 
 
 
-WAEXEmitterUnsubscribe[emitterName_String, payload_Association] := 
-SocketIOEmit[$WAEXConnection, "unsubscribe-from-emitter", 
-    <|"emitterName" -> emitterName, "payload" -> payload|>
-];
+WAEXConnections[] := $connections; 
 
 
-If[!ValueQ[$connection], $connection = Null]; 
+WAEXSubscribe[connection_SocketIOConnection, emitterName_String] :=
+Module[{message = <|"emitterName" -> emitterName|>}, 
+    connection["Subscribtions"] = Append[connection["Subscribtions"], message]; 
+    SocketIOEmit[connection, "subscribe-to-emitter", message, Identity]
+]; 
+
+
+WAEXSubscribe[connection_SocketIOConnection, emitterName_String, payload_Association] :=
+Module[{message = <|"emitterName" -> emitterName, "payload" -> payload|>}, 
+    connection["Subscribtions"] = Append[connection["Subscribtions"], message]; 
+    SocketIOEmit[connection, "subscribe-to-emitter", message, Identity]
+]; 
+
+
+WAEXUnsubscribe[connection_SocketIOConnection, emitterName_String] := 
+Module[{message = <|"emitterName" -> emitterName, "payload" -> payload|>}, 
+    connection["Subscribtions"] = DeleteCases[connection["Subscribtions"], message]; 
+    SocketIOEmit[connection, "unsubscribe-from-emitter", message, Identity]
+]; 
+
+
+WAEXUnsubscribe[connection_SocketIOConnection, emitterName_String, payload_Association] := 
+Module[{message = <|"emitterName" -> emitterName, "payload" -> payload|>}, 
+    connection["Subscribtions"] = DeleteCases[connection["Subscribtions"], message]; 
+    SocketIOEmit[connection, "unsubscribe-from-emitter", message, Identity]
+]; 
+
+
+WAEXSubscribeToAggregateOHLCV[connection_SocketIOConnection] := 
+WAEXSubscribe[connection, "AggregateOHLCVEmitter"]; 
+
+
+WAEXUnsubscribeFromAggregateOHLCV[connection_SocketIOConnection] := 
+WAEXUnsubscribe[connection, "AggregateOHLCVEmitter"]; 
+
+
+WAEXSubscribeToPricing[connection_SocketIOConnection, type: "CandleStick" | "Trade" | "Ticker" | "OrderBook", marketId_Integer] := 
+WAEXSubscribe[connection, 
+    "PricingEmitter", 
+    <|
+        "type" -> type, 
+        "marketId" -> marketId
+    |>
+]; 
+
+
+WAEXUnsubscribeFromPricing[connection_SocketIOConnection, type: "CandleStick" | "Trade" | "Ticker" | "OrderBook", marketId_Integer] := 
+WAEXUnsubscribe[connection, 
+    "PricingEmitter", 
+    <|
+        "type" -> type, 
+        "marketId" -> marketId
+    |>
+]; 
 
 
 $waexEndpoint = "https://access.ccdb.waexservices.com"; 
 
 
-getConnection[] := 
-Block[{connected}, 
-    If[
-        $connection === Null || 
-        !$connection["JavaIOSocket"] @ connected[], 
+If[!ListQ[$connections], $connections = {}]; 
 
-        $connection = SocketIOConnect[$waexEndpoint, 
-            "HTTPHeaders" -> $WAEXCredentials
-        ]; 
 
-        With[{data = CreateDataStructure["DynamicArray"]}, 
-            $connection["Data"] := Normal[data]; 
-            $connection["DataDynamicArray"] := data; 
-            SocketIOListenAll[$connection, data["Append", KeyDrop[#, "connection"]]&]; 
-        ]; 
-    ]; 
+getConnection[credentials_Association] := 
+Block[{connected},  
+    With[{
+        data = CreateDataStructure["DynamicArray"], 
+        connection = SocketIOConnect[$waexEndpoint, 
+            "HTTPHeaders" -> credentials
+        ]
+    }, 
+        connection["Data"] := Normal[data]; 
+        connection["DataDynamicArray"] := data; 
+        
+        SocketIOListenAll[connection, 
+            Function[
+                data["Append", KeyDrop[#, "connection"]];
+                connection["MessageHandler"][#];
+            ]
+        ];
 
-    TimeConstrained[While[Not[$connection @ connected[]], Pause[0.01]], 5]; 
+        TimeConstrained[While[Not[connection @ connected[]], Pause[0.01]], 5]; 
 
-    $connection
+        AppendTo[$connections, connection]; 
+
+        (*Return*)
+        connection 
+    ]
 ]; 
 
 

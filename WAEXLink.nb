@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1060,         20]
-NotebookDataLength[      4086,        106]
-NotebookOptionsPosition[      4353,        102]
-NotebookOutlinePosition[      4759,        118]
-CellTagsIndexPosition[      4716,        115]
+NotebookDataLength[      3830,         98]
+NotebookOptionsPosition[      4097,         94]
+NotebookOutlinePosition[      4505,        110]
+CellTagsIndexPosition[      4462,        107]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -42,66 +42,58 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"Map", "[", "PacletDirectoryLoad", "]"}], " ", "@", " ", 
-   RowBox[{"{", 
+   RowBox[{"{", "\n", "\t", 
     RowBox[{"\"\<Objects\>\"", ",", " ", "\"\<CSockets\>\"", ",", 
      " ", "\"\<LTP\>\"", ",", " ", "\"\<SocketIOLink\>\"", ",", 
-     " ", "\"\<WAEXLink\>\""}], "}"}]}], ";"}], "\n", 
+     " ", "\"\<WAEXLink\>\""}], "\n", "}"}]}], ";"}], "\n", 
  RowBox[{
   RowBox[{"Get", "[", "\"\<KirillBelov`WAEXLink`\>\"", "]"}], ";"}], "\n", 
  RowBox[{
-  RowBox[{"ShowJavaConsole", "[", "]"}], ";"}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{"WAEXLogin", "[", 
-    RowBox[{"\"\<kirillbelovtest@gmail.com\>\"", ",", 
-     " ", "\"\<1234asdf\>\""}], "]"}], ";"}], " "}]}], "Code",
+  RowBox[{"ShowJavaConsole", "[", "]"}], ";"}]}], "Code",
  CellChangeTimes->{{3.9506753515864086`*^9, 3.950675371257725*^9}, 
    3.950677927168783*^9, {3.9507428331561604`*^9, 3.950742841702524*^9}, {
-   3.9508489338028793`*^9, 3.9508489406381187`*^9}, 3.9508517255259933`*^9},
+   3.9508489338028793`*^9, 3.9508489406381187`*^9}, 3.9508517255259933`*^9, {
+   3.950922619617138*^9, 3.9509226207342777`*^9}, {3.950923548560961*^9, 
+   3.9509235507939205`*^9}, {3.9509310584844894`*^9, 
+   3.9509310739334106`*^9}, {3.9509323393763313`*^9, 
+   3.9509323408090973`*^9}, {3.950933008749773*^9, 3.950933009406128*^9}, {
+   3.9509330823509464`*^9, 3.9509330854050503`*^9}, {3.9509390849260635`*^9, 
+   3.9509390855790997`*^9}},
  CellLabel->"In[1]:=",ExpressionUUID->"130ec76b-5311-b540-ae7f-a46b9bfcd2f3"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"SocketIOEmit", "[", 
-   RowBox[{
-   "$WAEXConnection", ",", " ", "\"\<subscribe-to-emitter\>\"", ",", " ", 
-    RowBox[{"<|", "\n", "\t", 
-     RowBox[{"\"\<emitterName\>\"", " ", "->", 
-      " ", "\"\<AggregateOHLCVEmitter\>\""}], "\n", "|>"}], ",", " ", 
-    "Echo"}], "]"}], ";"}]], "Code",
+  RowBox[{"connection", " ", "=", " ", 
+   RowBox[{"WAEXConnect", "[", 
+    RowBox[{"\"\<kirillbelovtest@gmail.com\>\"", ",", " ", "\"\<1234asdf\>\"",
+      ",", " ", "\n", "\t", 
+     RowBox[{"\"\<MessageHandler\>\"", " ", "->", " ", "Print"}]}], "\n", 
+    "]"}]}], ";", " "}]], "Code",
+ CellChangeTimes->{
+  3.9509390870337257`*^9},ExpressionUUID->"b65593a9-f7b9-f648-96f6-\
+6e9af0e6cd32"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"WAEXSubscribeToAggregateOHLCV", "[", "connection", "]"}], 
+  ";"}]], "Code",
  CellChangeTimes->{{3.9508515000376225`*^9, 3.950851559636671*^9}, 
-   3.950851758656618*^9},
+   3.950851758656618*^9, {3.9509312241495686`*^9, 3.9509312307839775`*^9}, {
+   3.9509313697963104`*^9, 3.9509313835484905`*^9}, {3.950932553636614*^9, 
+   3.9509325538771133`*^9}, 3.950933066615135*^9},
  CellLabel->"In[6]:=",ExpressionUUID->"71d85779-5ee6-ab4d-b1c3-27e042345d0c"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"SocketIOEmit", "[", 
-   RowBox[{
-   "$WAEXConnection", ",", " ", "\"\<subscribe-to-emitter\>\"", ",", " ", 
-    RowBox[{"<|", "\n", "\t", 
-     RowBox[{
-      RowBox[{"\"\<emitterName\>\"", " ", "->", 
-       " ", "\"\<PricingEmitter\>\""}], ",", " ", "\n", "\t", 
-      RowBox[{"\"\<payload\>\"", " ", "->", " ", 
-       RowBox[{"<|", "\n", "\t\t", 
-        RowBox[{
-         RowBox[{"\"\<type\>\"", " ", "->", " ", "\"\<Ticker\>\""}], ",", " ",
-          "\n", "\t\t", 
-         RowBox[{"\"\<marketId\>\"", " ", "->", " ", "1"}]}], "\n", "\t", 
-        "|>"}]}]}], "\n", "|>"}], ",", " ", "Echo"}], "]"}], ";"}]], "Code",
- CellChangeTimes->{{3.9508515000376225`*^9, 3.950851559636671*^9}, 
-   3.950851758656618*^9, {3.9508591586767673`*^9, 3.9508592085097713`*^9}},
- CellLabel->"In[7]:=",ExpressionUUID->"c1c6ff36-55bb-f74d-8d81-d5cfb635503a"],
-
-Cell[BoxData[{
- RowBox[{"$WAEXConnection", "[", "\"\<DataDynamicArray\>\"", "]"}], "\n", 
- RowBox[{"$WAEXConnection", "[", "\"\<Data\>\"", "]"}]}], "Code",
- CellChangeTimes->{{3.9508584518704376`*^9, 3.9508584560380535`*^9}, {
-  3.950881758954275*^9, 3.9508817637167435`*^9}},
- CellLabel->"In[17]:=",ExpressionUUID->"5ae769bc-29a8-124e-beb6-acb08d247cce"]
+  RowBox[{"WAEXSubscribeToPricing", "[", 
+   RowBox[{"connection", ",", " ", "\"\<Ticker\>\"", ",", " ", "1"}], "]"}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.950931390076996*^9, 3.9509314100126534`*^9}, {
+   3.9509326596314793`*^9, 3.9509326597825966`*^9}, 3.9509330674312935`*^9},
+ CellLabel->"In[7]:=",ExpressionUUID->"597a9e77-1bd4-5649-ad69-471344696596"]
 },
-WindowSize->{777, 657},
-WindowMargins->{{Automatic, 70.5}, {Automatic, 28.5}},
+WindowSize->{576, 655.5},
+WindowMargins->{{Automatic, 589.5}, {Automatic, 165}},
 FrontEndVersion->"14.2 for Microsoft Windows (64-bit) (December 26, 2024)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"9db1fb26-09a8-cc42-8b41-d685f8f6d012"
@@ -117,10 +109,10 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[1460, 33, 1144, 27, 120, "Code",ExpressionUUID->"130ec76b-5311-b540-ae7f-a46b9bfcd2f3"],
-Cell[2607, 62, 501, 11, 85, "Code",ExpressionUUID->"71d85779-5ee6-ab4d-b1c3-27e042345d0c"],
-Cell[3111, 75, 880, 18, 155, "Code",ExpressionUUID->"c1c6ff36-55bb-f74d-8d81-d5cfb635503a"],
-Cell[3994, 95, 355, 5, 67, "Code",ExpressionUUID->"5ae769bc-29a8-124e-beb6-acb08d247cce"]
+Cell[1460, 33, 1362, 28, 137, "Code",ExpressionUUID->"130ec76b-5311-b540-ae7f-a46b9bfcd2f3"],
+Cell[2825, 63, 416, 10, 85, "Code",ExpressionUUID->"b65593a9-f7b9-f648-96f6-6e9af0e6cd32"],
+Cell[3244, 75, 461, 8, 50, "Code",ExpressionUUID->"71d85779-5ee6-ab4d-b1c3-27e042345d0c"],
+Cell[3708, 85, 385, 7, 50, "Code",ExpressionUUID->"597a9e77-1bd4-5649-ad69-471344696596"]
 }
 ]
 *)

@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Kirill Belov",
     "License" -> "MIT",
     "PublisherID" -> "KirillBelov",
-    "Version" -> "1.0.1",
+    "Version" -> "1.0.2",
     "WolframVersion" -> "14+",
     "PrimaryContext" -> "KirillBelov`WAEXLink`",
     "DocumentationURL" -> "https://resources.wolframcloud.com/PacletRepository/resources",

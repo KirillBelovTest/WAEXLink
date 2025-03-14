@@ -101,7 +101,7 @@ encode[value_List] :=
 StringRiffle[Map[encode, value], ","]; 
 
 
-saveWAEXCredentials[response_HTTPResponse] := 
+getWAEXCredentials[response_HTTPResponse] := 
 Module[{
     headers = response["Headers"], 
     body = response["Body"], 
@@ -111,14 +111,21 @@ Module[{
     json = ImportString[body, "RawJSON"];
     csrfToken = json["meta", "csrfToken"]; 
 
-    $WAEXCredentials = <|"Cookie" -> cookie, "csrf_token" -> csrfToken|>
+    <|"Cookie" -> cookie, "csrf_token" -> csrfToken|>
 ]; 
 
 
-WAEXLogin[login_String, password_String] := 
-WAEXRequest["/api/v1/auth/local", <||>, <|"login" -> login, "password" -> password|>, 
-    "HTTPMethod" -> "POST", 
-    "ResponseHandler" -> saveWAEXCredentials
+Options[WAEXLogin] = {
+    "CreadentialHandler" -> Identity
+}; 
+
+
+WAEXLogin[login_String, password_String, OptionsPattern[]] := 
+With[{creadentialHandler = OptionValue["CreadentialHandler"]}, 
+    WAEXRequest["/api/v1/auth/local", <||>, <|"login" -> login, "password" -> password|>, 
+        "HTTPMethod" -> "POST", 
+        "ResponseHandler" -> creadentialHandler @* getWAEXCredentials
+    ]
 ]; 
 
 
