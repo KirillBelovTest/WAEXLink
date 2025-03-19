@@ -35,7 +35,7 @@ Cell["", "FileManagerTopSpacer",
  CellGroupingRules->{"SectionGrouping", 99},
  TaggingRules->{},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->27751952,ExpressionUUID->"dd7ab198-6cf8-fb4c-8b3a-eed95b8345fa"],
+ CellID->27751952,ExpressionUUID->"86b1e398-5d53-9c4e-92d9-a1c7a2af61ca"],
 
 Cell[TextData[Cell[BoxData[
  InterpretationBox[
@@ -58,7 +58,7 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Documentation"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"0ad0fbe2-32d7-6a4e-9c54-bdf84664b602"]], \
+   "Text"}]],ExpressionUUID->"8ead55c4-7c8e-684f-a41e-585861542b78"]], \
 "FileManagerDirectory",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
@@ -69,7 +69,7 @@ Cell[TextData[Cell[BoxData[
       TemplateBox[{}, "FileManagerDocumentationIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->372803771,ExpressionUUID->"e5f54161-0a6a-2f41-ab41-deb853d615ae"],
+ CellID->372803771,ExpressionUUID->"32e0539d-f379-dc48-852a-59c5b6f563c1"],
 
 Cell[CellGroupData[{
 
@@ -94,7 +94,7 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Kernel"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"a9c43a91-6a14-154a-a3d7-facccc65bbc0"]], \
+   "Text"}]],ExpressionUUID->"c62a06bb-3b55-fb4b-bea0-bb1064d34467"]], \
 "FileManagerDirectory",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
@@ -105,7 +105,7 @@ Cell[TextData[Cell[BoxData[
       TemplateBox[{}, "FileManagerKernelIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->49148700,ExpressionUUID->"5f94d383-296c-3a4e-a7d1-f22f7428866b"],
+ CellID->49148700,ExpressionUUID->"19d702b5-1165-0442-8ccc-b9a916e093c2"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -129,7 +129,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerWLIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->742346855,ExpressionUUID->"2586e13d-cd53-f542-bad3-5a1036e331ae"],
+ CellID->742346855,ExpressionUUID->"b0162c3c-bfcb-bb49-8069-1271ed8fac32"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -153,7 +153,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerWLIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->276749388,ExpressionUUID->"e7b5d619-dfc3-eb49-aee3-b01b686641d3"],
+ CellID->276749388,ExpressionUUID->"8155b872-3ffc-4347-9ffe-3df17a818f54"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -177,7 +177,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerWLIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->265105176,ExpressionUUID->"0c632501-59d4-594b-b7f5-007e68ad7373"]
+ CellID->265105176,ExpressionUUID->"14385286-4084-b04a-a3a3-ec6b85720e1a"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -202,7 +202,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
      Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->72091081,ExpressionUUID->"8aa09387-2d7d-6241-a1e9-605f54bd10b5"],
+ CellID->72091081,ExpressionUUID->"f34e6d9d-51b2-0147-9243-cf826aafa178"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -226,7 +226,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerPacletInfoIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->96574810,ExpressionUUID->"44f354a7-25a9-9b46-a398-48b4f590d54d"],
+ CellID->96574810,ExpressionUUID->"46c15c73-b6a3-8a44-9305-652048846836"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -250,7 +250,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerTXTIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->835389,ExpressionUUID->"8ad49d8a-c240-954b-8733-c07096ad1700"],
+ CellID->835389,ExpressionUUID->"41db405e-87d4-8448-9de0-d73465d35516"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -274,7 +274,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->176515836,ExpressionUUID->"9a9cf8ef-6006-394f-94d5-127f9666b2c6"],
+ CellID->176515836,ExpressionUUID->"ecc6e680-1153-6e41-816d-39ab02aa9117"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -298,13 +298,13 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->159101982,ExpressionUUID->"f01fc4f6-ad8e-9c42-b0f1-fa31f2c250ca"],
+ CellID->159101982,ExpressionUUID->"48f8d9a7-a312-ac46-9889-d64a319fe550"],
 
 Cell["", "FileManagerBottomSpacer",
  CellGroupingRules->{"SectionGrouping", 100},
  TaggingRules->{},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->68800810,ExpressionUUID->"5546d88f-f2b5-ca4a-8c18-88ff6ecb80e9"]
+ CellID->68800810,ExpressionUUID->"455ac90c-5470-bd40-94b1-7587cb73e03b"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1744,7 +1744,7 @@ Cell[BoxData[
   ";"}]], "Input", "Excluded",
  TaggingRules->{},
  InitializationCell->True,
- CellLabel->"In[2]:=",
+ CellLabel->"In[32]:=",
  CellID->172764492,ExpressionUUID->"e7785d50-06e9-1a46-bede-7b442fb78e7e"]
 }, Open  ]],
 
@@ -1760,6 +1760,100 @@ Cell["REST API", "Subsubsection",
  TaggingRules->{},
  CellID->423124571,ExpressionUUID->"ea0da64c-9194-aa4c-8adf-dcd4bf107ac4"],
 
+Cell["Login:", "Text",
+ TaggingRules->{},
+ CellID->401493469,ExpressionUUID->"c4150933-052a-ba47-9850-b171aa907d4d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WAEXLogin", "[", 
+  RowBox[{"\"\<kirillbelovtest@gmail.com\>\"", ",", " ", "\"\<1234asdf\>\""}],
+   "]"}]], "Input",
+ TaggingRules->{},
+ CellLabel->"In[33]:=",
+ CellID->506868372,ExpressionUUID->"84e26dfc-2953-3a45-8c69-4041456f03e4"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"data\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"id\"\>", "\[Rule]", "9"}], ",", 
+      RowBox[{"\<\"email\"\>", 
+       "\[Rule]", "\<\"kirillbelovtest@gmail.com\"\>"}], ",", 
+      RowBox[{"\<\"username\"\>", "\[Rule]", "\<\"krillbelov\"\>"}], ",", 
+      RowBox[{"\<\"firstName\"\>", "\[Rule]", "\<\"Krill\"\>"}], ",", 
+      RowBox[{"\<\"middleName\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"lastName\"\>", "\[Rule]", "\<\"Belov\"\>"}], ",", 
+      RowBox[{"\<\"roleId\"\>", "\[Rule]", "4"}], ",", 
+      RowBox[{"\<\"avatarUrl\"\>", "\[Rule]", "Null"}], ",", 
+      RowBox[{"\<\"role\"\>", "\[Rule]", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"\<\"id\"\>", "\[Rule]", "4"}], ",", 
+         RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"CRYPTO_ANALYST\"\>"}], ",", 
+         RowBox[{"\<\"rateLimit\"\>", "\[Rule]", "100000"}], ",", 
+         RowBox[{"\<\"description\"\>", 
+          "\[Rule]", "\<\"User with the basic crypto information retrieval \
+and aggregation permissions\"\>"}], ",", 
+         RowBox[{"\<\"createdAt\"\>", 
+          "\[Rule]", "\<\"2024-09-24T12:22:43.140Z\"\>"}], ",", 
+         RowBox[{"\<\"updatedAt\"\>", 
+          "\[Rule]", "\<\"2024-10-18T12:28:55.354Z\"\>"}]}], 
+        "\[RightAssociation]"}]}], ",", 
+      RowBox[{"\<\"createdAt\"\>", 
+       "\[Rule]", "\<\"2024-12-19T17:50:16.971Z\"\>"}], ",", 
+      RowBox[{"\<\"updatedAt\"\>", 
+       "\[Rule]", "\<\"2024-12-19T17:50:16.971Z\"\>"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"meta\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"csrfToken\"\>", "\[Rule]", "\<\"QDvyKKks\"\>"}], ",", 
+      RowBox[{"\<\"useragent\"\>", "\[Rule]", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"\<\"ip\"\>", "\[Rule]", "\<\"10.116.0.8\"\>"}], ",", 
+         RowBox[{"\<\"browser\"\>", "\[Rule]", "\<\"unknown\"\>"}], ",", 
+         RowBox[{"\<\"version\"\>", "\[Rule]", "\<\"unknown\"\>"}], ",", 
+         RowBox[{"\<\"os\"\>", "\[Rule]", "\<\"unknown\"\>"}], ",", 
+         RowBox[{"\<\"platform\"\>", "\[Rule]", "\<\"unknown\"\>"}]}], 
+        "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
+ CellLabel->"Out[33]=",
+ CellID->200685393,ExpressionUUID->"2d92629f-dda1-c443-af5b-0786c81f3564"]
+}, Open  ]],
+
+Cell["Saved creds:", "Text",
+ TaggingRules->{},
+ CellID->898065165,ExpressionUUID->"7ee079c3-a8b0-e540-9c3e-3077c91cdbbc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$WAEXCredentials"], "Input",
+ TaggingRules->{},
+ CellLabel->"In[34]:=",
+ CellID->64542208,ExpressionUUID->"2cc0a22b-d01c-344d-9ed2-ccfdbe87e5a9"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Cookie\"\>", 
+    "\[Rule]", \
+"\<\"ccdb.sid=s%3Ai3tlFXZuKr8cqWL8oTPpjFWX8GEriPY9.t%2Baa5wk0h%\
+2BhmUDgDaVoJrXDmadfsEJ3lVotoybZuhHM; Path=/; Expires=Wed, 19 Mar 2025 \
+22:02:05 GMT; HttpOnly; SameSite=Strict\"\>"}], ",", 
+   RowBox[{"\<\"csrf_token\"\>", "\[Rule]", "\<\"QDvyKKks\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
+ CellLabel->"Out[34]=",
+ CellID->316021634,ExpressionUUID->"78e56734-ef09-0641-9d35-c1517f865ccb"]
+}, Open  ]],
+
 Cell["Get list of crypto exchanges:", "Text",
  TaggingRules->{},
  CellTags->"DefaultContent",
@@ -1773,7 +1867,7 @@ Cell[BoxData[
    RowBox[{"\"\<limit\>\"", "->", "2"}], "]"}]}]], "Input",
  TaggingRules->{},
  CellTags->"DefaultContent",
- CellLabel->"In[5]:=",
+ CellLabel->"In[35]:=",
  CellID->593829399,ExpressionUUID->"df434e00-9f7d-1e48-8bff-0101f0e2311d"],
 
 Cell[BoxData[
@@ -1821,8 +1915,8 @@ Cell[BoxData[
   "\[RightAssociation]"}]], "Output",
  TaggingRules->{},
  CellTags->"DefaultContent",
- CellLabel->"Out[5]=",
- CellID->127611425,ExpressionUUID->"d78a7b77-11b6-3446-9aef-16b4aaa3bc5d"]
+ CellLabel->"Out[35]=",
+ CellID->50052572,ExpressionUUID->"2c67d78a-ea51-4442-a9db-31eb30a57ec6"]
 }, Open  ]],
 
 Cell["List of markets:", "Text",
@@ -1836,7 +1930,7 @@ Cell[BoxData[
   RowBox[{"WAEXMarkets", "[", 
    RowBox[{"\"\<limit\>\"", " ", "->", " ", "2"}], "]"}]}]], "Input",
  TaggingRules->{},
- CellLabel->"In[6]:=",
+ CellLabel->"In[36]:=",
  CellID->666009158,ExpressionUUID->"6201dddf-451c-7d40-a491-2d9b6ad737a1"],
 
 Cell[BoxData[
@@ -1994,8 +2088,8 @@ Cell[BoxData[
    RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
   "\[RightAssociation]"}]], "Output",
  TaggingRules->{},
- CellLabel->"Out[6]=",
- CellID->255101295,ExpressionUUID->"264b956b-acf2-c24e-9b55-5dab75e203b8"]
+ CellLabel->"Out[36]=",
+ CellID->171380638,ExpressionUUID->"f69b02c0-06a9-ef46-ad1e-105398579247"]
 }, Open  ]],
 
 Cell["Token:", "Text",
@@ -2009,7 +2103,7 @@ Cell[BoxData[
   RowBox[{"WAEXTokens", "[", 
    RowBox[{"\"\<limit\>\"", " ", "->", " ", "2"}], "]"}]}]], "Input",
  TaggingRules->{},
- CellLabel->"In[7]:=",
+ CellLabel->"In[37]:=",
  CellID->517090248,ExpressionUUID->"a79a64bb-0717-1c45-b684-f517b5300a17"],
 
 Cell[BoxData[
@@ -2053,8 +2147,8 @@ Cell[BoxData[
    RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
   "\[RightAssociation]"}]], "Output",
  TaggingRules->{},
- CellLabel->"Out[7]=",
- CellID->30881607,ExpressionUUID->"e201f9a7-f462-9141-9640-87efdb91f8bb"]
+ CellLabel->"Out[37]=",
+ CellID->460927957,ExpressionUUID->"2adf4311-8b56-fd4d-87d5-9a2e9b0765fd"]
 }, Open  ]],
 
 Cell["Order book:", "Text",
@@ -2080,7 +2174,7 @@ Cell[BoxData[
        RowBox[{"2024", ",", " ", "12", ",", " ", "19"}], "}"}], "]"}]}]}], 
    "\n", "]"}]}]], "Input",
  TaggingRules->{},
- CellLabel->"In[11]:=",
+ CellLabel->"In[38]:=",
  CellID->28635636,ExpressionUUID->"4acb1676-db9e-b341-88fb-289c44e4553d"],
 
 Cell[BoxData[
@@ -2095,8 +2189,8 @@ Cell[BoxData[
    RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
   "\[RightAssociation]"}]], "Output",
  TaggingRules->{},
- CellLabel->"Out[11]=",
- CellID->292942124,ExpressionUUID->"71218afb-9ddb-b946-ae56-a1b67f37b396"]
+ CellLabel->"Out[38]=",
+ CellID->284678183,ExpressionUUID->"af61a7ec-d136-514d-a6f7-6c00d795ec8f"]
 }, Open  ]]
 }, Open  ]],
 
@@ -4557,7 +4651,6 @@ Cell[BoxData[
          TemplateBox[{
            CheckboxBox["WebEvaluation", {False, "WebEvaluation"}], "\" \"", 
            StyleBox[
-            
             TemplateBox[{
              "\"WebEvaluation\"", 
               "\"Cloud evaluation initiated by an HTTP request\""}, 
@@ -5295,9 +5388,9 @@ system do not require a disclosure.", "MoreInfoText"], Background ->
                    GrayLevel[0.95], FrameMargins -> 20, FrameStyle -> 
                    GrayLevel[0.9], RoundingRadius -> 5, ImageSize -> {
                     Scaled[0.65], Automatic}]], "MoreInfoText", Deletable -> 
-                 True, 
-                 CellTags -> {"SectionMoreInfoDisclosuresPacletDependencies"},
-                  CellMargins -> {{66, 66}, {15, 15}}], 
+                 True, CellTags -> {
+                  "SectionMoreInfoDisclosuresPacletDependencies"}, 
+                 CellMargins -> {{66, 66}, {15, 15}}], 
                 HoldComplete[
                  EvaluationCell[]], "Click for more information"}, 
                "InlineMoreInfoOpenerButtonTemplate"]}, "RowDefault"], 
@@ -5629,7 +5722,7 @@ Cell["Additional information about limitations, issues, etc.", "Text",
 }, Open  ]]
 },
 WindowSize->{879.75, 865.5},
-WindowMargins->{{Automatic, 420.75}, {Automatic, 57.75}},
+WindowMargins->{{Automatic, 307.5}, {24, Automatic}},
 WindowTitle->"WAEXLink | Definition Notebook",
 DockedCells->{
   Cell[
@@ -5690,27 +5783,27 @@ Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
   "PacletBuildData" -> {
    "LastBuiltArchive" -> 
     "C:\\Users\\Kirill\\Projects\\WAEXLink\\build\\KirillBelov__WAEXLink-1.0.\
-4.paclet", "FileHashes" -> 
+5.paclet", "FileHashes" -> 
     ByteArray[{56, 67, 58, 120, 156, 115, 228, 210, 13, 86, 115, 201, 79, 46, 
       205, 77, 205, 43, 73, 44, 201, 204, 207, 211, 119, 205, 75, 207, 201, 
       44, 206, 208, 247, 204, 75, 73, 173, 208, 47, 78, 77, 7, 73, 21, 199, 
       27, 58, 50, 233, 6, 179, 5, 231, 151, 22, 37, 167, 22, 179, 248, 229, 
-      231, 165, 2, 185, 33, 137, 69, 233, 169, 37, 62, 12, 123, 141, 159, 204,
-       168, 240, 240, 208, 13, 214, 32, 198, 44, 189, 244, 212, 60, 60, 166, 
-      177, 126, 152, 241, 104, 129, 228, 179, 18, 221, 96, 109, 236, 166, 5, 
-      23, 164, 230, 228, 144, 224, 188, 237, 159, 111, 79, 190, 250, 242, 164,
-       148, 110, 176, 46, 209, 6, 18, 237, 70, 33, 239, 212, 162, 188, 212, 
-      28, 253, 160, 212, 196, 156, 144, 204, 220, 84, 189, 242, 28, 36, 125, 
-      62, 83, 53, 255, 22, 85, 205, 122, 32, 131, 208, 138, 16, 225, 131, 105,
-       117, 13, 14, 65, 211, 214, 179, 248, 67, 89, 232, 66, 183, 52, 132, 54,
-       132, 8, 204, 198, 112, 71, 215, 8, 159, 204, 188, 108, 52, 173, 91, 
-      190, 218, 136, 79, 185, 144, 159, 137, 208, 138, 16, 225, 13, 72, 76, 
-      206, 73, 45, 241, 204, 75, 203, 71, 211, 197, 154, 182, 150, 115, 195, 
-      41, 99, 110, 36, 47, 194, 69, 4, 33, 186, 124, 19, 243, 50, 211, 82, 
-      139, 75, 80, 117, 162, 135, 204, 204, 171, 107, 247, 138, 154, 124, 225,
-       211, 13, 230, 12, 114, 117, 116, 241, 117, 213, 203, 77, 65, 182, 104, 
-      238, 177, 95, 47, 47, 244, 29, 73, 71, 232, 128, 137, 0, 0, 180, 88, 
-      243, 203}]}},
+      231, 165, 2, 185, 33, 137, 69, 233, 169, 37, 62, 219, 119, 150, 78, 106,
+       244, 74, 9, 215, 13, 214, 32, 198, 44, 189, 244, 212, 60, 60, 166, 177,
+       126, 152, 241, 104, 129, 228, 179, 18, 221, 96, 109, 236, 166, 5, 23, 
+      164, 230, 228, 144, 224, 60, 151, 164, 11, 215, 211, 88, 138, 210, 117, 
+      131, 117, 137, 54, 144, 104, 55, 10, 121, 167, 22, 229, 165, 230, 232, 
+      7, 165, 38, 230, 132, 100, 230, 166, 234, 149, 231, 32, 233, 243, 153, 
+      170, 249, 183, 168, 106, 214, 3, 25, 132, 86, 132, 8, 31, 76, 171, 107, 
+      112, 8, 154, 182, 194, 123, 27, 60, 163, 190, 124, 173, 68, 104, 67, 
+      136, 192, 108, 12, 119, 116, 141, 240, 201, 204, 203, 70, 211, 186, 229,
+       171, 141, 248, 148, 11, 249, 153, 8, 173, 8, 17, 222, 128, 196, 228, 
+      156, 212, 18, 207, 188, 180, 124, 52, 93, 31, 107, 167, 234, 126, 236, 
+      218, 108, 140, 208, 133, 16, 17, 132, 232, 242, 77, 204, 203, 76, 75, 
+      45, 46, 65, 213, 137, 30, 50, 159, 45, 31, 93, 23, 184, 253, 159, 83, 
+      55, 152, 51, 200, 213, 209, 197, 215, 85, 47, 55, 5, 217, 162, 185, 199,
+       126, 189, 188, 208, 119, 36, 29, 161, 3, 38, 2, 0, 142, 176, 247, 
+      234}]}},
 CreateCellID->True,
 DynamicEvaluationTimeout->60,
 TrackCellChangeTimes->False,

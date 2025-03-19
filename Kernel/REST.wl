@@ -36,7 +36,7 @@ WAEXCandleSticks::usage =
 
 
 $WAEXCredentials::usage = 
-"User cookie and csrf token."; 
+"User cookie and csrf token or access_token."; 
 
 
 Begin["`Private`"];
@@ -45,9 +45,12 @@ Begin["`Private`"];
 (* :Internal: *)
 
 
+$WAEXCredentials = <||>;
+
+
 Options[WAEXRequest] = {
     "Endpoint" :> "https://access.ccdb.WAEXservices.com", 
-    "Creadentials" :> <|"APIToken" -> SystemCredential["WAEX_API_TOKEN"]|>, 
+    "Creadentials" :> $WAEXCredentials, 
     "HTTPMethod" :> "GET", 
     "ResponseHandler" :> Identity
 };
@@ -68,10 +71,10 @@ Module[{
     url = URLBuild[{endpoint, path}, encodedQuery]; 
 
     headers = Which[
-        KeyExistsQ[credentials, "Cookie"] && KeyExistsQ[credentials, "CSRFToken"],
+        KeyExistsQ[credentials, "Cookie"] && KeyExistsQ[credentials, "csrf_token"],
             <|
                 "Cookie" -> credentials["Cookie"], 
-                "csrf_token" -> credentials["CSRFToken"]
+                "csrf_token" -> credentials["csrf_token"]
             |>,
         KeyExistsQ[credentials, "APIToken"] && StringQ[credentials["APIToken"]],
             <|"access_token" -> credentials["APIToken"]|>, 
@@ -129,7 +132,7 @@ Module[{
 
 
 Options[WAEXLogin] = {
-    "CreadentialHandler" -> Identity
+    "CreadentialHandler" -> Function[cred, $WAEXCredentials = cred]
 }; 
 
 
