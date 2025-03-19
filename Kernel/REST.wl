@@ -47,7 +47,7 @@ Begin["`Private`"];
 
 Options[WAEXRequest] = {
     "Endpoint" :> "https://access.ccdb.WAEXservices.com", 
-    "APIToken" :> SystemCredential["WAEX_API_TOKEN"], 
+    "Creadentials" :> <|"APIToken" -> SystemCredential["WAEX_API_TOKEN"]|>, 
     "HTTPMethod" :> "GET", 
     "ResponseHandler" :> Identity
 };
@@ -56,19 +56,32 @@ Options[WAEXRequest] = {
 WAEXRequest[path_, query: _Association: <||>, body: _Association: <||>, opts: OptionsPattern[{}]] := 
 Module[{
     endpoint = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "Endpoint"], 
-    apiToken = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "APIToken"], 
+    credentials = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "Creadentials"], 
     httpMethod = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "HTTPMethod"], 
     responseHandler = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "ResponseHandler"], 
     request, response, 
-    metadata, url, encodedQuery
+    metadata, url, encodedQuery, 
+    headers
 }, 
     encodedQuery = encode[query]; 
 
     url = URLBuild[{endpoint, path}, encodedQuery]; 
 
+    headers = Which[
+        KeyExistsQ[credentials, "Cookie"] && KeyExistsQ[credentials, "CSRFToken"],
+            <|
+                "Cookie" -> credentials["Cookie"], 
+                "csrf_token" -> credentials["CSRFToken"]
+            |>,
+        KeyExistsQ[credentials, "APIToken"] && StringQ[credentials["APIToken"]],
+            <|"access_token" -> credentials["APIToken"]|>, 
+        True,
+            <||>
+    ];
+
     metadata = <|
         Method -> httpMethod, 
-        "Headers" -> {"access_token" -> apiToken}, 
+        "Headers" -> headers, 
         "ContentType" -> "application/json"
     |>; 
 
