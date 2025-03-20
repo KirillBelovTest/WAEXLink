@@ -50,16 +50,16 @@ $WAEXCredentials = <||>;
 
 Options[WAEXRequest] = {
     "Endpoint" :> "https://access.ccdb.WAEXservices.com", 
-    "Creadentials" :> $WAEXCredentials, 
+    "Credentials" :> $WAEXCredentials, 
     "HTTPMethod" :> "GET", 
     "ResponseHandler" :> Identity
 };
 
 
-WAEXRequest[path_, query: _Association: <||>, body: _Association: <||>, opts: OptionsPattern[{}]] := 
+WAEXRequest[path_, query: _Association: <||>, body: _Association: <||>, opts: OptionsPattern[]] := 
 Module[{
     endpoint = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "Endpoint"], 
-    credentials = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "Creadentials"], 
+    credentials = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "Credentials"], 
     httpMethod = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "HTTPMethod"], 
     responseHandler = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "ResponseHandler"], 
     request, response, 
@@ -154,7 +154,7 @@ Options[WAEXExchanges] = {
 
 SyntaxInformation[WAEXExchanges] = {
     "ArgumentsPattern" -> {OptionsPattern[]}, 
-    "OptionNames" -> {"\"search\"", "\"limit\"", "\"offset\""}
+    "OptionNames" -> {"\"search\"", "\"limit\"", "\"offset\"", "\"Credentials\"", "\"Endpoint\""}
 };
 
 
@@ -177,7 +177,7 @@ Options[WAEXMarkets] = {
 
 SyntaxInformation[WAEXMarkets] = {
     "ArgumentsPattern" -> {OptionsPattern[]}, 
-    "OptionNames" -> {"\"limit\"", "\"offset\"", "\"exchangeNames\"", "\"tokenSymbols\"", "\"active\""}
+    "OptionNames" -> {"\"limit\"", "\"offset\"", "\"exchangeNames\"", "\"tokenSymbols\"", "\"active\"", "\"Credentials\"", "\"Endpoint\""}
 };
 
 
@@ -203,7 +203,7 @@ Options[WAEXTokens] = {
 
 SyntaxInformation[WAEXTokens] = {
     "ArgumentsPattern" -> {OptionsPattern[]}, 
-    "OptionNames" -> {"\"offset\"", "\"limit\"", "\"names\"", "\"symbols\"", "\"active\"", "\"itins\""}
+    "OptionNames" -> {"\"offset\"", "\"limit\"", "\"names\"", "\"symbols\"", "\"active\"", "\"itins\"", "\"Credentials\"", "\"Endpoint\""}
 };
 
 
@@ -230,7 +230,7 @@ Options[WAEXOrderBooks] = {
 
 SyntaxInformation[WAEXOrderBooks] = {
     "ArgumentsPattern" -> {_., OptionsPattern[]}, 
-    "OptionNames" -> {"\"offset\"", "\"limit\"", "\"rangeDateStart\"", "\"rangeDateEnd\"", "\"exchangeNames\"", "\"symbol\""}
+    "OptionNames" -> {"\"offset\"", "\"limit\"", "\"rangeDateStart\"", "\"rangeDateEnd\"", "\"exchangeNames\"", "\"symbol\"", "\"Credentials\"", "\"Endpoint\""}
 };
 
 
@@ -261,7 +261,7 @@ Options[WAEXTrades] = {
 
 SyntaxInformation[WAEXTrades] = {
     "ArgumentsPattern" -> {_., OptionsPattern[]}, 
-    "OptionNames" -> {"\"offset\"", "\"limit\"", "\"rangeDateStart\"", "\"rangeDateEnd\"", "\"exchangeNames\"", "\"symbol\""}
+    "OptionNames" -> {"\"offset\"", "\"limit\"", "\"rangeDateStart\"", "\"rangeDateEnd\"", "\"exchangeNames\"", "\"symbol\"", "\"Credentials\"", "\"Endpoint\""}
 };
 
 
@@ -292,7 +292,7 @@ Options[WAEXTickers] = {
 
 SyntaxInformation[WAEXTickers] = {
     "ArgumentsPattern" -> {_., OptionsPattern[]}, 
-    "OptionNames" -> {"\"offset\"", "\"limit\"", "\"rangeDateStart\"", "\"rangeDateEnd\"", "\"exchangeNames\"", "\"symbol\""}
+    "OptionNames" -> {"\"offset\"", "\"limit\"", "\"rangeDateStart\"", "\"rangeDateEnd\"", "\"exchangeNames\"", "\"symbol\"", "\"Credentials\"", "\"Endpoint\""}
 };
 
 
@@ -323,7 +323,7 @@ Options[WAEXCandleSticks] = {
 
 SyntaxInformation[WAEXCandleSticks] = {
     "ArgumentsPattern" -> {_., OptionsPattern[]}, 
-    "OptionNames" -> {"\"offset\"", "\"limit\"", "\"rangeDateStart\"", "\"rangeDateEnd\"", "\"exchangeNames\"", "\"symbol\""}
+    "OptionNames" -> {"\"offset\"", "\"limit\"", "\"rangeDateStart\"", "\"rangeDateEnd\"", "\"exchangeNames\"", "\"symbol\"", "\"Credentials\"", "\"Endpoint\""}
 };
 
 
