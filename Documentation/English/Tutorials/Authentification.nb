@@ -1,0 +1,1193 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     46072,       1185]
+NotebookOptionsPosition[     35736,        938]
+NotebookOutlinePosition[     36283,        956]
+CellTagsIndexPosition[     36240,        953]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Authentification", "Title",
+ CellID->47599552,ExpressionUUID->"2a6c08c9-d595-3c4e-a2ba-148c6f8a13ea"],
+
+Cell["Authentification tutorial", "Text",
+ CellChangeTimes->{{3.9515243175770397`*^9, 3.951524331181656*^9}},
+ CellID->134260403,ExpressionUUID->"2c84e1a3-6cab-0d4a-bee7-6f391dcca7be"],
+
+Cell[BoxData[GridBox[{
+   {"$WAEXCredentials", Cell[
+    "WAEX system variable with user authentification", "TableText",
+     ExpressionUUID->"de23ec7b-6145-2d42-9089-9cfba3faee8c"]},
+   {"WAEXLogin", Cell[
+    "Login to the WAEX services", "TableText",ExpressionUUID->
+     "953b2894-cc38-6c42-8861-1c9b3946786f"]},
+   {"SystemCredential", Cell[
+    "Built-in function", "TableText",ExpressionUUID->
+     "44299d1b-9abd-274e-bac0-26de86ff77fb"]}
+  }]], "DefinitionBox",
+ CellChangeTimes->{{3.9515243391939144`*^9, 3.9515244183066216`*^9}},
+ CellID->159675470,ExpressionUUID->"b9b72b30-cc28-dd43-ab10-e278add11acc"],
+
+Cell["\<\
+You can sign-in to the WAEX and  get you login/pasword pair and access token \
+here: https://access.ccdb.waexservices.com/profile. And documentation here: \
+https://docs-ccdb.waexservices.com. In this tutorial I try to explain all \
+about authintification methods to WAEX services from Wolfram Language. .\
+\>", "Caption",
+ CellChangeTimes->{3.9515245844790974`*^9},
+ CellID->199218782,ExpressionUUID->"35ac75dd-6e1b-d34e-9aca-0e237241ed23"],
+
+Cell[CellGroupData[{
+
+Cell["Preparation", "Section",
+ CellChangeTimes->{{3.951524680752199*^9, 3.9515246827683525`*^9}},
+ CellID->419882370,ExpressionUUID->"bc6efac5-a4e4-5f4d-82bd-2f3b0b7fc825"],
+
+Cell[CellGroupData[{
+
+Cell["Default installation with dependencies:", "MathCaption",
+ CellChangeTimes->{{3.9515244375434074`*^9, 3.951524476119341*^9}, {
+  3.9515245204656887`*^9, 3.9515246006605816`*^9}, {3.951524654214922*^9, 
+  3.951524673947401*^9}, {3.951524749028742*^9, 3.9515247639542217`*^9}},
+ CellID->192657445,ExpressionUUID->"9dce78fc-3af9-374a-b381-66fbe96f7e43"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"PacletInstall", "[", 
+      RowBox[{
+       RowBox[{"StringTemplate", "[", "\"\<KirillBelov/`1`\>\"", "]"}], " ", "@",
+        " ", "#"}], "]"}], "&"}], " ", "/@", " ", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"\"\<CSockets\>\"", ",", " ", 
+      "\[IndentingNewLine]", "\"\<Objects\>\"", ",", " ", 
+      "\[IndentingNewLine]", "\"\<LTP\>\"", ",", " ", 
+      "\[IndentingNewLine]", "\"\<SocketIOLink\>\"", ",", " ", 
+      "\[IndentingNewLine]", "\"\<WAEXLink\>\""}], "\[IndentingNewLine]", 
+     "}"}]}], ";"}], " "}]], "Input",
+ CellChangeTimes->{{3.9515247663856945`*^9, 3.9515248305867195`*^9}},
+ CellLabel->"In[1]:=",
+ CellID->283470541,ExpressionUUID->"07712906-0e0e-2b4b-9997-ec23d1a12a88"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Import the package:", "MathCaption",
+ CellChangeTimes->{{3.9515244375434074`*^9, 3.951524476119341*^9}, {
+  3.9515245204656887`*^9, 3.9515246006605816`*^9}, {3.951524654214922*^9, 
+  3.951524673947401*^9}, {3.951524749028742*^9, 3.9515247639542217`*^9}, {
+  3.951524856160473*^9, 3.9515248592645016`*^9}},
+ CellID->219517036,ExpressionUUID->"0c2fd285-b228-ac42-9b78-d8a1144e59f1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Get", "[", "\"\<KirillBelov`WAEXLink`\>\"", "]"}], ";"}], 
+  " "}]], "Input",
+ CellChangeTimes->{{3.9515247663856945`*^9, 3.9515248305867195`*^9}, {
+  3.9515248650676136`*^9, 3.9515248770693417`*^9}},
+ CellLabel->"In[69]:=",
+ CellID->275416028,ExpressionUUID->"af6d3558-2c61-8147-b224-230be9a441e2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Access token", "Section",
+ CellChangeTimes->{{3.9515246332667675`*^9, 3.951524643157175*^9}},
+ CellID->6267748,ExpressionUUID->"dfa3c5ac-a645-a641-9ad5-c380f172c8fa"],
+
+Cell[CellGroupData[{
+
+Cell["Global credentials", "Subsection",
+ CellChangeTimes->{{3.951525119691185*^9, 3.9515251246760426`*^9}},
+ CellID->50533063,ExpressionUUID->"d4323872-a332-ff40-8d5f-69502b61d328"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+If you want to use WAEX Client withot login actions in every sessions just \
+save you access token to system credentials like this: \
+\>", "MathCaption",
+ CellChangeTimes->{{3.9515244375434074`*^9, 3.951524476119341*^9}, {
+  3.9515245204656887`*^9, 3.9515246006605816`*^9}, {3.951524654214922*^9, 
+  3.951524673947401*^9}, {3.9515248992937527`*^9, 3.9515249308004665`*^9}, {
+  3.951524980735821*^9, 3.9515249883281994`*^9}},
+ CellID->8503178,ExpressionUUID->"c49e62cf-7614-7a42-9359-a2a337805e16"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"SystemCredential", "[", "\"\<WAEX_ACCESS_TOKEN\>\"", "]"}], " ", 
+    "=", " ", \
+"\"\<ajzFBTnXbMkvLSSGBO0mloSBzsbTS7BE_f_KbGPlndsKsx1CD8zukZ1Pw8mWgVbb-\
+btd1O6tSbIxPk6TjSs6eg\>\""}], ";"}], " "}]], "Input",
+ CellChangeTimes->{{3.9515249335621204`*^9, 3.9515249602541256`*^9}},
+ CellLabel->"In[32]:=",
+ CellID->307870401,ExpressionUUID->"43650a95-2320-4641-aeac-eb056110a2f5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Now your access token saved in special system variable and will be work after \
+restarting of the kernel:\
+\>", "MathCaption",
+ CellChangeTimes->{{3.95152499758144*^9, 3.9515250304850445`*^9}, {
+  3.951525249209675*^9, 3.9515252742791157`*^9}},
+ CellID->190808638,ExpressionUUID->"b99727f8-9784-6742-a7d2-c8ba16c0d36f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$WAEXCredentials"], "Input",
+ CellChangeTimes->{{3.9515250331906605`*^9, 3.951525038234068*^9}},
+ CellLabel->"In[33]:=",
+ CellID->97421670,ExpressionUUID->"f03a3123-9434-0344-a28b-5f6d32c26cf9"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{"\<\"access_token\"\>", 
+   "\[Rule]", \
+"\<\"ajzFBTnXbMkvLSSGBO0mloSBzsbTS7BE_f_KbGPlndsKsx1CD8zukZ1Pw8mWgVbb-\
+btd1O6tSbIxPk6TjSs6eg\"\>"}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.9515250385048275`*^9, {3.951525276647356*^9, 3.9515252808101463`*^9}},
+ CellLabel->"Out[33]=",
+ CellID->306265987,ExpressionUUID->"e7dfed1f-1474-8042-92b7-c839f53f266e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+And you can get access to waex services without passing login/passord or \
+access token:\
+\>", "MathCaption",
+ CellChangeTimes->{{3.9515250437102776`*^9, 3.9515250740907173`*^9}},
+ CellID->297441994,ExpressionUUID->"6a71b01e-82df-9c46-b54f-0e6cb49af361"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WAEXExchanges", "[", 
+  RowBox[{"\"\<limit\>\"", " ", "->", " ", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9515250763153954`*^9, 3.9515250830319824`*^9}, {
+  3.9515251520239296`*^9, 3.951525192484745*^9}},
+ CellLabel->"In[34]:=",
+ CellID->309927281,ExpressionUUID->"59c74c35-4ed9-b14e-a35e-9d2673a58092"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"data\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"\<\"id\"\>", "\[Rule]", "1"}], ",", 
+       RowBox[{"\<\"externalExchangeId\"\>", "\[Rule]", "\<\"binance\"\>"}], ",", 
+       RowBox[{"\<\"dataSource\"\>", "\[Rule]", "\<\"binance\"\>"}], ",", 
+       RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CEX\"\>"}], ",", 
+       RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Binance\"\>"}], ",", 
+       RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"createdAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:19:34.614Z\"\>"}], ",", 
+       RowBox[{"\<\"updatedAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:19:34.614Z\"\>"}]}], 
+      "\[RightAssociation]"}], "}"}]}], ",", 
+   RowBox[{"\<\"meta\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"fetchCount\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"totalCount\"\>", "\[Rule]", "22"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.951525085361292*^9, {3.9515251367302628`*^9, 3.9515251930585613`*^9}, 
+   3.951525282759199*^9},
+ CellLabel->"Out[34]=",
+ CellID->115032752,ExpressionUUID->"cbbcbc4c-5e07-ac49-a33e-6a4a8ff8b923"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Session credentials", "Subsection",
+ CellChangeTimes->{{3.951525287842022*^9, 3.9515252933203335`*^9}},
+ CellID->207020435,ExpressionUUID->"17931817-2916-8546-97f4-db18b917fe61"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Of course you can use you access token only during the Wolfram Language \
+session lives. Just set system variable one time:\
+\>", "MathCaption",
+ CellChangeTimes->{{3.951525323430317*^9, 3.9515254124289894`*^9}},
+ CellID->477894886,ExpressionUUID->"f1a41e42-5f63-fe4f-ab71-0e68664a1e7d"],
+
+Cell[BoxData[
+ RowBox[{"$WAEXCredentials", " ", "=", " ", 
+  RowBox[{"\[LeftAssociation]", 
+   RowBox[{"\"\<access_token\>\"", 
+    "\[Rule]", \
+"\"\<ajzFBTnXbMkvLSSGBO0mloSBzsbTS7BE_f_KbGPlndsKsx1CD8zukZ1Pw8mWgVbb-\
+btd1O6tSbIxPk6TjSs6eg\>\""}], "\[RightAssociation]"}]}]], "Input",
+ CellChangeTimes->{{3.951525441152975*^9, 3.9515254422297764`*^9}},
+ CellID->44014932,ExpressionUUID->"14d97716-c79c-4a4d-8423-06f15a4b6919"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+I assume that OS credentials are not set this  time. And after setting creds \
+you can get data from WAEX the same way: \
+\>", "MathCaption",
+ CellChangeTimes->{{3.951525453275137*^9, 3.951525530976345*^9}},
+ CellID->371538194,ExpressionUUID->"498f07b8-204a-bf49-aca7-3cf46a9f13c7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WAEXExchanges", "[", 
+  RowBox[{
+   RowBox[{"\"\<limit\>\"", " ", "->", " ", "1"}], ",", " ", 
+   RowBox[{"\"\<offset\>\"", " ", "->", " ", "2"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.951525555041912*^9, 3.95152555966646*^9}},
+ CellLabel->"In[35]:=",
+ CellID->514503702,ExpressionUUID->"b4000437-2489-2144-839b-56408f8e5b23"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"data\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"\<\"id\"\>", "\[Rule]", "12"}], ",", 
+       RowBox[{"\<\"externalExchangeId\"\>", "\[Rule]", "\<\"minswap\"\>"}], ",", 
+       RowBox[{"\<\"dataSource\"\>", "\[Rule]", "\<\"Cardano\"\>"}], ",", 
+       RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"DEX\"\>"}], ",", 
+       RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Minswap\"\>"}], ",", 
+       RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"createdAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:21:13.978Z\"\>"}], ",", 
+       RowBox[{"\<\"updatedAt\"\>", 
+        "\[Rule]", "\<\"2024-11-14T09:23:38.570Z\"\>"}]}], 
+      "\[RightAssociation]"}], "}"}]}], ",", 
+   RowBox[{"\<\"meta\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"fetchCount\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"totalCount\"\>", "\[Rule]", "22"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.9515255605352764`*^9},
+ CellLabel->"Out[35]=",
+ CellID->3332016,ExpressionUUID->"38a05703-7659-5244-a0d2-50f83ad743c1"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["One call credentials", "Subsection",
+ CellChangeTimes->{{3.9515255910104885`*^9, 3.951525596860861*^9}},
+ CellID->15871567,ExpressionUUID->"406e067e-8361-a649-ba5a-0ddc256caebd"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+And the last way to get access - using Credentials option  during call of the \
+API Client method:\
+\>", "MathCaption",
+ CellChangeTimes->{{3.9515256042331276`*^9, 3.9515256748034344`*^9}},
+ CellID->209768471,ExpressionUUID->"49b5ffc2-4223-cd48-9959-56bc202e49ef"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WAEXExchanges", "[", 
+  RowBox[{
+   RowBox[{"\"\<limit\>\"", " ", "->", " ", "1"}], ",", " ", 
+   RowBox[{"\"\<offset\>\"", " ", "->", " ", "1"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"\"\<Credentials\>\"", "->", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\"\<access_token\>\"", 
+      "\[Rule]", \
+"\"\<ajzFBTnXbMkvLSSGBO0mloSBzsbTS7BE_f_KbGPlndsKsx1CD8zukZ1Pw8mWgVbb-\
+btd1O6tSbIxPk6TjSs6eg\>\""}], "\[RightAssociation]"}]}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.951525555041912*^9, 3.95152555966646*^9}, {
+  3.951525686321903*^9, 3.951525741152321*^9}},
+ CellLabel->"In[38]:=",
+ CellID->580283978,ExpressionUUID->"a890f66e-15c2-a142-8107-e0d17b62ea6b"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"data\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"\<\"id\"\>", "\[Rule]", "5"}], ",", 
+       RowBox[{"\<\"externalExchangeId\"\>", "\[Rule]", "\<\"bybit\"\>"}], ",", 
+       RowBox[{"\<\"dataSource\"\>", "\[Rule]", "\<\"bybit\"\>"}], ",", 
+       RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CEX\"\>"}], ",", 
+       RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Bybit\"\>"}], ",", 
+       RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"createdAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:20:00.681Z\"\>"}], ",", 
+       RowBox[{"\<\"updatedAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:20:00.681Z\"\>"}]}], 
+      "\[RightAssociation]"}], "}"}]}], ",", 
+   RowBox[{"\<\"meta\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"fetchCount\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"totalCount\"\>", "\[Rule]", "22"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.9515255605352764`*^9, {3.9515257230368385`*^9, 3.9515257418161545`*^9}},
+ CellLabel->"Out[38]=",
+ CellID->88795038,ExpressionUUID->"b2c2c362-c4fb-8944-aad1-874ddbe1f4fd"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Advanced method", "Subsection",
+ CellChangeTimes->{{3.9515257652488823`*^9, 3.951525770932619*^9}},
+ CellID->2395889,ExpressionUUID->"2fcbe4c0-e0cc-b04d-bcf1-b90dd19651e7"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "And one more advanced way to use credentials for several call without \
+passing Creadentials option. Just use ",
+ StyleBox["Block",
+  FontWeight->"Bold"],
+ ":"
+}], "MathCaption",
+ CellChangeTimes->{{3.951525779487873*^9, 3.951525825291767*^9}},
+ CellID->251971613,ExpressionUUID->"e6222444-d651-1f4f-b992-4ff6cfbaa42d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Block", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"$WAEXCredentials", " ", "=", " ", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{"\"\<access_token\>\"", 
+       "\[Rule]", \
+"\"\<ajzFBTnXbMkvLSSGBO0mloSBzsbTS7BE_f_KbGPlndsKsx1CD8zukZ1Pw8mWgVbb-\
+btd1O6tSbIxPk6TjSs6eg\>\""}], "\[RightAssociation]"}]}], "}"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"WAEXExchanges", "[", 
+      RowBox[{"\"\<limit\>\"", " ", "->", " ", "1"}], "]"}], ",", " ", 
+     "\[IndentingNewLine]", 
+     RowBox[{"WAEXExchanges", "[", 
+      RowBox[{
+       RowBox[{"\"\<limit\>\"", " ", "->", " ", "1"}], ",", " ", 
+       RowBox[{"\"\<offset\>\"", " ", "->", " ", "1"}]}], "]"}]}], 
+    "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.9515258315274334`*^9, 3.951525877699314*^9}},
+ CellLabel->"In[39]:=",
+ CellID->76663510,ExpressionUUID->"184c282b-2f89-9440-b440-c94ef1cef9df"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"\<\"id\"\>", "\[Rule]", "1"}], ",", 
+         RowBox[{"\<\"externalExchangeId\"\>", "\[Rule]", "\<\"binance\"\>"}],
+          ",", 
+         RowBox[{"\<\"dataSource\"\>", "\[Rule]", "\<\"binance\"\>"}], ",", 
+         RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CEX\"\>"}], ",", 
+         RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Binance\"\>"}], ",", 
+         RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+         RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+         RowBox[{"\<\"createdAt\"\>", 
+          "\[Rule]", "\<\"2024-09-24T12:19:34.614Z\"\>"}], ",", 
+         RowBox[{"\<\"updatedAt\"\>", 
+          "\[Rule]", "\<\"2024-09-24T12:19:34.614Z\"\>"}]}], 
+        "\[RightAssociation]"}], "}"}]}], ",", 
+     RowBox[{"\<\"meta\"\>", "\[Rule]", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"fetchCount\"\>", "\[Rule]", "1"}], ",", 
+        RowBox[{"\<\"totalCount\"\>", "\[Rule]", "22"}]}], 
+       "\[RightAssociation]"}]}], ",", 
+     RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"\<\"id\"\>", "\[Rule]", "5"}], ",", 
+         RowBox[{"\<\"externalExchangeId\"\>", "\[Rule]", "\<\"bybit\"\>"}], ",", 
+         RowBox[{"\<\"dataSource\"\>", "\[Rule]", "\<\"bybit\"\>"}], ",", 
+         RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CEX\"\>"}], ",", 
+         RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Bybit\"\>"}], ",", 
+         RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+         RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+         RowBox[{"\<\"createdAt\"\>", 
+          "\[Rule]", "\<\"2024-09-24T12:20:00.681Z\"\>"}], ",", 
+         RowBox[{"\<\"updatedAt\"\>", 
+          "\[Rule]", "\<\"2024-09-24T12:20:00.681Z\"\>"}]}], 
+        "\[RightAssociation]"}], "}"}]}], ",", 
+     RowBox[{"\<\"meta\"\>", "\[Rule]", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"fetchCount\"\>", "\[Rule]", "1"}], ",", 
+        RowBox[{"\<\"totalCount\"\>", "\[Rule]", "22"}]}], 
+       "\[RightAssociation]"}]}], ",", 
+     RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], "\[RightAssociation]"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.951525878842039*^9},
+ CellLabel->"Out[39]=",
+ CellID->302029039,ExpressionUUID->"de558dbb-103f-4d42-905b-48cce98054ab"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Login and password -> cookie and csrf_token", "Section",
+ CellChangeTimes->{{3.951525921119461*^9, 3.9515259604698734`*^9}},
+ CellID->396587103,ExpressionUUID->"cfccc872-0f4c-d643-9345-879cd00b6e6b"],
+
+Cell[CellGroupData[{
+
+Cell["Global login and password", "Subsection",
+ CellChangeTimes->{{3.951525942474762*^9, 3.951525969728792*^9}},
+ CellID->755465265,ExpressionUUID->"d3289c97-e9dd-6c45-80f2-70f7c4064ee6"],
+
+Cell[CellGroupData[{
+
+Cell["You can save global login and password to SystemCredentials:", \
+"MathCaption",
+ CellChangeTimes->{{3.951525930791025*^9, 3.9515259374634647`*^9}, {
+  3.951525972744417*^9, 3.951525998909281*^9}},
+ CellID->59314237,ExpressionUUID->"717b1056-c08c-e442-80b5-045b47629c97"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"SystemCredential", "[", "\"\<WAEX_LOGIN\>\"", "]"}], " ", "=", 
+   " ", "\"\<kirillbelovtest@gmail.com\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"SystemCredential", "[", "\"\<WAEX_PASSWORD\>\"", "]"}], " ", "=",
+     " ", "\"\<1234asdf\>\""}], ";"}], " "}]}], "Input",
+ CellChangeTimes->{{3.951526012722769*^9, 3.9515260488223495`*^9}},
+ CellLabel->"In[47]:=",
+ CellID->133021382,ExpressionUUID->"3ee94b9c-04a2-3246-b3d7-bc0388028fd3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+After let's check that (assuming that WAEX_ACCESS_TOKE not set). the value of \
+the variable are constant during the session but calculated from scratch \
+after kernel reloading:\
+\>", "MathCaption",
+ CellChangeTimes->{{3.951526086639967*^9, 3.9515261173755302`*^9}, {
+  3.9515265276123123`*^9, 3.9515265739829426`*^9}},
+ CellID->155590566,ExpressionUUID->"52fea6c4-d7fb-3b47-8a61-7f5b877bc1bb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$WAEXCredentials"], "Input",
+ CellChangeTimes->{{3.9515261216818905`*^9, 3.9515261230446987`*^9}},
+ CellLabel->"In[64]:=",
+ CellID->31705882,ExpressionUUID->"65778a91-68ea-ba43-a44a-af27b0be888c"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Cookie\"\>", 
+    "\[Rule]", \
+"\<\"ccdb.sid=s%3A5XpZilSihqe_DSapW57oSmfoNw0Z8-h5.\
+JSridNAWSH0bKHgR9NS2kBbcyN2Hn3O4ZTKPWU5wW2w; Path=/; Expires=Fri, 21 Mar 2025 \
+18:15:04 GMT; HttpOnly; SameSite=Strict\"\>"}], ",", 
+   RowBox[{"\<\"csrf_token\"\>", "\[Rule]", "\<\"pQh0mTm1\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.9515261273517246`*^9, 3.951526274677143*^9, 3.9515263109919395`*^9, 
+   3.951526341516487*^9, {3.951526440373581*^9, 3.9515264475741863`*^9}, {
+   3.9515265047820377`*^9, 3.9515265070017757`*^9}, 3.9515265766266117`*^9},
+ CellLabel->"Out[64]=",
+ CellID->694217084,ExpressionUUID->"40530e8c-3ffe-4b47-95da-7738fc733ae3"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Of couse you can manually recalculate cookie and csrf_token:", \
+"MathCaption",
+ CellChangeTimes->{{3.951526611179352*^9, 3.951526625510401*^9}, {
+  3.9515266733436947`*^9, 3.951526701197794*^9}},
+ CellID->235594070,ExpressionUUID->"f7e92151-86a3-f048-abc1-4d10a3f173aa"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"WAEXLogin", "[", "]"}], 
+  ";"}], "\[IndentingNewLine]", "$WAEXCredentials"}], "Input",
+ CellChangeTimes->{{3.951526703052759*^9, 3.951526753199688*^9}},
+ CellLabel->"In[72]:=",
+ CellID->143802378,ExpressionUUID->"f84cc78e-e960-ff4b-9e8c-25514b717c1d"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Cookie\"\>", 
+    "\[Rule]", \
+"\<\"ccdb.sid=s%3AMXTsrCuNFnD9dZCZFJwHNfQZ56sPn6kG.\
+hOUPfdaxcji1ZjMfaSafND1bvrMKiQahtYR%2BFkFyjKs; Path=/; Expires=Fri, 21 Mar \
+2025 18:19:13 GMT; HttpOnly; SameSite=Strict\"\>"}], ",", 
+   RowBox[{"\<\"csrf_token\"\>", "\[Rule]", "\<\"Ftq0RX2O\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.951526713985752*^9, 3.951526753793066*^9}},
+ CellLabel->"Out[73]=",
+ CellID->202354216,ExpressionUUID->"dda20247-f474-7240-a5b3-9351219c3b3a"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Session login and password", "Subsection",
+ CellChangeTimes->{{3.951526776659422*^9, 3.95152678195125*^9}},
+ CellID->95488799,ExpressionUUID->"ba805253-cac8-444c-844d-85b835e7bc4e"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Assuming that acces token, loing and password not saved in system credentials \
+you can login to the system using login and password passing manually lke \
+this:\
+\>", "MathCaption",
+ CellChangeTimes->{{3.951526814730465*^9, 3.951526866276861*^9}},
+ CellID->113067562,ExpressionUUID->"645741c4-2da0-fd4c-a18d-c820e8197b1b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"WAEXLogin", "[", 
+    RowBox[{"\"\<kirillbelovtest@gmail.com\>\"", ",", 
+     " ", "\"\<1234asdf\>\""}], "]"}], ";"}], " "}]], "Input",
+ CellChangeTimes->{{3.951526872799715*^9, 3.951526895773905*^9}},
+ CellLabel->"In[76]:=",
+ CellID->177887713,ExpressionUUID->"9237d13b-7e05-474c-991e-0c670aa539d9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["After session credentials is:", "MathCaption",
+ CellChangeTimes->{{3.951526903306774*^9, 3.9515269183534584`*^9}},
+ CellID->198510589,ExpressionUUID->"744852f9-5d9f-3046-9323-d4a53c166458"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$WAEXCredentials"], "Input",
+ CellLabel->"In[77]:=",
+ CellID->510981922,ExpressionUUID->"fe94d43d-23f9-cd45-82ea-87df9937de90"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Cookie\"\>", 
+    "\[Rule]", \
+"\<\"ccdb.sid=s%3A2N80n51BC5saDAEm83SWKrWH3sDFxmS6.%2BDAzW0RlfI2V%\
+2BdE0riWw8oTxPMBN59pTloTVpsVjhuc; Path=/; Expires=Fri, 21 Mar 2025 18:21:38 \
+GMT; HttpOnly; SameSite=Strict\"\>"}], ",", 
+   RowBox[{"\<\"csrf_token\"\>", "\[Rule]", "\<\"7DlR6vkT\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.9515269195711136`*^9},
+ CellLabel->"Out[77]=",
+ CellID->226749600,ExpressionUUID->"04d3c54b-41a6-f547-9848-d55fa9514e6b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["And try to get some data from WAEX:", "MathCaption",
+ CellChangeTimes->{{3.9515269245991383`*^9, 3.9515269374390583`*^9}},
+ CellID->275665872,ExpressionUUID->"6f5cbfc6-ee4c-8949-9aff-2f9dac16f616"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WAEXMarkets", "[", 
+  RowBox[{"\"\<limit\>\"", " ", "->", " ", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.951526940277954*^9, 3.951527003229471*^9}},
+ CellLabel->"In[80]:=",
+ CellID->329131735,ExpressionUUID->"ce457201-b3b8-1a44-8761-6273be47e7bc"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"data\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"\<\"id\"\>", "\[Rule]", "6"}], ",", 
+       RowBox[{"\<\"externalMarketId\"\>", "\[Rule]", "\<\"BTC:CNHT\"\>"}], ",", 
+       RowBox[{"\<\"baseId\"\>", "\[Rule]", "1"}], ",", 
+       RowBox[{"\<\"quoteId\"\>", "\[Rule]", "7"}], ",", 
+       RowBox[{"\<\"exchangeId\"\>", "\[Rule]", "2"}], ",", 
+       RowBox[{"\<\"meta\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"baseMeta\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"quoteMeta\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"active\"\>", "\[Rule]", "False"}], ",", 
+       RowBox[{"\<\"historical\"\>", "\[Rule]", "False"}], ",", 
+       RowBox[{"\<\"exchange\"\>", "\[Rule]", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"id\"\>", "\[Rule]", "2"}], ",", 
+          
+          RowBox[{"\<\"externalExchangeId\"\>", 
+           "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"dataSource\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CEX\"\>"}], ",", 
+          RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+          RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+          
+          RowBox[{"\<\"createdAt\"\>", 
+           "\[Rule]", "\<\"2024-09-24T12:19:35.311Z\"\>"}], ",", 
+          
+          RowBox[{"\<\"updatedAt\"\>", 
+           "\[Rule]", "\<\"2024-10-18T12:28:26.656Z\"\>"}]}], 
+         "\[RightAssociation]"}]}], ",", 
+       RowBox[{"\<\"baseToken\"\>", "\[Rule]", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"id\"\>", "\[Rule]", "1"}], ",", 
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC\"\>"}], ",", 
+          RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Bitcoin\"\>"}], ",", 
+          RowBox[{"\<\"itin\"\>", "\[Rule]", "Null"}], ",", 
+          RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+          RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+          
+          RowBox[{"\<\"createdAt\"\>", 
+           "\[Rule]", "\<\"2024-09-24T12:19:47.676Z\"\>"}], ",", 
+          
+          RowBox[{"\<\"updatedAt\"\>", 
+           "\[Rule]", "\<\"2024-09-24T12:19:56.481Z\"\>"}]}], 
+         "\[RightAssociation]"}]}], ",", 
+       RowBox[{"\<\"quoteToken\"\>", "\[Rule]", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"id\"\>", "\[Rule]", "7"}], ",", 
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"CNHT\"\>"}], ",", 
+          RowBox[{"\<\"name\"\>", "\[Rule]", "Null"}], ",", 
+          RowBox[{"\<\"itin\"\>", "\[Rule]", "Null"}], ",", 
+          RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+          RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+          
+          RowBox[{"\<\"createdAt\"\>", 
+           "\[Rule]", "\<\"2024-09-24T12:19:48.090Z\"\>"}], ",", 
+          
+          RowBox[{"\<\"updatedAt\"\>", 
+           "\[Rule]", "\<\"2024-09-24T12:19:48.090Z\"\>"}]}], 
+         "\[RightAssociation]"}]}], ",", 
+       RowBox[{"\<\"createdAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:19:48.098Z\"\>"}], ",", 
+       RowBox[{"\<\"updatedAt\"\>", 
+        "\[Rule]", "\<\"2024-11-14T09:40:36.910Z\"\>"}]}], 
+      "\[RightAssociation]"}], "}"}]}], ",", 
+   RowBox[{"\<\"meta\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"fetchCount\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"totalCount\"\>", "\[Rule]", "889"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.9515269482271385`*^9, 3.951526964928276*^9}, 
+   3.951527003756157*^9},
+ CellLabel->"Out[80]=",
+ CellID->337135673,ExpressionUUID->"c3224433-faa5-024d-a6e7-bbc484f3b740"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Of course you can just save hardcoded cookie and token to the variable:\
+\>", "MathCaption",
+ CellChangeTimes->{{3.9515271432242775`*^9, 3.951527191994692*^9}},
+ CellID->12593718,ExpressionUUID->"93d6d677-def7-a949-bd29-888d1603a609"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$WAEXCredentials", " ", "=", " ", 
+  RowBox[{"\[LeftAssociation]", 
+   RowBox[{
+    RowBox[{"\"\<Cookie\>\"", 
+     "\[Rule]", \
+"\"\<ccdb.sid=s%3A2N80n51BC5saDAEm83SWKrWH3sDFxmS6.%2BDAzW0RlfI2V%\
+2BdE0riWw8oTxPMBN59pTloTVpsVjhuc; Path=/; Expires=Fri, 21 Mar 2025 18:21:38 \
+GMT; HttpOnly; SameSite=Strict\>\""}], ",", 
+    RowBox[{"\"\<csrf_token\>\"", "\[Rule]", "\"\<7DlR6vkT\>\""}]}], 
+   "\[RightAssociation]"}]}]], "Input",
+ CellChangeTimes->{{3.951527181894541*^9, 3.9515271832588615`*^9}},
+ CellLabel->"In[82]:=",
+ CellID->551409735,ExpressionUUID->"e628757f-772d-9540-814e-c1dff1ab8336"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Cookie\"\>", 
+    "\[Rule]", \
+"\<\"ccdb.sid=s%3A2N80n51BC5saDAEm83SWKrWH3sDFxmS6.%2BDAzW0RlfI2V%\
+2BdE0riWw8oTxPMBN59pTloTVpsVjhuc; Path=/; Expires=Fri, 21 Mar 2025 18:21:38 \
+GMT; HttpOnly; SameSite=Strict\"\>"}], ",", 
+   RowBox[{"\<\"csrf_token\"\>", "\[Rule]", "\<\"7DlR6vkT\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.951527194906397*^9},
+ CellLabel->"Out[82]=",
+ CellID->31929673,ExpressionUUID->"ed09764c-85fd-af46-a967-74d5c0b8e4bb"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["One time cookie and csrf_token", "Subsection",
+ CellChangeTimes->{{3.9515270355480404`*^9, 3.9515270461854362`*^9}},
+ CellID->2940638,ExpressionUUID->"1ff4aa96-436d-b84c-b14d-0b7b0fb31be9"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+And the last way - passing cookie and csrf_token directly to optionvalue  \
+Credentials:\
+\>", "MathCaption",
+ CellChangeTimes->{{3.9515270657810345`*^9, 3.9515271064777584`*^9}},
+ CellID->408343686,ExpressionUUID->"4a466b38-492a-3044-95ff-46f581a253dd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WAEXExchanges", "[", 
+  RowBox[{
+   RowBox[{"\"\<limit\>\"", " ", "->", " ", "1"}], ",", " ", 
+   RowBox[{"\"\<Credentials\>\"", " ", "->", " ", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\"\<Cookie\>\"", 
+       "\[Rule]", \
+"\"\<ccdb.sid=s%3A2N80n51BC5saDAEm83SWKrWH3sDFxmS6.%2BDAzW0RlfI2V%\
+2BdE0riWw8oTxPMBN59pTloTVpsVjhuc; Path=/; Expires=Fri, 21 Mar 2025 18:21:38 \
+GMT; HttpOnly; SameSite=Strict\>\""}], ",", 
+      RowBox[{"\"\<csrf_token\>\"", "\[Rule]", "\"\<7DlR6vkT\>\""}]}], 
+     "\[RightAssociation]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9515271135691185`*^9, 3.9515271244660397`*^9}},
+ CellLabel->"In[81]:=",
+ CellID->7065229,ExpressionUUID->"27fe6779-95bd-d847-bee7-37b099ce65e4"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"data\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"\<\"id\"\>", "\[Rule]", "1"}], ",", 
+       RowBox[{"\<\"externalExchangeId\"\>", "\[Rule]", "\<\"binance\"\>"}], ",", 
+       RowBox[{"\<\"dataSource\"\>", "\[Rule]", "\<\"binance\"\>"}], ",", 
+       RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CEX\"\>"}], ",", 
+       RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"Binance\"\>"}], ",", 
+       RowBox[{"\<\"description\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"imageUrl\"\>", "\[Rule]", "Null"}], ",", 
+       RowBox[{"\<\"createdAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:19:34.614Z\"\>"}], ",", 
+       RowBox[{"\<\"updatedAt\"\>", 
+        "\[Rule]", "\<\"2024-09-24T12:19:34.614Z\"\>"}]}], 
+      "\[RightAssociation]"}], "}"}]}], ",", 
+   RowBox[{"\<\"meta\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"fetchCount\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"totalCount\"\>", "\[Rule]", "22"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"status\"\>", "\[Rule]", "1"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.9515271260880604`*^9},
+ CellLabel->"Out[81]=",
+ CellID->45115367,ExpressionUUID->"5a9f90f5-31da-9e46-8956-c6efcc8ed3c3"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Guides", "TutorialMoreAboutSection",
+ CellChangeTimes->{{3.843042384656711*^9, 3.843042386024461*^9}},
+ CellID->262451253,ExpressionUUID->"f976b27b-44b4-9d47-9260-9697b0e6340b"],
+
+Cell["XXXX", "TutorialMoreAbout",
+ CellID->61307229,ExpressionUUID->"bcd0b235-76f6-0341-a028-04c28e63407d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Tech Notes", "RelatedTutorialsSection",
+ CellID->364138763,ExpressionUUID->"9e93b1dd-9311-a54e-b379-710bb5138845"],
+
+Cell["XXXX", "RelatedTutorials",
+ CellID->32725095,ExpressionUUID->"a4e9019b-3a34-664e-8b44-03679969c875"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Metadata", "MetadataSection",
+ CellID->186646223,ExpressionUUID->"04433b70-5e71-bf42-b517-f22905f2a113"],
+
+Cell[TextData[{
+ "New in: ",
+ Cell["1.0", "HistoryData",
+  CellTags->"New",ExpressionUUID->"e35476a0-78dc-634a-9853-1620a2d7c87f"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified",ExpressionUUID->"cea3b274-9b4b-be4b-b7a9-ae71fc4152dc"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete",ExpressionUUID->"2c62bf99-a474-0d49-8a2a-8fcac76502ff"]
+}], "History",
+ CellChangeTimes->{{3.9515252234211082`*^9, 3.9515252238870068`*^9}},
+ CellID->93897251,ExpressionUUID->"9326a2c3-1e74-e344-a128-66697fe6b730"],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->695295059,ExpressionUUID->"0dc118a1-99c3-7d4c-ae6d-7398ec8c07e6"],
+
+Cell["Tech Note", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->274063865,ExpressionUUID->"760c3523-afd3-4447-9a01-06324fac1940"],
+
+Cell["KirillBelov/WAEXLink", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->12096657,ExpressionUUID->"a03a5e7f-aa76-8745-81f6-c6e8cd30f248"],
+
+Cell["KirillBelov`WAEXLink`", "Categorization",
+ CellLabel->"Context",
+ CellID->420177450,ExpressionUUID->"91d0f9ff-519f-114f-b29a-8395138ab530"],
+
+Cell["KirillBelov/WAEXLink/tutorial/Authentification", "Categorization",
+ CellLabel->"URI",
+ CellID->130564103,ExpressionUUID->"644b0a2e-c993-c545-94d6-c008646c81b2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->647662207,ExpressionUUID->"de43125e-93d8-ae4d-9b0d-b9f22f907a74"],
+
+Cell["XXXX", "Keywords",
+ CellID->346239881,ExpressionUUID->"7c270955-28c5-754d-8ad6-dad44bb86ff5"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700.5, 770.25},
+WindowMargins->{{Automatic, 473.25}, {98.25, Automatic}},
+TaggingRules-><|"Paclet" -> "KirillBelov/WAEXLink"|>,
+FrontEndVersion->"14.2 for Microsoft Windows (64-bit) (December 26, 2024)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TechNotePageStylesExt.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"f1e202a7-12a8-3d41-8f75-0adeaa28bb60"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 107, 1, 112, "Title",ExpressionUUID->"2a6c08c9-d595-3c4e-a2ba-148c6f8a13ea",
+ CellID->47599552],
+Cell[686, 25, 184, 2, 24, "Text",ExpressionUUID->"2c84e1a3-6cab-0d4a-bee7-6f391dcca7be",
+ CellID->134260403],
+Cell[873, 29, 615, 12, 92, "DefinitionBox",ExpressionUUID->"b9b72b30-cc28-dd43-ab10-e278add11acc",
+ CellID->159675470],
+Cell[1491, 43, 451, 7, 58, "Caption",ExpressionUUID->"35ac75dd-6e1b-d34e-9aca-0e237241ed23",
+ CellID->199218782],
+Cell[CellGroupData[{
+Cell[1967, 54, 173, 2, 44, "Section",ExpressionUUID->"bc6efac5-a4e4-5f4d-82bd-2f3b0b7fc825",
+ CellID->419882370],
+Cell[CellGroupData[{
+Cell[2165, 60, 355, 4, 39, "MathCaption",ExpressionUUID->"9dce78fc-3af9-374a-b381-66fbe96f7e43",
+ CellID->192657445],
+Cell[2523, 66, 787, 18, 130, "Input",ExpressionUUID->"07712906-0e0e-2b4b-9997-ec23d1a12a88",
+ CellID->283470541]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3347, 89, 386, 5, 39, "MathCaption",ExpressionUUID->"0c2fd285-b228-ac42-9b78-d8a1144e59f1",
+ CellID->219517036],
+Cell[3736, 96, 346, 8, 25, "Input",ExpressionUUID->"af6d3558-2c61-8147-b224-230be9a441e2",
+ CellID->275416028]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4131, 110, 172, 2, 44, "Section",ExpressionUUID->"dfa3c5ac-a645-a641-9ad5-c380f172c8fa",
+ CellID->6267748],
+Cell[CellGroupData[{
+Cell[4328, 116, 182, 2, 40, "Subsection",ExpressionUUID->"d4323872-a332-ff40-8d5f-69502b61d328",
+ CellID->50533063],
+Cell[CellGroupData[{
+Cell[4535, 122, 507, 8, 55, "MathCaption",ExpressionUUID->"c49e62cf-7614-7a42-9359-a2a337805e16",
+ CellID->8503178],
+Cell[5045, 132, 436, 10, 60, "Input",ExpressionUUID->"43650a95-2320-4641-aeac-eb056110a2f5",
+ CellID->307870401]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5518, 147, 329, 6, 55, "MathCaption",ExpressionUUID->"b99727f8-9784-6742-a7d2-c8ba16c0d36f",
+ CellID->190808638],
+Cell[CellGroupData[{
+Cell[5872, 157, 208, 3, 25, "Input",ExpressionUUID->"f03a3123-9434-0344-a28b-5f6d32c26cf9",
+ CellID->97421670],
+Cell[6083, 162, 428, 9, 41, "Output",ExpressionUUID->"e7dfed1f-1474-8042-92b7-c839f53f266e",
+ CellID->306265987]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6560, 177, 264, 5, 39, "MathCaption",ExpressionUUID->"6a71b01e-82df-9c46-b54f-0e6cb49af361",
+ CellID->297441994],
+Cell[CellGroupData[{
+Cell[6849, 186, 332, 6, 25, "Input",ExpressionUUID->"59c74c35-4ed9-b14e-a35e-9d2673a58092",
+ CellID->309927281],
+Cell[7184, 194, 1431, 31, 76, "Output",ExpressionUUID->"cbbcbc4c-5e07-ac49-a33e-6a4a8ff8b923",
+ CellID->115032752]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8676, 232, 184, 2, 40, "Subsection",ExpressionUUID->"17931817-2916-8546-97f4-db18b917fe61",
+ CellID->207020435],
+Cell[CellGroupData[{
+Cell[8885, 238, 297, 5, 55, "MathCaption",ExpressionUUID->"f1a41e42-5f63-fe4f-ab71-0e68664a1e7d",
+ CellID->477894886],
+Cell[9185, 245, 425, 8, 77, "Input",ExpressionUUID->"14d97716-c79c-4a4d-8423-06f15a4b6919",
+ CellID->44014932]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9647, 258, 292, 5, 55, "MathCaption",ExpressionUUID->"498f07b8-204a-bf49-aca7-3cf46a9f13c7",
+ CellID->371538194],
+Cell[CellGroupData[{
+Cell[9964, 267, 353, 7, 25, "Input",ExpressionUUID->"b4000437-2489-2144-839b-56408f8e5b23",
+ CellID->514503702],
+Cell[10320, 276, 1353, 29, 76, "Output",ExpressionUUID->"38a05703-7659-5244-a0d2-50f83ad743c1",
+ CellID->3332016]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11734, 312, 184, 2, 40, "Subsection",ExpressionUUID->"406e067e-8361-a649-ba5a-0ddc256caebd",
+ CellID->15871567],
+Cell[CellGroupData[{
+Cell[11943, 318, 274, 5, 39, "MathCaption",ExpressionUUID->"49b5ffc2-4223-cd48-9959-56bc202e49ef",
+ CellID->209768471],
+Cell[CellGroupData[{
+Cell[12242, 327, 728, 16, 112, "Input",ExpressionUUID->"a890f66e-15c2-a142-8107-e0d17b62ea6b",
+ CellID->580283978],
+Cell[12973, 345, 1400, 30, 76, "Output",ExpressionUUID->"b2c2c362-c4fb-8944-aad1-874ddbe1f4fd",
+ CellID->88795038]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14434, 382, 178, 2, 40, "Subsection",ExpressionUUID->"2fcbe4c0-e0cc-b04d-bcf1-b90dd19651e7",
+ CellID->2395889],
+Cell[CellGroupData[{
+Cell[14637, 388, 337, 8, 55, "MathCaption",ExpressionUUID->"e6222444-d651-1f4f-b992-4ff6cfbaa42d",
+ CellID->251971613],
+Cell[CellGroupData[{
+Cell[14999, 400, 999, 23, 183, "Input",ExpressionUUID->"184c282b-2f89-9440-b440-c94ef1cef9df",
+ CellID->76663510],
+Cell[16001, 425, 2681, 57, 146, "Output",ExpressionUUID->"de558dbb-103f-4d42-905b-48cce98054ab",
+ CellID->302029039]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18755, 490, 205, 2, 44, "Section",ExpressionUUID->"cfccc872-0f4c-d643-9345-879cd00b6e6b",
+ CellID->396587103],
+Cell[CellGroupData[{
+Cell[18985, 496, 188, 2, 40, "Subsection",ExpressionUUID->"d3289c97-e9dd-6c45-80f2-70f7c4064ee6",
+ CellID->755465265],
+Cell[CellGroupData[{
+Cell[19198, 502, 276, 4, 39, "MathCaption",ExpressionUUID->"717b1056-c08c-e442-80b5-045b47629c97",
+ CellID->59314237],
+Cell[19477, 508, 525, 12, 42, "Input",ExpressionUUID->"3ee94b9c-04a2-3246-b3d7-bc0388028fd3",
+ CellID->133021382]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20039, 525, 405, 7, 55, "MathCaption",ExpressionUUID->"52fea6c4-d7fb-3b47-8a61-7f5b877bc1bb",
+ CellID->155590566],
+Cell[CellGroupData[{
+Cell[20469, 536, 210, 3, 25, "Input",ExpressionUUID->"65778a91-68ea-ba43-a44a-af27b0be888c",
+ CellID->31705882],
+Cell[20682, 541, 741, 15, 59, "Output",ExpressionUUID->"40530e8c-3ffe-4b47-95da-7738fc733ae3",
+ CellID->694217084]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21472, 562, 277, 4, 39, "MathCaption",ExpressionUUID->"f7e92151-86a3-f048-abc1-4d10a3f173aa",
+ CellID->235594070],
+Cell[CellGroupData[{
+Cell[21774, 570, 288, 6, 42, "Input",ExpressionUUID->"f84cc78e-e960-ff4b-9e8c-25514b717c1d",
+ CellID->143802378],
+Cell[22065, 578, 564, 12, 76, "Output",ExpressionUUID->"dda20247-f474-7240-a5b3-9351219c3b3a",
+ CellID->202354216]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22690, 597, 187, 2, 40, "Subsection",ExpressionUUID->"ba805253-cac8-444c-844d-85b835e7bc4e",
+ CellID->95488799],
+Cell[CellGroupData[{
+Cell[22902, 603, 333, 6, 55, "MathCaption",ExpressionUUID->"645741c4-2da0-fd4c-a18d-c820e8197b1b",
+ CellID->113067562],
+Cell[23238, 611, 347, 8, 25, "Input",ExpressionUUID->"9237d13b-7e05-474c-991e-0c670aa539d9",
+ CellID->177887713]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23622, 624, 195, 2, 39, "MathCaption",ExpressionUUID->"744852f9-5d9f-3046-9323-d4a53c166458",
+ CellID->198510589],
+Cell[CellGroupData[{
+Cell[23842, 630, 141, 2, 25, "Input",ExpressionUUID->"fe94d43d-23f9-cd45-82ea-87df9937de90",
+ CellID->510981922],
+Cell[23986, 634, 544, 12, 59, "Output",ExpressionUUID->"04d3c54b-41a6-f547-9848-d55fa9514e6b",
+ CellID->226749600]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24579, 652, 203, 2, 39, "MathCaption",ExpressionUUID->"6f5cbfc6-ee4c-8949-9aff-2f9dac16f616",
+ CellID->275665872],
+Cell[CellGroupData[{
+Cell[24807, 658, 275, 5, 25, "Input",ExpressionUUID->"ce457201-b3b8-1a44-8761-6273be47e7bc",
+ CellID->329131735],
+Cell[25085, 665, 4107, 86, 269, "Output",ExpressionUUID->"c3224433-faa5-024d-a6e7-bbc484f3b740",
+ CellID->337135673]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29241, 757, 244, 4, 39, "MathCaption",ExpressionUUID->"93d6d677-def7-a949-bd29-888d1603a609",
+ CellID->12593718],
+Cell[CellGroupData[{
+Cell[29510, 765, 620, 13, 95, "Input",ExpressionUUID->"e628757f-772d-9540-814e-c1dff1ab8336",
+ CellID->551409735],
+Cell[30133, 780, 541, 12, 59, "Output",ExpressionUUID->"ed09764c-85fd-af46-a967-74d5c0b8e4bb",
+ CellID->31929673]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30735, 799, 195, 2, 40, "Subsection",ExpressionUUID->"1ff4aa96-436d-b84c-b14d-0b7b0fb31be9",
+ CellID->2940638],
+Cell[CellGroupData[{
+Cell[30955, 805, 264, 5, 39, "MathCaption",ExpressionUUID->"4a466b38-492a-3044-95ff-46f581a253dd",
+ CellID->408343686],
+Cell[CellGroupData[{
+Cell[31244, 814, 752, 16, 112, "Input",ExpressionUUID->"27fe6779-95bd-d847-bee7-37b099ce65e4",
+ CellID->7065229],
+Cell[31999, 832, 1353, 29, 76, "Output",ExpressionUUID->"5a9f90f5-31da-9e46-8956-c6efcc8ed3c3",
+ CellID->45115367]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33425, 869, 191, 2, 73, "TutorialMoreAboutSection",ExpressionUUID->"f976b27b-44b4-9d47-9260-9697b0e6340b",
+ CellID->262451253],
+Cell[33619, 873, 107, 1, 23, "TutorialMoreAbout",ExpressionUUID->"bcd0b235-76f6-0341-a028-04c28e63407d",
+ CellID->61307229]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33763, 879, 128, 1, 73, "RelatedTutorialsSection",ExpressionUUID->"9e93b1dd-9311-a54e-b379-710bb5138845",
+ CellID->364138763],
+Cell[33894, 882, 106, 1, 23, "RelatedTutorials",ExpressionUUID->"a4e9019b-3a34-664e-8b44-03679969c875",
+ CellID->32725095]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34049, 889, 110, 1, 71, "MetadataSection",ExpressionUUID->"04433b70-5e71-bf42-b517-f22905f2a113",
+ CellID->186646223],
+Cell[34162, 892, 543, 12, 25, "History",ExpressionUUID->"9326a2c3-1e74-e344-a128-66697fe6b730",
+ CellID->93897251],
+Cell[CellGroupData[{
+Cell[34730, 908, 122, 1, 20, "CategorizationSection",ExpressionUUID->"0dc118a1-99c3-7d4c-ae6d-7398ec8c07e6",
+ CellID->695295059],
+Cell[34855, 911, 137, 2, 33, "Categorization",ExpressionUUID->"760c3523-afd3-4447-9a01-06324fac1940",
+ CellID->274063865],
+Cell[34995, 915, 147, 2, 33, "Categorization",ExpressionUUID->"a03a5e7f-aa76-8745-81f6-c6e8cd30f248",
+ CellID->12096657],
+Cell[35145, 919, 145, 2, 33, "Categorization",ExpressionUUID->"91d0f9ff-519f-114f-b29a-8395138ab530",
+ CellID->420177450],
+Cell[35293, 923, 166, 2, 33, "Categorization",ExpressionUUID->"644b0a2e-c993-c545-94d6-c008646c81b2",
+ CellID->130564103]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35496, 930, 110, 1, 30, "KeywordsSection",ExpressionUUID->"de43125e-93d8-ae4d-9b0d-b9f22f907a74",
+ CellID->647662207],
+Cell[35609, 933, 99, 1, 19, "Keywords",ExpressionUUID->"7c270955-28c5-754d-8ad6-dad44bb86ff5",
+ CellID->346239881]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

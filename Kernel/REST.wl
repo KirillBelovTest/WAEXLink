@@ -45,7 +45,20 @@ Begin["`Private`"];
 (* :Internal: *)
 
 
-$WAEXCredentials = <||>;
+$WAEXCredentials := Which[
+    StringQ[SystemCredential["WAEX_ACCESS_TOKEN"]], 
+        <|"access_token" -> SystemCredential["WAEX_ACCESS_TOKEN"]|>, 
+    StringQ[SystemCredential["WAEX_LOGIN"]] && StringQ[SystemCredential["WAEX_PASSWORD"]], 
+        $WAEXCredentials = Block[{$creds, $WAEXCredentials}, 
+            WAEXLogin[SystemCredential["WAEX_LOGIN"], SystemCredential["WAEX_PASSWORD"], 
+                "CreadentialHandler" -> Function[cred, $creds = cred], 
+                "Credentials" -> <||>
+            ];
+            $creds
+        ], 
+    True,
+        <||>
+];
 
 
 Options[WAEXRequest] = {
@@ -76,8 +89,8 @@ Module[{
                 "Cookie" -> credentials["Cookie"], 
                 "csrf_token" -> credentials["csrf_token"]
             |>,
-        KeyExistsQ[credentials, "APIToken"] && StringQ[credentials["APIToken"]],
-            <|"access_token" -> credentials["APIToken"]|>, 
+        KeyExistsQ[credentials, "access_token"] && StringQ[credentials["access_token"]],
+            <|"access_token" -> credentials["access_token"]|>, 
         True,
             <||>
     ];
@@ -136,13 +149,18 @@ Options[WAEXLogin] = {
 }; 
 
 
-WAEXLogin[login_String, password_String, OptionsPattern[]] := 
+WAEXLogin[login_String, password_String, opts: OptionsPattern[{WAEXLogin, WAEXRequest}]] := 
 With[{creadentialHandler = OptionValue["CreadentialHandler"]}, 
     WAEXRequest["/api/v1/auth/local", <||>, <|"login" -> login, "password" -> password|>, 
         "HTTPMethod" -> "POST", 
-        "ResponseHandler" -> creadentialHandler @* getWAEXCredentials
+        "ResponseHandler" -> creadentialHandler @* getWAEXCredentials, 
+        opts
     ]
 ]; 
+
+
+WAEXLogin[opts: OptionsPattern[{WAEXLogin, WAEXRequest}]] := 
+WAEXLogin[SystemCredential["WAEX_LOGIN"], SystemCredential["WAEX_PASSWORD"], opts];
 
 
 Options[WAEXExchanges] = {
