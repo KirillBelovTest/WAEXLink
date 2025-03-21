@@ -130,6 +130,10 @@ encode[value_List] :=
 StringRiffle[Map[encode, value], ","]; 
 
 
+encode[value: True | False] := 
+ToLowerCase[ToString[value]]; 
+
+
 getWAEXCredentials[response_HTTPResponse] := 
 Module[{
     headers = response["Headers"], 
