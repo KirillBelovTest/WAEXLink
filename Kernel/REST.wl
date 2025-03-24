@@ -65,7 +65,8 @@ Options[WAEXRequest] = {
     "Endpoint" :> "https://access.ccdb.WAEXservices.com", 
     "Credentials" :> $WAEXCredentials, 
     "HTTPMethod" :> "GET", 
-    "ResponseHandler" :> Identity
+    "ResponseHandler" :> Identity, 
+    "Logger" :> Identity
 };
 
 
@@ -77,11 +78,14 @@ Module[{
     responseHandler = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "ResponseHandler"], 
     request, response, 
     metadata, url, encodedQuery, 
-    headers
+    headers, 
+    logger = OptionValue[WAEXRequest, FilterRules[Flatten[{opts}], Options[WAEXRequest]], "Logger"]
 }, 
     encodedQuery = encode[query]; 
 
     url = URLBuild[{endpoint, path}, encodedQuery]; 
+
+    logger[{"URL", url}];
 
     headers = Which[
         KeyExistsQ[credentials, "Cookie"] && KeyExistsQ[credentials, "csrf_token"],
