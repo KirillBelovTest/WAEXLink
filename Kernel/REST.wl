@@ -83,7 +83,7 @@ Module[{
 }, 
     encodedQuery = encode[query]; 
 
-    url = URLBuild[{endpoint, path}, encodedQuery]; 
+    url = URLBuild[{endpoint, path}]; 
 
     logger[{"URL", url}];
 
@@ -101,6 +101,7 @@ Module[{
 
     metadata = <|
         Method -> httpMethod, 
+        "Query" -> encodedQuery, 
         "Headers" -> headers, 
         "ContentType" -> "application/json"
     |>; 
@@ -131,7 +132,7 @@ encode[date_DateObject] :=
 DateString[date, "ISODateTimeMillisecond"] <> "Z"; 
 
 encode[value_List] := 
-StringRiffle[Map[encode, value], ","]; 
+Map[encode, value]; 
 
 
 encode[value: True | False] := 
