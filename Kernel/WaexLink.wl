@@ -1,17 +1,17 @@
 (* ::Package:: *)
 
 Once[
-	Map[
-		If[PacletFind[#] === {}, 
-			PacletInstall[#]
-		]&, 
-		{
-			"KirillBelov/CSockets", 
-			"KirillBelov/Objects", 
-			"KirillBelov/LTP", 
-			"KirillBelov/SocketIOLink"
-		}
-	]
+    Map[
+        If[PacletFind[#] === {}, 
+            PacletInstall[#]
+        ]&, 
+        {
+            "KirillBelov/CSockets", 
+            "KirillBelov/Objects", 
+            "KirillBelov/LTP", 
+            "KirillBelov/SocketIOLink"
+        }
+    ]
 ];
 
 
@@ -22,4 +22,6 @@ EndPackage[];
 
 
 Get["KirillBelov`WAEXLink`REST`"];
+
+
 Get["KirillBelov`WAEXLink`RealTime`"];

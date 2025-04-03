@@ -78,7 +78,7 @@ Module[{message = <|"emitterName" -> emitterName, "payload" -> payload|>},
 
 
 WAEXUnsubscribe[connection_SocketIOConnection, emitterName_String] := 
-Module[{message = <|"emitterName" -> emitterName, "payload" -> payload|>}, 
+Module[{message = <|"emitterName" -> emitterName|>}, 
     connection["Subscribtions"] = DeleteCases[connection["Subscribtions"], message]; 
     SocketIOEmit[connection, "unsubscribe-from-emitter", message, Identity]
 ]; 
