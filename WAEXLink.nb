@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1060,         20]
-NotebookDataLength[     57497,       1151]
-NotebookOptionsPosition[     55920,       1116]
-NotebookOutlinePosition[     56326,       1132]
-CellTagsIndexPosition[     56283,       1129]
+NotebookDataLength[    151089,       2970]
+NotebookOptionsPosition[    150063,       2946]
+NotebookOutlinePosition[    150472,       2962]
+CellTagsIndexPosition[    150429,       2959]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -74,12 +74,22 @@ Cell[BoxData[
   3.9509390870337257`*^9, {3.954208284878948*^9, 3.954208292564108*^9}},
  CellLabel->"In[5]:=",ExpressionUUID->"b65593a9-f7b9-f648-96f6-6e9af0e6cd32"],
 
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"WAEXSubscribeToAggregateOHLCV", "[", "connection", "]"}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.9566358747200584`*^9, 3.9566358772453976`*^9}, 
+   3.956714593576906*^9},
+ CellLabel->"In[6]:=",ExpressionUUID->"0e16b211-ceff-c548-80f9-1fae06daa852"],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"WAEXSubscribeToAggregateOHLCV", "[", "connection", "]"}]], "Code",
- CellChangeTimes->{{3.9566358747200584`*^9, 3.9566358772453976`*^9}},
- CellLabel->"In[6]:=",ExpressionUUID->"0e16b211-ceff-c548-80f9-1fae06daa852"],
+ RowBox[{"WAEXSubscribeToPricing", "[", 
+  RowBox[{"connection", ",", " ", "\"\<Ticker\>\"", ",", " ", "1"}], 
+  "]"}]], "Code",
+ CellChangeTimes->{{3.956716013872057*^9, 3.95671604423773*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"7fe25f14-f067-c741-b828-e029a9cd8765"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -495,160 +505,216 @@ HxMVhKM=
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{3.9566358782174206`*^9, 3.956636152446476*^9},
- CellLabel->"Out[6]=",ExpressionUUID->"a8c9b6f2-b58e-014f-bf41-d77e8d1102ca"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"With", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{"h", " ", "=", " ", 
-      RowBox[{"connection", "[", "\"\<ListenHandler\>\"", "]"}]}], "}"}], ",",
-     " ", "\n", "\t", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"h", "[", "\"\<Accumulator\>\"", "]"}], " ", "=", " ", 
-      RowBox[{"<|", "|>"}]}], ";", " ", "\n", "\t", 
-     RowBox[{
-      RowBox[{"h", "[", "\"\<Handler\>\"", "]"}], " ", "=", " ", 
-      RowBox[{"<|", "|>"}]}], ";", " ", "\n", "\t", 
-     RowBox[{
-      RowBox[{"h", "[", "\"\<DefaultAccumulator\>\"", "]"}], " ", "=", " ", 
-      "Length"}], ";", " ", "\n", "\t", 
-     RowBox[{
-      RowBox[{"h", "[", "\"\<DefaultHandler\>\"", "]"}], " ", "=", " ", 
-      "Print"}], ";"}]}], " ", "\n", "]"}], ";"}]], "Code",
- CellChangeTimes->{{3.9566424698497868`*^9, 3.9566425606588993`*^9}},
- CellLabel->"In[6]:=",ExpressionUUID->"20afae46-c533-f24c-ad1d-6412cccfd8ce"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"connection", "[", "\"\<ListenPort\>\"", "]"}]], "Code",
- CellChangeTimes->{{3.956642611192114*^9, 3.9566426605026913`*^9}, {
-  3.9566427088807335`*^9, 3.9566427107131863`*^9}},
- CellLabel->"In[7]:=",ExpressionUUID->"0b7b1c61-8350-9741-83f6-989724b25356"],
-
-Cell[BoxData["34382"], "Output",
- CellChangeTimes->{3.956642711023388*^9, 3.956642855363329*^9},
- CellLabel->"Out[7]=",ExpressionUUID->"972ef0a4-742f-424f-b562-ccdd726c0d64"]
+ CellChangeTimes->{3.9567160446125507`*^9},
+ CellLabel->"Out[26]=",ExpressionUUID->"62dba18a-8db2-094d-8263-505b1fbd95d3"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"c", " ", "=", " ", 
-  RowBox[{"SocketConnect", "[", 
-   RowBox[{"connection", "[", "\"\<ListenPort\>\"", "]"}], "]"}]}]], "Code",
- CellChangeTimes->{{3.956642594204012*^9, 3.9566425984322453`*^9}, 
-   3.9566427138645782`*^9},
- CellLabel->"In[8]:=",ExpressionUUID->"9b20ac60-0ad0-fe4b-9f2e-c8863448097d"],
+ RowBox[{"WAEXSubscribeToPricing", "[", 
+  RowBox[{"connection", ",", " ", "\"\<CandleStick\>\"", ",", " ", "1"}], 
+  "]"}]], "Code",
+ CellChangeTimes->{{3.9567167685724926`*^9, 3.956716786615078*^9}},
+ CellLabel->"In[47]:=",ExpressionUUID->"3ff2938d-f101-9649-b214-108d12cd19b3"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{
-   TagBox["SocketObject",
+   TagBox["SocketIOConnection",
     "SummaryHead"], "[", 
    DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
     TemplateBox[{
       PaneSelectorBox[{False -> GridBox[{{
-            PaneBox[
-             ButtonBox[
-              DynamicBox[
-               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
-              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
-              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
-              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
-             Dynamic[{
-               Automatic, 
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                 Magnification])}]], 
             GraphicsBox[
-             GeometricTransformationBox[{{{
-                 FilledCurveBox[{{
-                    
-                    Line[{{36.558, 8.569}, {40.947, 8.569}, {40.947, 
-                    43.684000000000005`}, {36.558, 43.684000000000005`}, {
-                    36.558, 8.569}}]}}]}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{59.053, 8.569}, {63.443, 8.569}, {63.443, 
-                    43.684000000000005`}, {59.053, 43.684000000000005`}, {
-                    59.053, 8.569}}]}}]}, {{
-                  FilledCurveBox[{{
-                    
-                    Line[{{55.487, 8.569}, {56.95, 8.569}, {56.95, 
-                    21.188000000000002`}, {55.487, 21.188000000000002`}, {
-                    55.487, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{52.562, 8.569}, {54.025, 8.569}, {54.025, 
-                    21.188000000000002`}, {52.562, 21.188000000000002`}, {
-                    52.562, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{49.636, 8.569}, {51.099000000000004`, 8.569}, {
-                    51.099000000000004`, 21.188000000000002`}, {49.636, 
-                    21.188000000000002`}, {49.636, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{46.709, 8.569}, {48.172000000000004`, 8.569}, {
-                    48.172000000000004`, 21.188000000000002`}, {46.709, 
-                    21.188000000000002`}, {46.709, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{43.783, 8.569}, {45.246, 8.569}, {45.246, 
-                    21.188000000000002`}, {43.783, 21.188000000000002`}, {
-                    43.783, 8.569}}]}}]}}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{40.947, 4.911}, {59.787000000000006`, 4.911}, {
-                    59.787000000000006`, 6.922}, {40.947, 6.922}, {40.947, 
-                    4.911}}]}}]}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{44.057, 31.675}, {56.678000000000004`, 31.675}, {
-                    56.678000000000004`, 39.051}, {44.057, 39.051}, {44.057, 
-                    31.675}}]}}]}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{44.057, 43.685}, {56.678000000000004`, 43.685}, {
-                    56.678000000000004`, 65.089}, {44.057, 65.089}, {44.057, 
-                    43.685}}]}}]}}}, {{{1, 0}, {0, -1}}, Center}], {
-             ImageSize -> {Automatic, 
-                Dynamic[
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                  Magnification])]}, PlotRange -> {{20, 80}, {0, 70}}, 
-              BaseStyle -> {CacheGraphics -> False}, ImageSize -> 30}], 
+             TagBox[
+              RasterBox[CompressedData["
+1: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
+HxMVhKM=
+               "], {{0, 135.}, {135., 0}}, {0, 255}, ColorFunction -> 
+               RGBColor, ImageResolution -> {96, 96}], 
+              BoxForm`ImageTag[
+              "Byte", ColorSpace -> "RGB", Interleaving -> True], Selectable -> 
+              False], DefaultBaseStyle -> "ImageGraphics", 
+             ImageSizeRaw -> {135., 135.}, 
+             PlotRange -> {{0, 135.}, {0, 135.}}], 
             GridBox[{{
                RowBox[{
-                 TagBox["\"Foreign IPAddress: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"127.0.0.1\"", "SummaryItem"]}], 
-               RowBox[{
-                 TagBox["\"Foreign Port: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["34382", "SummaryItem"]}], 
-               RowBox[{
-                 TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
+                 TagBox["\"Self: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
                  TagBox[
-                  TemplateBox[{"\"TCP\"", 
-                    TagBox[
-                    "\" (Client)\"", Deploy, DefaultBaseStyle -> "Deploy"]}, 
-                   "RowDefault"], "SummaryItem"]}]}, {
+                 "KirillBelov`SocketIOLink`SocketIOConnection`$11", 
+                  "SummaryItem"]}], "\[SpanFromLeft]"}, {
                RowBox[{
-                 TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
+                 TagBox["\"Endpoint: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
                  TagBox[
-                 "\"57fd3f71-46f4-41f5-bbd0-41e665cbe25d\"", "SummaryItem"]}],
-                "\[SpanFromLeft]", "\[SpanFromLeft]"}}, 
+                 "\"https://access.ccdb.waexservices.com\"", "SummaryItem"]}],
+                "\[SpanFromLeft]"}}, 
              GridBoxAlignment -> {
               "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, 
-             GridBoxItemSize -> {
+             False, GridBoxItemSize -> {
               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
              GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
               BaseStyle -> {
@@ -659,103 +725,192 @@ Cell[BoxData[
           GridBoxItemSize -> {
            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
           BaselinePosition -> {1, 1}], True -> GridBox[{{
-            PaneBox[
-             ButtonBox[
-              DynamicBox[
-               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
-              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
-              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
-              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
-             Dynamic[{
-               Automatic, 
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                 Magnification])}]], 
             GraphicsBox[
-             GeometricTransformationBox[{{{
-                 FilledCurveBox[{{
-                    
-                    Line[{{36.558, 8.569}, {40.947, 8.569}, {40.947, 
-                    43.684000000000005`}, {36.558, 43.684000000000005`}, {
-                    36.558, 8.569}}]}}]}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{59.053, 8.569}, {63.443, 8.569}, {63.443, 
-                    43.684000000000005`}, {59.053, 43.684000000000005`}, {
-                    59.053, 8.569}}]}}]}, {{
-                  FilledCurveBox[{{
-                    
-                    Line[{{55.487, 8.569}, {56.95, 8.569}, {56.95, 
-                    21.188000000000002`}, {55.487, 21.188000000000002`}, {
-                    55.487, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{52.562, 8.569}, {54.025, 8.569}, {54.025, 
-                    21.188000000000002`}, {52.562, 21.188000000000002`}, {
-                    52.562, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{49.636, 8.569}, {51.099000000000004`, 8.569}, {
-                    51.099000000000004`, 21.188000000000002`}, {49.636, 
-                    21.188000000000002`}, {49.636, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{46.709, 8.569}, {48.172000000000004`, 8.569}, {
-                    48.172000000000004`, 21.188000000000002`}, {46.709, 
-                    21.188000000000002`}, {46.709, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{43.783, 8.569}, {45.246, 8.569}, {45.246, 
-                    21.188000000000002`}, {43.783, 21.188000000000002`}, {
-                    43.783, 8.569}}]}}]}}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{40.947, 4.911}, {59.787000000000006`, 4.911}, {
-                    59.787000000000006`, 6.922}, {40.947, 6.922}, {40.947, 
-                    4.911}}]}}]}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{44.057, 31.675}, {56.678000000000004`, 31.675}, {
-                    56.678000000000004`, 39.051}, {44.057, 39.051}, {44.057, 
-                    31.675}}]}}]}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{44.057, 43.685}, {56.678000000000004`, 43.685}, {
-                    56.678000000000004`, 65.089}, {44.057, 65.089}, {44.057, 
-                    43.685}}]}}]}}}, {{{1, 0}, {0, -1}}, Center}], {
-             ImageSize -> {Automatic, 
-                Dynamic[
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                  Magnification])]}, PlotRange -> {{20, 80}, {0, 70}}, 
-              BaseStyle -> {CacheGraphics -> False}, ImageSize -> 30}], 
+             TagBox[
+              RasterBox[CompressedData["
+1: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
+HxMVhKM=
+               "], {{0, 135.}, {135., 0}}, {0, 255}, ColorFunction -> 
+               RGBColor, ImageResolution -> {96, 96}], 
+              BoxForm`ImageTag[
+              "Byte", ColorSpace -> "RGB", Interleaving -> True], Selectable -> 
+              False], DefaultBaseStyle -> "ImageGraphics", 
+             ImageSizeRaw -> {135., 135.}, 
+             PlotRange -> {{0, 135.}, {0, 135.}}], 
             GridBox[{{
                RowBox[{
-                 TagBox["\"Foreign IPAddress: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"127.0.0.1\"", "SummaryItem"]}], 
-               RowBox[{
-                 TagBox["\"Foreign Port: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["34382", "SummaryItem"]}], 
-               RowBox[{
-                 TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
+                 TagBox["\"Self: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
                  TagBox[
-                  TemplateBox[{"\"TCP\"", 
-                    TagBox[
-                    "\" (Client)\"", Deploy, DefaultBaseStyle -> "Deploy"]}, 
-                   "RowDefault"], "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox[
-                 "\"57fd3f71-46f4-41f5-bbd0-41e665cbe25d\"", "SummaryItem"]}],
-                "\[SpanFromLeft]", "\[SpanFromLeft]"}, {
+                 "KirillBelov`SocketIOLink`SocketIOConnection`$11", 
+                  "SummaryItem"]}], "\[SpanFromLeft]"}, {
                RowBox[{
                  TagBox["\"Endpoint: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
                  TagBox[
-                  RowBox[{"{", "}"}], "SummaryItem"]}], "\[SpanFromLeft]", 
-               "\[SpanFromLeft]"}}, 
+                 "\"https://access.ccdb.waexservices.com\"", "SummaryItem"]}],
+                "\[SpanFromLeft]"}}, 
              GridBoxAlignment -> {
               "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
              False, GridBoxItemSize -> {
@@ -772,350 +927,2025 @@ Cell[BoxData[
        Dynamic[Typeset`open$$], ImageSize -> Automatic]},
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
-  SocketObject["57fd3f71-46f4-41f5-bbd0-41e665cbe25d"],
+  KirillBelov`SocketIOLink`SocketIOConnection[
+  KirillBelov`SocketIOLink`SocketIOConnection`$11],
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{3.9566427162434025`*^9, 3.9566428649627304`*^9},
- CellLabel->"Out[8]=",ExpressionUUID->"76929d5a-84f9-9744-98b0-5af4e82ac175"]
+ CellChangeTimes->{{3.956716780906275*^9, 3.9567167868332996`*^9}},
+ CellLabel->"Out[47]=",ExpressionUUID->"7e517b5b-ae9c-df42-908e-b7c764e02ce3"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"WriteString", "[", 
-  RowBox[{"c", ",", " ", "\"\<x\>\""}], "]"}]], "Code",
- CellChangeTimes->{{3.9566427288645306`*^9, 3.9566427335270214`*^9}, 
-   3.9566428876623898`*^9},
- CellLabel->"In[9]:=",ExpressionUUID->"821be444-aff6-b648-8582-13ac904b7ca1"],
+ RowBox[{"?", "WAEXSubscribeToPricing"}]], "Code",
+ CellChangeTimes->{{3.9567211648040733`*^9, 3.9567211680876427`*^9}},
+ CellLabel->"In[71]:=",ExpressionUUID->"4b985d14-b8bc-bc4f-b88c-d22575a8be72"],
 
 Cell[BoxData[
- TemplateBox[{
-  "LibraryFunction", "notensor", "\"-- Message text not found --\"", 2, 23, 1,
-    22133795069594295923, "Local"},
-  "MessageTemplate",
-  BaseStyle->"MSG"]], "Message",
- CellChangeTimes->{3.956642734153509*^9},
- CellLabel->
-  "During evaluation of \
-In[23]:=",ExpressionUUID->"33627a9d-e012-304d-9fd6-c5e9bbe2c271"]
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = True, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"WAEXSubscribeToPricing[connection, type, marketId] \
+subscribes to the Pricing emitter.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"WAEXSubscribeToPricing", "[", 
+                    
+                    RowBox[{
+                    "KirillBelov`WAEXLink`RealTime`Private`connection_\
+SocketIOConnection", ",", 
+                    RowBox[{"KirillBelov`WAEXLink`RealTime`Private`type", ":", 
+                    
+                    RowBox[{"\"CandleStick\"", "|", "\"Trade\"", "|", 
+                    "\"Ticker\"", "|", "\"OrderBook\""}]}], ",", 
+                    "KirillBelov`WAEXLink`RealTime`Private`marketId_Integer"}]\
+, "]"}], ":=", 
+                    RowBox[{"WAEXSubscribe", "[", 
+                    
+                    RowBox[{
+                    "KirillBelov`WAEXLink`RealTime`Private`connection", ",", 
+                    "\"PricingEmitter\"", ",", 
+                    RowBox[{"Association", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"\"type\"", "\[Rule]", 
+                    "KirillBelov`WAEXLink`RealTime`Private`type"}], ",", 
+                    
+                    RowBox[{"\"marketId\"", "\[Rule]", 
+                    "KirillBelov`WAEXLink`RealTime`Private`marketId"}]}], 
+                    "]"}]}], "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], \
+"\<\"KirillBelov`WAEXLink`RealTime`WAEXSubscribeToPricing\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"],
+               
+               ImageSizeCache->{
+                10., {2.9335936884162948`, 7.066406311583705}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"],
+               
+               ImageSizeCache->{
+                10., {2.9335936884162948`, 7.066406311583705}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"WAEXSubscribeToPricing[connection, type, marketId] \
+subscribes to the Pricing emitter.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               
+               ImageSizeCache->{
+                10., {2.9335936884162948`, 7.066406311583705}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               
+               ImageSizeCache->{
+                10., {2.9335936884162948`, 7.066406311583705}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "WAEXSubscribeToPricing[connection, type, marketId] subscribes to the \
+Pricing emitter.", "Documentation" -> None, "OwnValues" -> None, "UpValues" -> 
+    None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, KirillBelov`WAEXLink`RealTime`WAEXSubscribeToPricing, {
+      KirillBelov`WAEXLink`RealTime`WAEXSubscribeToPricing[
+         Pattern[KirillBelov`WAEXLink`RealTime`Private`connection, 
+          Blank[KirillBelov`SocketIOLink`SocketIOConnection]], 
+         Pattern[KirillBelov`WAEXLink`RealTime`Private`type, 
+          Alternatives["CandleStick", "Trade", "Ticker", "OrderBook"]], 
+         Pattern[KirillBelov`WAEXLink`RealTime`Private`marketId, 
+          Blank[Integer]]] :> 
+       KirillBelov`WAEXLink`RealTime`WAEXSubscribe[
+        KirillBelov`WAEXLink`RealTime`Private`connection, "PricingEmitter", <|
+         "type" -> KirillBelov`WAEXLink`RealTime`Private`type, "marketId" -> 
+          KirillBelov`WAEXLink`RealTime`Private`marketId|>]}], "SubValues" -> 
+    None, "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> None, "Attributes" -> {}, "FullName" -> 
+    "KirillBelov`WAEXLink`RealTime`WAEXSubscribeToPricing"|>, 
+   False]]], "Output",
+ CellChangeTimes->{3.956721168451584*^9},
+ CellLabel->"Out[71]=",ExpressionUUID->"598dac19-a54d-164c-98ca-bc906aa83b2b"]
 }, Open  ]],
 
-Cell[BoxData[{
- RowBox[{"<<", "KirillBelov`CSockets`TCP`"}], "\n", 
- RowBox[{"<<", "KirillBelov`CSockets`Handler`"}]}], "Code",
- CellChangeTimes->{{3.9566429215753326`*^9, 3.956642935976328*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"f82455e7-73e8-524c-b954-c33b7c367cdf"],
-
 Cell[BoxData[
- RowBox[{
-  RowBox[{
-   RowBox[{"h", " ", "=", " ", "Print"}], ";"}], " "}]], "Code",
- CellChangeTimes->{{3.956642964339838*^9, 3.956642972789358*^9}, {
-  3.9566430829293575`*^9, 3.9566430842931995`*^9}},
- CellLabel->"In[3]:=",ExpressionUUID->"9656e9f1-ad28-3746-a224-ca463ffb62cf"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"s", " ", "=", " ", 
-  RowBox[{"CSocketOpen", "[", "8080", "]"}]}]], "Code",
- CellChangeTimes->{{3.9566429858353176`*^9, 3.9566429956877613`*^9}},
- CellLabel->"In[4]:=",ExpressionUUID->"1d92ae45-5206-9140-8ecd-60c95c413126"],
-
-Cell[BoxData[
- RowBox[{"CSocketObject", "[", "1900", "]"}]], "Output",
- CellChangeTimes->{3.9566429968493843`*^9, 3.9566430587516975`*^9, 
-  3.9566430928853607`*^9, 3.9566431571715927`*^9},
- CellLabel->"Out[4]=",ExpressionUUID->"b36b25d3-8a83-a14d-b279-63d6eef25c20"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"SocketListen", "[", 
-  RowBox[{"s", ",", " ", "h"}], "]"}]], "Code",
- CellChangeTimes->{{3.9566429997983875`*^9, 3.956643005607939*^9}},
- CellLabel->"In[5]:=",ExpressionUUID->"1d3f5ec5-50f8-5a44-af15-2131fe509b4e"],
-
-Cell[BoxData[
- RowBox[{"CSocketListener", "[", 
-  RowBox[{"\[LeftAssociation]", 
-   RowBox[{
-    RowBox[{"\<\"Task\"\>", "\[Rule]", 
-     InterpretationBox[
-      RowBox[{"AsynchronousTaskObject", "[", "\<\"\"\>", ",", "1", ",", 
-       RowBox[{" ", "<>"}], "]"}],
-      AsynchronousTaskObject["", 1, 22133801761902248803]]}], ",", 
-    RowBox[{"\<\"Server\"\>", "\[Rule]", "635667456"}], ",", 
-    RowBox[{"\<\"Socket\"\>", "\[Rule]", "1900"}], ",", 
-    RowBox[{"\<\"Handler\"\>", "\[Rule]", "Print"}], ",", 
-    RowBox[{"\<\"ClientsCapacity\"\>", "\[Rule]", "1024"}], ",", 
-    RowBox[{"\<\"BufferSize\"\>", "\[Rule]", "8192"}], ",", 
-    RowBox[{"\<\"SelectTimeout\"\>", "\[Rule]", "1"}]}], 
-   "\[RightAssociation]"}], "]"}]], "Output",
- CellChangeTimes->{3.956643006249527*^9, 3.9566430602946186`*^9, 
-  3.9566430946158657`*^9, 3.956643158355736*^9},
- CellLabel->"Out[5]=",ExpressionUUID->"ed044225-97e3-d747-8de7-9dc44a159510"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"c", " ", "=", " ", 
-  RowBox[{"SocketConnect", "[", "8080", "]"}]}]], "Code",
+ RowBox[{"WAEXSubscribeToPricing", "[", 
+  RowBox[{"connection", ",", " ", "\"\<CandleStick\>\"", ",", " ", "1"}], 
+  "]"}]], "Code",
  CellChangeTimes->{
-  3.9566429824448586`*^9, {3.9566430165525627`*^9, 3.9566430168968773`*^9}},
- CellLabel->"In[6]:=",ExpressionUUID->"e8fd2c28-db81-3f40-8ebd-418d870a541d"],
+  3.9567211608485527`*^9},ExpressionUUID->"59caedc1-a419-9f4f-bbee-\
+a6bfdda570fd"],
 
 Cell[BoxData[
- InterpretationBox[
+ RowBox[{"klines", " ", ":=", " ", 
+  RowBox[{"First", " ", "@", " ", "\n", 
+   RowBox[{
+    RowBox[{"Query", "[", "\n", "\t", 
+     RowBox[{
+      RowBox[{"Select", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#data", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], " ", "==", 
+         " ", "\"\<Pricing_CandleStick_1\>\""}], "&"}], "]"}], ",", " ", "\n",
+       "\t", "\"\<data\>\"", ",", " ", "2", ",", " ", "\"\<payload\>\"", ",", 
+      " ", "\"\<charts\>\"", ",", " ", "All", ",", " ", "\n", "\t", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"1", "/*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"#", "/", "1000"}], "&"}], ")"}], "/*", "FromUnixTime"}], ",",
+         " ", 
+        RowBox[{"2", " ", ";;"}]}], " ", "}"}]}], "\n", "]"}], " ", "@", " ", 
+    "\n", 
+    RowBox[{"connection", "[", "\"\<Data\>\"", "]"}]}]}]}]], "Code",
+ CellChangeTimes->{{3.9567174847283497`*^9, 3.9567174920627003`*^9}},
+ CellLabel->"In[66]:=",ExpressionUUID->"72155d3e-c254-fd4c-833f-5f72baf9e2a1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Dynamic", "[", 
+   RowBox[{
+    RowBox[{"Refresh", "[", 
+     RowBox[{"CandlestickChart", "[", 
+      RowBox[{"klines", ",", " ", 
+       RowBox[{"PlotTheme", "->", "\"\<Detailed\>\""}]}], "]"}], "]"}], ",", 
+    " ", 
+    RowBox[{"UpdateInterval", "->", "3"}]}], "]"}], " "}]], "Code",
+ CellChangeTimes->{3.956721126455265*^9},
+ CellLabel->"In[70]:=",ExpressionUUID->"7c971485-bb9f-0a46-82fc-48b9b29a6227"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Dynamic", "[", 
+   RowBox[{
+    RowBox[{"Refresh", "[", 
+     RowBox[{"CandlestickChart", "[", 
+      RowBox[{"klines", ",", " ", 
+       RowBox[{"PlotTheme", "->", "\"\<Detailed\>\""}]}], "]"}], "]"}], ",", 
+    " ", 
+    RowBox[{"UpdateInterval", "->", "3"}]}], "]"}], " "}]], "Code",
+ CellChangeTimes->{{3.956719814251049*^9, 3.956719827778681*^9}},
+ CellLabel->"In[69]:=",ExpressionUUID->"5bf17bbf-6728-4048-ae3d-53dd2478f50e"],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJzt2z+OI8cVgPG1lTh0ajly4jM4dehQWuwBJFgUnMiAZMNwxGPwBgIkUInm
+AAITRXuCuYVP0GaTnO7qrmqyi+9V8dXj94NsNP8Ma18P92Nvk/zTl//8fPPb
+d+/effe74/99/sV//vrtt1/89/3vjxc+fPPdP77+5qu//+2bf3319Vff/uXL
+T45X/vk379797/i/frsDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADA
+o20A4Lk9OsOanI0DAFmcNdDZOACQxVkDnY0DAFmcNdDrCSUAuMJr+pyNAwBZ
+nDXQ2TgAkMVZA52NAwBZnDXQ2TgAkMVZA52NAwBZnDXQ2TgAkMVZA52NAwBZ
+nDXQ2TgAkMVZA71+3h5oy48fPxz/e/Sf4ol4TZ+zcYCGbH9+d/O/R/8Z/XPW
+QGfjAA0h6RY4a6CzcYCGkHQLnDXQ2ThAQ0i6BSoNPOw22/3rePl1vz2fpp9c
+e7zXaHLLwk8MV57sDtEDjVepjgPgDiTdAnkDz4ENUtyX+HRx2Biujht87Sfm
+rxTjeqfHGTZUxwFwH5JugayBp5xvd7t5ut8uhVFOB/rKT6RfA4KQJ+5A0oFH
+IekWCJN+6IsaHVsPob3e3+76TyRfA8K1pusqjAPgfiTdAo0GLp8uCTp+5Ux6
++ifSZ9Inrwxx9Ek68Cgk3YJaST8FOjhgD4/Y0z/RvwYEp2Mu27eTPjPc9PLy
+wjbbbJfbzkq67p/h/MhG9kPl7SvRu9eqEy8T0+tX/ETyDVROvACGPPAoneP/
+gX7Sw+PopbdEp9ev+InJwfuV909JOvAoJN0C/aSnj6jnR+LR59jnPzE/HI+P
+4/kQI2AJSbegQNJXfNUoOrVy66tG6Qfiq0aAHSTdAmcNdDYO0BCSboGzBjob
+B2gISbfAWQOdjQM0hKRb4KyBzsYBGkLSLXDWQGfjAA3xl/Sffvrp3ysc71Zi
+9fs4a6DqV6gAZKiW9DoL/fLLL5999tmngU9OPo0c7/bDDz/IV5Twmj5n4wAN
+cZb0RjlroLNxgIaQdAucNdDZOEBDSLoFzhrobBygISTdAmcNdDYO0BCSboGz
+BjobB2gISbfAWQOdjQM0hKRb4KyBzsYBGkLSLXDWQK+ftwfsI+mKPm4+HP9b
+f3+v6XM2DtCQB5bWQcOPfv7Du5v/3XwQZw10Ng7QEJIuRNJjzsYBGkLShUh6
+zNk4QENIuhBJjzkbB2gISRci6TFn4wANIelCJD3mbBygISRdiKTHnI0DNISk
+C5H0mLNxgIaQdCGSHrvjK1S539ICkETShSRJf/Jvj6q8GgIIkXQhjtJjJB14
+FJIuRNJjJB14FJIuRNJjJB14FJIuRNJjJB14FJIuRNJjJB14FJIuRNJjJB14
+FJIuRNJjJB14FJIuRNJjJB14FJIuRNJjK79C9cCk82KRpWYleKEXIulCkmcg
+3x4l6U0g6Q15YNJ94Cg9RtKdIekNIelCJD1G0p0h6Q0h6UJ2kn7Ybbb71/Hy
+6357PqczufZ4r9HklqWfSF87PtDucOc4JL0VJL0hJF3ISNLPgQ2i24f4dHHY
+GK6OG3zlJxYep1/v9DjDRv44JL0VJL0hJF3IQNJPOd/udvN0v10KD9/nh/Kj
+9E8sPE4Q8sSLBEl3hqQ3hKQLWUj6oS/qwlF0d6u/3dWfSF8brjVdN2cckt4K
+kt4Qki5kIOlnUdIn504uWb5yJj39E+lrJ68M8YE/SXeGpDeEpAs1lfTTO53B
+AXt4xK6b9JnhppeXl2F7za4L76+4PfxSCj2+s+31lZCvtf4vlJ39Y2o7K+lG
+/symtu/r0pXo3WvViZeJ6fW6J16MZ5YsZG2T9Ia2SbpwW+VQUz/p4XH00lui
+0+vTP7HwOMHm/W+PztT8BzX/eM/CiZeGcOJFyOiJl/SHD+fH3NHnz6t+iHGG
+pJtF0htC0oWsJn3FV42ikzGVv2o0Q9LNIukNIelCZpJuCEl3hqQ3hKQLkfQY
+SXeGpDeEpAuR9BhJd4akN4SkC5H0GEl3hqQ3hKQLkfQYSXeGpDeEpAuR9Nh9
+X6Ei6WY9Q9J//Pjh+F+JR66MpAtJnoGq3x41xNpROgd+Ql6T7jJ9JF3Xfc83
+kt6RdMNIekNIui6S3pF0d0h6Q0i6LpLekXR3SHpDSLoukt6RdHdIekNIui6S
+3pF0d0h6Q0i6LpLekXR3SHpDSLoukt6RdHdIekNIui6S3pF0d0h6Q0i6LpLe
+2fv26JMkvdxfVZJeeqGiv7tCj/wksp5vfHs0RNKFSHouko5CSHpH0sVIei6S
+jkJIekfSxUh6LpKOQkh6R9LFSHouko5CSHpH0sVIei6SjkJIekfSxUh6LpKO
+Qkh6R9LFSHouko5CSHpH0sVIei6SjkL8JZ2vGtVH0nORdOjiq0Yhkp7rgaEo
+h6TravE54ABJ70h6PpIu9AxJx0OQ9I6k53MZCpIOB0h6R9LzuQwFSYcDJL0j
+6flchoKkwwGS3pH0fC5DQdLhAEnvSHo+l6Eg6XCApHckPZ/LUJB0OEDSO5Ke
+z2UoSDoc8Jd0vj1agctQkHS0i2+Phkh6LpehcJl0PBuS3pH0fCRdyN/egxEk
+vSPp+Ui6kL+9ByNIekfS85F0IX97D0aoJP2w22z3r+Pl1/32fJp+cm1w783u
+EF93FtwyPMzshuHO80ch6bWQdCF/ew9GyJN+DmwQ777Ep4vDRnz3SYxP6b5c
+E746zF8pxgc43Tn10kDS6yDpQv72HoyQJf3U5+1uF6Y7DHkU5eONR9MUT8vf
+3+N8ob8+Pg4PQp64A0mvg6QL+dt7MEKY9ENf1GmTw4Pn2YH0Odfzo+so6Zdb
+kwfp4Z0T/wog6XWQdCF/ew9GaJxLj5I+XJgeRx9v6S9EJ0xOx/rjiZfNeNom
+PpM+ecQ4+iS9DpIu5G/vwYh6Sb8EPXkOfMz3bv/2YP3dghM4l+3bSZ8Zbnp5
+eVnaHv6qXrnPfdsrK6G+buntlUl/+J/z7u2Pmw/H/2ruTzuzs93W9pXo3WvN
+iZfxFHnybc1R+tbkW65qJ17K4Sgda7C7oEU/6bMj8/Hgeib5Acf0p2QWzrCr
+vT1aDknHGuwuaNFP+o0PMSaOw8c0Bx9nnB+Ox0f+eh9iLIekYw12F7QUSPod
+XzUaD+LDnwgO7ScPpP5Vo3JIOtZgd0GLtQYKWRuHpGMNdhe0WGugkLVxSDrW
+YHdBi7UGClkbh6RjDXYXtFhroJC1cUg61mB3QYu1BgpZG4ekYw12F7RYa6CQ
+6leoFJB0rMHugpC19GmxNg5JB1CTtQYKWRuHpAOoyVoDhayNQ9IB1GStgULW
+xiHpAGqy1kAha+OQdAA1WWugkLVxSDqAmqw1UMjaOCQdQE3WGihkbRySDqAm
+aw0UsvZ5e5IOoAJr6dNibRySDqAmaw0UsjYOSQdQk7UGClkbh6QDqMlaA4Ws
+jUPSAdRkrYFC1sYh6QBqstZAIWvjkHQANVlroJC1cUg6gJqsNVDI2jgkHUBN
+1hooZG0ckg6gJmsNFLL2FaoHJv3dSaEHJ+mAKdbSp8XaOCQdQE3WGihkbRyS
+DqAmaw0UsjYOSQdQk7UGClkbh6QDqMlaA4WsjUPSAdRkrYFC1sYh6QBqstZA
+IWvjkHQANVlroJC1cUg6gJqsNVDI2jgkHUBN1hooZO0rVCQdQAXW0qfF2jgk
+HUBN1hooZG0ckg6gJmsNFLI2DkkHUJNKAw+7zXb/Ol5+3W/P53Qm1wb33uwO
+8XVn4S0LjzPcef4oJD1A0oEnJG/gObBBdPsQny4OG/HdJzE+lftyTfDqsPA4
+wytC6qWBpA9IOvCEZA089Xm724XJDQM8P3zvbzyKj8UnP36+sPA4Qcj7e8ya
+TtIHJB14QsKkH/qiLhxFd9GB9DnX86PrKOnxQfi4Hd458a8Akj4g6cAT0mhg
+lPThwvQ4+nhLfyE6YXI61h9PvFzO4qQfZ/KI0T8CSPqIpANPqF7SL0FPngMf
+3gfd7PZvD3Zv0meGm15eXupvr0x6iT9DmHT1x1+Z9Ifsc7bZfqrtK9G715oT
+L8Mp8vTbmqPku5+ceMnHUTrwhPSTPjsyH9/rnEl+wDF4rOTjRB+J4e3RJSQd
+eEL6Sb/xIcbEUfr0tMpwGx9iFCHpwBMqkPQ7vmo0HsSveRy+arQGSQeekLUG
+Clkbh6QDqMlaA4WsjUPSAdRkrYFC1sYh6QBqstZAIWvjkHQANVlroJC1cUg6
+gJqsNVBI9StUCkg6gAqspU+LtXFIOoCarDVQyNo4JB1ATdYaKGRtHJIOoCZr
+DRSyNg5JB1CTtQYKWRuHpAOoyVoDhayNQ9IB1GStgULWxiHpAGqy1kAha+OQ
+dAA1WWugkLVxSDqAmqw1UMj+V6jKNXyGpAPPw3767mN/HJIOoBz7DcxifxyS
+DqAc+w3MYn8ckg6gHPsNzGJ/HJIOoBz7DcxifxySDqAc+w3MYn8ckg6gHPsN
+zGJ/HJIOoBz7DcxifxySDqAc+w3MYv/z9iWS/v33379///6PU+ekz6483u3X
+X3+Vr0jSAVPsp+8+9scpdJS+3+//NXVO+uzK491KrA7ACPsNzGJ/HB8nXgDY
+ZL+BWeyPQ9IBlGO/gVnsj0PSAZRjv4FZ7I9D0gGUY7+BWeyPQ9IBlGO/gVns
+j0PSAZRjv4FZ7I9D0gGUY7+BWeyPQ9IBlGO/gVnsf4WKpANQZz9997E/TrWk
+A3hC9huYxf44JB1AOfYbmMX+OCQdQDn2G5jF/jgkHUA5Kg087Dbb/et4+XW/
+PZ+mn1wb3HuzO0yvG34i/JHxyt74I/0DzK5SHacokg6gHHkDz4Gdlfh0cdiI
+7z6N8Rj5U8Xfbpy/UszunHppIOkAnpmsgac+b3e7MN1hyKMoH288mqU4/Ilg
+u9+Mj8ODkCfuQNIBPDNh0g99UadH4+HB8+xAug/6/jU+up4epS++HszvkPhX
+AEkH8Mw0GhglfbgwPY4+3tJfSJ0wGc6bjzekz6RPHjGOPkkH8MzqJf0S9ETS
+wxPo4439VnDAftm+nfSZ4aaXlxcL20PSjfx52Gab7aa3r0TvXmtOvJzPuUR3
+iH88+Z5q+i1XTrwAwIR+0mdH5uPB9czkUH5N0oeD9zDpvD0KAAP9pN/4EOOK
+Ey/Jw/H4yJ8PMQLAVIGk3/NVo+HbQwtfNZo8EF81AoAk+w3MYn8ckg6gHPsN
+zGJ/HJIOoBz7DcxifxySDqAc+w3MYn8ckg6gHPsNzKL6efsiSDoAdfbTdx/7
+45B0AOXYb2AW++OQdADl2G9gFvvjkHQA5dhvYBb745B0AOXYb2AW++OQdADl
+2G9gFvvjkHQA5dhvYBb745B0AOXYb2AW++OQdADl2G9gFvvjkHQA5dhvYBb7
+X6Ei6QDU2U/ffZyNAwBZnDXQ2TgAkMVZA52NAwBZnDXQ2TgAkMVZA52NAwBZ
+nDXQ2TgAkMVZA52NAwBZnDXQ2TgAkMVZA52NAwBZnDXQ61eoAOAKr+lzNg4A
+ZHHWQGfjAEAWZw10Ng4AZHHWQGfjAEAWZw10Ng4AZHHWQGfjAEAWZw10Ng4A
+ZHHWQGfjAEAWZw30+nl7ALjCa/qcjQMAWZw10Nk4AJDFWQOdjQMAWZw1cAMA
+z+3RGdZUcxyXa7kcquZaDMVaD1yo8loVeN11PPdaWYuhWOuBC1VeqwKvu47n
+XitrMRRrPXChymtV4HXX8dxrZS2GYq0HLlR5rQqyxnndbzfb/etp+7Cbv8Ww
+OyiuFS41Xe7mMrlrzZbqL56F68sWGh9zMsFw9aqV1q21sNTZcS+uXGrNWuml
+gieG3g6cPNuGhw3+AHrPivRSb+bPS8FCK6ZaNZhgB+Y+2e/dgfmxkOzA3Fis
+W6sZGeOcf/2pX/3K5/l6s6WCx+9/WyWXCh6/v2VdKW5KpnSYSnX3LVf7/ERX
+3HmJpcJRTntWZwcmfxX9PJcrFZ8VV3/ry38FFJfKeN0VLhXstmBnFllqenvJ
+31V+LJ426f0zbZv6bagHPVoqfL7pPfdSS00f/XhJZalbTz3Fv8XLmTg+u3c7
+zd/UzZc8vSfGzf2j96y4ttTiXwHNpRSPJG4sVeK149ajlj98yY/Fkyb9VLfk
+70O5samlZi+8eqtFS0VJV3n6KT317l7qePWhf3TdF9+be0dtuZuVq3KMufxX
+QHWpagfp6n9xl5cqs2Z6qfxYPGXSj7up30uJ53OJcy7JpS7nxzTXSix1+pd1
+cOJF5Qm4eM558pql9u+B5ROWqr+sm6d89c6GXDu9rfy8WFxq+a+A7lK5Z9Lv
+X+r0BDxkvp1z31IXyrFYXirvSfGESb88m1O/Eu2ip5eaneDWWXBpquGJst3v
+dY4pwraN20WSnl7qjfa/em8spXk4+7Z7Fk7Qa718LC115a+A8lLXd6vmUueT
+ccHhi8Yz8NrvSjkWt3eg6nvZzVgxznhGOd5Fyv9KTC8VnQ1R6uziVBf6bxKE
+D1rwDYL5UotXFFpKs+eR9L4qMtqw1Ioni9ZSE0WnKvLXKr3UcKnUk0I0lbOk
+3xZ/AGncSfrvVaaWKvHcuzaV7kozwwF5eGRe5skeHfuXTfr142g16X1VqkjD
+q++tJ4vSUlNF3yqdPniRp+DkQcsct8yXqvBC5ck8CUWecYmlZv+WUl5zvpT2
+xyWXPthX4EOMNz5DqJn0haXUP2Taxf+eid/8UntWLCw1Uv0UT2KpIp8CXZgq
+WEttrOUdqB6LK0+LcrHwZv6LL/gaOFsqeNOoyHFz6ly64krBH3/+kqj63tTy
+UsNtZZeKj2fVPsiTeMBrsyovFS6p+nbEY6ca11L9GFlqqRKxuLkD6TkAAAAA
+AAAAAAAAAABw8X/hAnVV
+    "], {{0, 220.5}, {372.75, 0}}, {0, 255},
+    ColorFunction->RGBColor,
+    ImageResolution->{96., 96.},
+    RasterInterpolation->"High"],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{372.75, 220.5},
+  PlotRange->{{0, 372.75}, {0, 220.5}}]], "Input",ExpressionUUID->"efb8e5c8-\
+3719-ff41-afec-299f264295ec"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Select", "[", "]"}], " ", "@", " ", 
+  RowBox[{"connection", "[", "\"\<Data\>\"", "]"}]}]], "Code",
+ CellChangeTimes->{{3.9567211837450867`*^9, 
+  3.956721199371565*^9}},ExpressionUUID->"562ca968-a5b8-c54a-bf11-\
+b06782df4646"],
+
+Cell[BoxData[
+ RowBox[{"{", 
   RowBox[{
-   TagBox["SocketObject",
-    "SummaryHead"], "[", 
-   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
-    TemplateBox[{
-      PaneSelectorBox[{False -> GridBox[{{
-            PaneBox[
-             ButtonBox[
-              DynamicBox[
-               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
-              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
-              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
-              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
-             Dynamic[{
-               Automatic, 
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                 Magnification])}]], 
-            GraphicsBox[
-             GeometricTransformationBox[{{{
-                 FilledCurveBox[{{
-                    
-                    Line[{{36.558, 8.569}, {40.947, 8.569}, {40.947, 
-                    43.684000000000005`}, {36.558, 43.684000000000005`}, {
-                    36.558, 8.569}}]}}]}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{59.053, 8.569}, {63.443, 8.569}, {63.443, 
-                    43.684000000000005`}, {59.053, 43.684000000000005`}, {
-                    59.053, 8.569}}]}}]}, {{
-                  FilledCurveBox[{{
-                    
-                    Line[{{55.487, 8.569}, {56.95, 8.569}, {56.95, 
-                    21.188000000000002`}, {55.487, 21.188000000000002`}, {
-                    55.487, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{52.562, 8.569}, {54.025, 8.569}, {54.025, 
-                    21.188000000000002`}, {52.562, 21.188000000000002`}, {
-                    52.562, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{49.636, 8.569}, {51.099000000000004`, 8.569}, {
-                    51.099000000000004`, 21.188000000000002`}, {49.636, 
-                    21.188000000000002`}, {49.636, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{46.709, 8.569}, {48.172000000000004`, 8.569}, {
-                    48.172000000000004`, 21.188000000000002`}, {46.709, 
-                    21.188000000000002`}, {46.709, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{43.783, 8.569}, {45.246, 8.569}, {45.246, 
-                    21.188000000000002`}, {43.783, 21.188000000000002`}, {
-                    43.783, 8.569}}]}}]}}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{40.947, 4.911}, {59.787000000000006`, 4.911}, {
-                    59.787000000000006`, 6.922}, {40.947, 6.922}, {40.947, 
-                    4.911}}]}}]}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{44.057, 31.675}, {56.678000000000004`, 31.675}, {
-                    56.678000000000004`, 39.051}, {44.057, 39.051}, {44.057, 
-                    31.675}}]}}]}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{44.057, 43.685}, {56.678000000000004`, 43.685}, {
-                    56.678000000000004`, 65.089}, {44.057, 65.089}, {44.057, 
-                    43.685}}]}}]}}}, {{{1, 0}, {0, -1}}, Center}], {
-             ImageSize -> {Automatic, 
-                Dynamic[
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                  Magnification])]}, PlotRange -> {{20, 80}, {0, 70}}, 
-              BaseStyle -> {CacheGraphics -> False}, ImageSize -> 30}], 
-            GridBox[{{
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"AggregateOHLCV\"\>", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "1.4151101700000002`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "93694"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "93600"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "93675.1`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "93647"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "93600"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "29.46256803`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "105538"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "105497.1`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "105538"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "105517.55`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "105505.6`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "665.2795196000001`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2542.56`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2534.32`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2542.31`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2538.44`"}],
+             ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2535.72`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "19.069410750000003`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2254.465`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2250.1949999999997`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2254.385`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2252.33`"}],
+             ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2251.165`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "2151.6643885899994`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "0.000912`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "0.00090769`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "0.00090769`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "0.0009098450000000001`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "0.00090997`"}]}], 
+           "\[RightAssociation]"}]}], "}"}], ",", "\<\"PRicoHl\"\>"}], 
+       "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"AggregateOHLCV\"\>", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "1.97546534`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "93638.25`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "93372.4`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "93380.6`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "93505.325`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "93598.25`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "37.65947753`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "105549.4`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "105199.8`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "105199.8`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "105374.6`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "105521.4`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "243.8958`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2541.38`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2535.65`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2536.24`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "2538.5150000000003`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2540.635`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "8.52926584`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2255.5`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2247.2`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2247.2`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2251.35`"}],
+             ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2251.7`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "26.83938344`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "0.00089925`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "0.0008880050000000001`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "0.0008898549999999999`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "0.0008936275000000001`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "0.0008991`"}]}], 
+           "\[RightAssociation]"}]}], "}"}], ",", "\<\"PRif4mq\"\>"}], 
+       "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_Ticker_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"average\"\>", "\[Rule]", "104995"}], ",", 
+             RowBox[{"\<\"high\"\>", "\[Rule]", "106770"}], ",", 
+             RowBox[{"\<\"last\"\>", "\[Rule]", "104950"}], ",", 
+             RowBox[{"\<\"low\"\>", "\[Rule]", "102140"}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747727280000"}], ",", 
+             RowBox[{"\<\"ask\"\>", "\[Rule]", "105000"}], ",", 
+             RowBox[{"\<\"bid\"\>", "\[Rule]", "104990"}], ",", 
+             RowBox[{"\<\"baseVolume\"\>", "\[Rule]", "720.01619405`"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747726560000"}], ",", 
+             RowBox[{"\<\"close\"\>", "\[Rule]", "104950"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"Ticker\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"e9b74fa6\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRigYZd\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"AggregateOHLCV\"\>", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "2.28012053`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "93283.05`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "93174.15`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "93185.65`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "93228.6`"}],
+             ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "93277.85`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "40.23193482`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "105127.9`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "105030.1`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "105030.1`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "105079"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "105127.2`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "160.2743`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2536.735`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2524.215`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2524.215`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "2530.4750000000004`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2535.175`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "37.74165472`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2246.4`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2239"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2241.4`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2242.7`"}], 
+            ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2245"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "211.689683`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "0.0008976`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "0.00089138`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "0.0008965`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "0.00089449`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "0.0008932`"}]}], 
+           "\[RightAssociation]"}]}], "}"}], ",", "\<\"PRihNFn\"\>"}], 
+       "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_CandleStick_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"charts\"\>", "\[Rule]", 
+              RowBox[{"{", 
                RowBox[{
-                 TagBox["\"Foreign IPAddress: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"127.0.0.1\"", "SummaryItem"]}], 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727220000", ",", "105020", ",", "105020", ",", "104950",
+                   ",", "105000", ",", "1.69793013`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727280000", ",", "104990", ",", "105010", ",", "104830",
+                   ",", "104880", ",", "0.76738753`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727340000", ",", "104870", ",", "104920", ",", "104860",
+                   ",", "104870", ",", "0.29128988`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727400000", ",", "104870", ",", "104980", ",", "104870",
+                   ",", "104970", ",", "0.26746529`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727460000", ",", "104970", ",", "105010", ",", "104970",
+                   ",", "105010", ",", "0.43502045`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727520000", ",", "105010", ",", "105010", ",", "104950",
+                   ",", "104950", ",", "0.26133972`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727580000", ",", "104950", ",", "104990", ",", "104940",
+                   ",", "104990", ",", "0.50718224`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727640000", ",", "104960", ",", "104980", ",", "104960",
+                   ",", "104980", ",", "0.25623937`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727700000", ",", "104980", ",", "105060", ",", "104970",
+                   ",", "105060", ",", "0.68453452`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727760000", ",", "105030", ",", "105050", ",", "105010",
+                   ",", "105040", ",", "0.481793`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727820000", ",", "105040", ",", "105040", ",", "105040",
+                   ",", "105040", ",", "0.018000000000000002`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727880000", ",", "105030", ",", "105030", ",", "104980",
+                   ",", "104990", ",", "1.0380340000000001`"}], "}"}]}], 
+               "}"}]}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747727940000"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747727220000"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CandleStick\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"5c4da2b3\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRijI2t\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_Ticker_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"average\"\>", "\[Rule]", "104965"}], ",", 
+             RowBox[{"\<\"high\"\>", "\[Rule]", "106770"}], ",", 
+             RowBox[{"\<\"last\"\>", "\[Rule]", "104930"}], ",", 
+             RowBox[{"\<\"low\"\>", "\[Rule]", "102140"}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747728000000"}], ",", 
+             RowBox[{"\<\"ask\"\>", "\[Rule]", "104970"}], ",", 
+             RowBox[{"\<\"bid\"\>", "\[Rule]", "104960"}], ",", 
+             RowBox[{"\<\"baseVolume\"\>", "\[Rule]", "725.49244662`"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747727280000"}], ",", 
+             RowBox[{"\<\"close\"\>", "\[Rule]", "104930"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"Ticker\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"482ccaf2\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRijILb\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"AggregateOHLCV\"\>", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "0.9184186700000001`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "93283.4`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "93202.4`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "93209.45`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "93242.9`"}],
+             ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "93208.85`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "20.855564270000002`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "105132"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "105043.5`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "105060.8`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "105087.75`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "105048.6`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "290.10280689999996`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2533.68`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2528.46`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2531.61`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "2531.0699999999997`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2529.18`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "1.1499659100000001`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2246.8`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2244"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2246.8`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2245.4`"}], 
+            ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2246.6`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "38.21164538`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "0.0008963350000000001`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "0.000894`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "0.00089455`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "0.0008951675`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "0.0008946799999999999`"}]}], 
+           "\[RightAssociation]"}]}], "}"}], ",", "\<\"PRijfkq\"\>"}], 
+       "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"AggregateOHLCV\"\>", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "0.47065115`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "93358.15`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "93266.95`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "93343.3`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "93312.54999999999`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "93288.45`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "31.16636914`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "105229.5`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "105083.6`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "105162.9`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "105156.55`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "105145.1`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "1445.1905`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2535.5950000000003`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2532.41`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2533.145`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "2534.0025`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2534.445`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "16.92001661`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2251.6`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2248.6`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2251.4`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2250.1`"}], 
+            ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2248.9`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "52.43955799999999`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "0.000895`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "0.000894`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "0.0008945`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "0.0008945`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "0.0008949`"}]}], 
+           "\[RightAssociation]"}]}], "}"}], ",", "\<\"PRilyDo\"\>"}], 
+       "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_CandleStick_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"charts\"\>", "\[Rule]", 
+              RowBox[{"{", 
                RowBox[{
-                 TagBox["\"Foreign Port: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["8080", "SummaryItem"]}], 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747727940000", ",", "104980", ",", "104990", ",", "104960",
+                   ",", "104970", ",", "0.46796657`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728000000", ",", "104960", ",", "104970", ",", "104930",
+                   ",", "104970", ",", "0.24392148000000002`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728060000", ",", "104970", ",", "105050", ",", "104970",
+                   ",", "105040", ",", "0.45222619`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728120000", ",", "105060", ",", "105070", ",", "105060",
+                   ",", "105070", ",", "0.041917909999999996`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728180000", ",", "105070", ",", "105140", ",", "105070",
+                   ",", "105130", ",", "0.61879622`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728240000", ",", "105100", ",", "105100", ",", "105010",
+                   ",", "105020", ",", "0.44725837`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728300000", ",", "105050", ",", "105060", ",", "105050",
+                   ",", "105060", ",", "0.27319897`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728360000", ",", "105070", ",", "105100", ",", "105070",
+                   ",", "105090", ",", "0.43448961`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728420000", ",", "105080", ",", "105090", ",", "105070",
+                   ",", "105070", ",", "0.22749598`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728480000", ",", "105070", ",", "105070", ",", "105040",
+                   ",", "105040", ",", "0.41086944`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728540000", ",", "105040", ",", "105040", ",", "105010",
+                   ",", "105010", ",", "0.43325123`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728600000", ",", "105010", ",", "105010", ",", "105000",
+                   ",", "105000", ",", "0.44099634`"}], "}"}]}], "}"}]}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747728660000"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747727940000"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CandleStick\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"e38442b1\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRim1qT\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_Ticker_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"average\"\>", "\[Rule]", "105015"}], ",", 
+             RowBox[{"\<\"high\"\>", "\[Rule]", "106770"}], ",", 
+             RowBox[{"\<\"last\"\>", "\[Rule]", "105020"}], ",", 
+             RowBox[{"\<\"low\"\>", "\[Rule]", "102140"}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747728720000"}], ",", 
+             RowBox[{"\<\"ask\"\>", "\[Rule]", "105020"}], ",", 
+             RowBox[{"\<\"bid\"\>", "\[Rule]", "105010"}], ",", 
+             RowBox[{"\<\"baseVolume\"\>", "\[Rule]", "730.35132172`"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747728000000"}], ",", 
+             RowBox[{"\<\"close\"\>", "\[Rule]", "105020"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"Ticker\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"bd85a532\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRim281\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"AggregateOHLCV\"\>", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "1.62431964`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "93316.25`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "93158"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "93297.9`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "93237.125`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "93162.5`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "20.51266245`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "105065.9`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "104918.2`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "105038.8`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "104992.04999999999`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "104975.1`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "343.5248`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2531.455`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2526.94`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2529.085`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "2529.1975`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2531.19`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "4.947797830000001`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2243.7`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2241.3`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2243.7`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2242.5`"}], 
+            ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2241.5`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "13.94499811`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "0.00089395`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "0.0008871700000000001`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "0.00088917`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "0.0008905600000000001`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "0.00089395`"}]}], 
+           "\[RightAssociation]"}]}], "}"}], ",", "\<\"PRioEiq\"\>"}], 
+       "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_CandleStick_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"charts\"\>", "\[Rule]", 
+              RowBox[{"{", 
                RowBox[{
-                 TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox[
-                  TemplateBox[{"\"TCP\"", 
-                    TagBox[
-                    "\" (Client)\"", Deploy, DefaultBaseStyle -> "Deploy"]}, 
-                   "RowDefault"], "SummaryItem"]}]}, {
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728660000", ",", "105010", ",", "105020", ",", "105000",
+                   ",", "105020", ",", "3.16240921`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728720000", ",", "104980", ",", "104980", ",", "104920",
+                   ",", "104920", ",", "0.25643728`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728780000", ",", "104920", ",", "104920", ",", "104860",
+                   ",", "104860", ",", "0.44458271`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728840000", ",", "104850", ",", "104860", ",", "104840",
+                   ",", "104860", ",", "0.03035492`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728900000", ",", "104860", ",", "104900", ",", "104860",
+                   ",", "104900", ",", "0.6415267100000001`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747728960000", ",", "104910", ",", "104920", ",", "104880",
+                   ",", "104880", ",", "0.42563255`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729020000", ",", "104900", ",", "104900", ",", "104880",
+                   ",", "104880", ",", "0.21437294`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729080000", ",", "104890", ",", "104980", ",", "104890",
+                   ",", "104940", ",", "0.70325966`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729140000", ",", "104950", ",", "104970", ",", "104950",
+                   ",", "104960", ",", "0.10775984`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729200000", ",", "104970", ",", "104980", ",", "104940",
+                   ",", "104940", ",", "0.4914006`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729320000", ",", "104960", ",", "104990", ",", "104950",
+                   ",", "104980", ",", "0.48371253999999997`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729380000", ",", "104990", ",", "104990", ",", "104920",
+                   ",", "104930", ",", "0.22610259000000002`"}], "}"}]}], 
+               "}"}]}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747729380000"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747728660000"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CandleStick\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"b73466b9\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRiongA\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_Ticker_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"average\"\>", "\[Rule]", "104925"}], ",", 
+             RowBox[{"\<\"high\"\>", "\[Rule]", "106770"}], ",", 
+             RowBox[{"\<\"last\"\>", "\[Rule]", "104930"}], ",", 
+             RowBox[{"\<\"low\"\>", "\[Rule]", "102140"}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747729440000"}], ",", 
+             RowBox[{"\<\"ask\"\>", "\[Rule]", "104930"}], ",", 
+             RowBox[{"\<\"bid\"\>", "\[Rule]", "104920"}], ",", 
+             RowBox[{"\<\"baseVolume\"\>", "\[Rule]", "733.74144037`"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747728720000"}], ",", 
+             RowBox[{"\<\"close\"\>", "\[Rule]", "104930"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"Ticker\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"dd4f7211\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRionvg\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"AggregateOHLCV\"\>", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "1.6651233`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "93313.8`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "93189"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "93261.3`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "93251.4`"}],
+             ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "93289"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "37.533069430000005`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "105054.8`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "104941"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "104950.1`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "104997.9`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "105050.8`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "394.5180096`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2530.83`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2523.02`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2523.54`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "2526.925`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2530.61`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "8.50822117`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2246.8`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2243"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2243"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2244.9`"}], 
+            ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2246.8`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "303.52628239`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "0.0008919`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "0.0008866`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "0.0008866`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "0.0008892500000000001`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "0.0008917`"}]}], 
+           "\[RightAssociation]"}]}], "}"}], ",", "\<\"PRiqXBu\"\>"}], 
+       "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_CandleStick_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"charts\"\>", "\[Rule]", 
+              RowBox[{"{", 
                RowBox[{
-                 TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox[
-                 "\"de3eebb1-493c-4056-8ba2-3675eb9694b7\"", "SummaryItem"]}],
-                "\[SpanFromLeft]", "\[SpanFromLeft]"}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, 
-             GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}], True -> GridBox[{{
-            PaneBox[
-             ButtonBox[
-              DynamicBox[
-               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
-              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
-              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
-              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
-             Dynamic[{
-               Automatic, 
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                 Magnification])}]], 
-            GraphicsBox[
-             GeometricTransformationBox[{{{
-                 FilledCurveBox[{{
-                    
-                    Line[{{36.558, 8.569}, {40.947, 8.569}, {40.947, 
-                    43.684000000000005`}, {36.558, 43.684000000000005`}, {
-                    36.558, 8.569}}]}}]}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{59.053, 8.569}, {63.443, 8.569}, {63.443, 
-                    43.684000000000005`}, {59.053, 43.684000000000005`}, {
-                    59.053, 8.569}}]}}]}, {{
-                  FilledCurveBox[{{
-                    
-                    Line[{{55.487, 8.569}, {56.95, 8.569}, {56.95, 
-                    21.188000000000002`}, {55.487, 21.188000000000002`}, {
-                    55.487, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{52.562, 8.569}, {54.025, 8.569}, {54.025, 
-                    21.188000000000002`}, {52.562, 21.188000000000002`}, {
-                    52.562, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{49.636, 8.569}, {51.099000000000004`, 8.569}, {
-                    51.099000000000004`, 21.188000000000002`}, {49.636, 
-                    21.188000000000002`}, {49.636, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{46.709, 8.569}, {48.172000000000004`, 8.569}, {
-                    48.172000000000004`, 21.188000000000002`}, {46.709, 
-                    21.188000000000002`}, {46.709, 8.569}}]}}]}, {
-                  FilledCurveBox[{{
-                    
-                    Line[{{43.783, 8.569}, {45.246, 8.569}, {45.246, 
-                    21.188000000000002`}, {43.783, 21.188000000000002`}, {
-                    43.783, 8.569}}]}}]}}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{40.947, 4.911}, {59.787000000000006`, 4.911}, {
-                    59.787000000000006`, 6.922}, {40.947, 6.922}, {40.947, 
-                    4.911}}]}}]}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{44.057, 31.675}, {56.678000000000004`, 31.675}, {
-                    56.678000000000004`, 39.051}, {44.057, 39.051}, {44.057, 
-                    31.675}}]}}]}, {
-                 FilledCurveBox[{{
-                    
-                    Line[{{44.057, 43.685}, {56.678000000000004`, 43.685}, {
-                    56.678000000000004`, 65.089}, {44.057, 65.089}, {44.057, 
-                    43.685}}]}}]}}}, {{{1, 0}, {0, -1}}, Center}], {
-             ImageSize -> {Automatic, 
-                Dynamic[
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                  Magnification])]}, PlotRange -> {{20, 80}, {0, 70}}, 
-              BaseStyle -> {CacheGraphics -> False}, ImageSize -> 30}], 
-            GridBox[{{
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729380000", ",", "104990", ",", "104990", ",", "104920",
+                   ",", "104930", ",", "0.22610259000000002`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729440000", ",", "104930", ",", "104950", ",", "104900",
+                   ",", "104950", ",", "0.66723339`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729500000", ",", "104960", ",", "104960", ",", "104940",
+                   ",", "104950", ",", "0.37275094999999997`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729560000", ",", "104940", ",", "104940", ",", "104910",
+                   ",", "104910", ",", "0.47489380999999997`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729620000", ",", "104910", ",", "104910", ",", "104910",
+                   ",", "104910", ",", "0.00248`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729680000", ",", "104900", ",", "104900", ",", "104880",
+                   ",", "104880", ",", "0.24700153`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729740000", ",", "104860", ",", "104860", ",", "104840",
+                   ",", "104840", ",", "0.7973832399999999`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729800000", ",", "104840", ",", "104840", ",", "104820",
+                   ",", "104840", ",", "0.24553047`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729860000", ",", "104850", ",", "104880", ",", "104850",
+                   ",", "104880", ",", "0.28802051`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729920000", ",", "104890", ",", "104940", ",", "104890",
+                   ",", "104940", ",", "0.24425469`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747729980000", ",", "104950", ",", "104960", ",", "104950",
+                   ",", "104950", ",", "0.24062331`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730040000", ",", "104950", ",", "104950", ",", "104950",
+                   ",", "104950", ",", "0.6367604099999999`"}], "}"}]}], 
+               "}"}]}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747730100000"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747729380000"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CandleStick\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"8575f47e\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRirXPR\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_Ticker_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"average\"\>", "\[Rule]", "104925"}], ",", 
+             RowBox[{"\<\"high\"\>", "\[Rule]", "106770"}], ",", 
+             RowBox[{"\<\"last\"\>", "\[Rule]", "104930"}], ",", 
+             RowBox[{"\<\"low\"\>", "\[Rule]", "102140"}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747730160000"}], ",", 
+             RowBox[{"\<\"ask\"\>", "\[Rule]", "104930"}], ",", 
+             RowBox[{"\<\"bid\"\>", "\[Rule]", "104920"}], ",", 
+             RowBox[{"\<\"baseVolume\"\>", "\[Rule]", "737.46330059`"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747729440000"}], ",", 
+             RowBox[{"\<\"close\"\>", "\[Rule]", "104930"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"Ticker\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"72cec547\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRirXhm\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"AggregateOHLCV\"\>", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "1.32259199`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "93301.95`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "93218.55`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "93256.3`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "93260.25`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "93233.7`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "47.77491223999999`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "105041.7`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "104923.2`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "104923.2`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "104982.45`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "105016.2`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "235.168`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2529.1549999999997`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2525.71`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2525.71`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "2527.4325`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2528.175`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "3.1393747999999997`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2246.4`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2243.9`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2246.4`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2245.15`"}],
+             ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2244.6`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "0.7083`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "0.0008897`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "0.00088855`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "0.0008887`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "0.0008891249999999999`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "0.0008887`"}]}], 
+           "\[RightAssociation]"}]}], "}"}], ",", "\<\"PRispgv\"\>"}], 
+       "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_CandleStick_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"charts\"\>", "\[Rule]", 
+              RowBox[{"{", 
                RowBox[{
-                 TagBox["\"Foreign IPAddress: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"127.0.0.1\"", "SummaryItem"]}], 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730100000", ",", "104940", ",", "104940", ",", "104920",
+                   ",", "104920", ",", "0.20224315999999998`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730160000", ",", "104930", ",", "104950", ",", "104910",
+                   ",", "104950", ",", "0.83094498`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730220000", ",", "104960", ",", "104960", ",", "104930",
+                   ",", "104930", ",", "0.25740239`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730280000", ",", "104930", ",", "104930", ",", "104920",
+                   ",", "104920", ",", "0.45183526`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730340000", ",", "104910", ",", "104910", ",", "104860",
+                   ",", "104880", ",", "0.17135022`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730400000", ",", "104870", ",", "104890", ",", "104870",
+                   ",", "104890", ",", "0.48771818`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730460000", ",", "104910", ",", "104930", ",", "104910",
+                   ",", "104930", ",", "0.71801511`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730520000", ",", "104930", ",", "105070", ",", "104930",
+                   ",", "105070", ",", "0.43811116`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730580000", ",", "105070", ",", "105090", ",", "105070",
+                   ",", "105080", ",", "0.37853108`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730700000", ",", "105090", ",", "105100", ",", "105090",
+                   ",", "105100", ",", "0.46274792`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730760000", ",", "105110", ",", "105170", ",", "105090",
+                   ",", "105130", ",", "0.9677784`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730820000", ",", "105130", ",", "105140", ",", "105110",
+                   ",", "105140", ",", "0.34266838`"}], "}"}]}], "}"}]}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747730820000"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747730100000"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CandleStick\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"27587e1d\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRiuHAd\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_Ticker_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"average\"\>", "\[Rule]", "105145"}], ",", 
+             RowBox[{"\<\"high\"\>", "\[Rule]", "106770"}], ",", 
+             RowBox[{"\<\"last\"\>", "\[Rule]", "105140"}], ",", 
+             RowBox[{"\<\"low\"\>", "\[Rule]", "102140"}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747730880000"}], ",", 
+             RowBox[{"\<\"ask\"\>", "\[Rule]", "105150"}], ",", 
+             RowBox[{"\<\"bid\"\>", "\[Rule]", "105140"}], ",", 
+             RowBox[{"\<\"baseVolume\"\>", "\[Rule]", "739.50377198`"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747730160000"}], ",", 
+             RowBox[{"\<\"close\"\>", "\[Rule]", "105140"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"Ticker\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"240f65f0\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRiuHUS\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"AggregateOHLCV\"\>", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "1.83202379`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "93533.55`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "93398.1`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "93518.55`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "93465.82500000001`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "93402.9`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "20.68663571`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "105245.3`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "105154.3`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "105229.8`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "105199.8`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "105154.5`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "232.9361`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2533.705`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2529.795`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2532.515`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2531.75`"}],
+             ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2530.13`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "14.35505198`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2257.1`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2249"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2254.8`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2253.05`"}],
+             ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2249"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "101.04299999999999`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "0.000894`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "0.0008929`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "0.0008929`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "0.0008934500000000001`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "0.000894`"}]}], 
+           "\[RightAssociation]"}]}], "}"}], ",", "\<\"PRiv69-\"\>"}], 
+       "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_CandleStick_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"charts\"\>", "\[Rule]", 
+              RowBox[{"{", 
                RowBox[{
-                 TagBox["\"Foreign Port: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["8080", "SummaryItem"]}], 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730820000", ",", "105130", ",", "105140", ",", "105110",
+                   ",", "105140", ",", "0.34266838`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730880000", ",", "105150", ",", "105160", ",", "105150",
+                   ",", "105160", ",", "0.44856734`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747730940000", ",", "105150", ",", "105150", ",", "105150",
+                   ",", "105150", ",", "0.21937841`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731000000", ",", "105150", ",", "105150", ",", "105140",
+                   ",", "105140", ",", "0.19217817`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731120000", ",", "105120", ",", "105120", ",", "105040",
+                   ",", "105070", ",", "0.6428688300000001`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731180000", ",", "105070", ",", "105070", ",", "105060",
+                   ",", "105070", ",", "0.62768581`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731240000", ",", "105070", ",", "105070", ",", "105060",
+                   ",", "105060", ",", "0.17534731`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731300000", ",", "105080", ",", "105080", ",", "105080",
+                   ",", "105080", ",", "0.64315726`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731360000", ",", "105080", ",", "105080", ",", "105080",
+                   ",", "105080", ",", "0.25031094`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731420000", ",", "105090", ",", "105120", ",", "105090",
+                   ",", "105120", ",", "0.46864708`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731480000", ",", "105130", ",", "105130", ",", "105130",
+                   ",", "105130", ",", "0.0020478000000000002`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731540000", ",", "105110", ",", "105140", ",", "105090",
+                   ",", "105140", ",", "0.62889933`"}], "}"}]}], "}"}]}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747731540000"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747730820000"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CandleStick\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"71c521e3\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRix0yn\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_Ticker_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"average\"\>", "\[Rule]", "105145"}], ",", 
+             RowBox[{"\<\"high\"\>", "\[Rule]", "106770"}], ",", 
+             RowBox[{"\<\"last\"\>", "\[Rule]", "105140"}], ",", 
+             RowBox[{"\<\"low\"\>", "\[Rule]", "102140"}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747731600000"}], ",", 
+             RowBox[{"\<\"ask\"\>", "\[Rule]", "105150"}], ",", 
+             RowBox[{"\<\"bid\"\>", "\[Rule]", "105140"}], ",", 
+             RowBox[{"\<\"baseVolume\"\>", "\[Rule]", "743.57517064`"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747730880000"}], ",", 
+             RowBox[{"\<\"close\"\>", "\[Rule]", "105140"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"Ticker\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"3288b37b\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRix1Hq\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"AggregateOHLCV\"\>", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "1.24397984`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "93468.35`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "93430.65`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "93439.65`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "93449.5`"}],
+             ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "93441.8`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "24.245682310000003`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "105220.6`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "105138.9`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "105161.6`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "105179.75`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "105150.2`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "298.3103616`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2534.58`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2529.82`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2532.87`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2532.2`"}], 
+            ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2532.72`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "5.8967833800000005`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2250.745`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2249.4449999999997`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2250.295`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "2250.095`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2250.145`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "1.2531`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "0.0008934500000000001`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "0.0008924499999999999`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "0.00089295`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "0.00089295`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "0.0008934500000000001`"}]}], 
+           "\[RightAssociation]"}]}], "}"}], ",", "\<\"PRixOew\"\>"}], 
+       "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"AggregateOHLCV\"\>", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "1.80425933`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "93539.4`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "93470.6`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "93532.75`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "93505"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "93496.9`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "50.19989995`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "105316.8`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "105256.2`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "105314.9`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "105286.5`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "105305.4`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "107.8812`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2535.98`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2533.715`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2535.84`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "2534.8475`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2534.935`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "28.401760160000002`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "2254.6`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "2248.5`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "2253.9`"}], ",", 
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", "2251.55`"}],
+             ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "2248.5`"}]}], 
+           "\[RightAssociation]"}], ",", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"volume\"\>", "\[Rule]", "1.6605120000000002`"}], ",", 
+            RowBox[{"\<\"high\"\>", "\[Rule]", "0.0008908`"}], ",", 
+            RowBox[{"\<\"low\"\>", "\[Rule]", "0.0008896`"}], ",", 
+            RowBox[{"\<\"close\"\>", "\[Rule]", "0.0008908`"}], ",", 
+            
+            RowBox[{"\<\"aggregatedAveragePrice\"\>", "\[Rule]", 
+             "0.0008902000000000001`"}], ",", 
+            RowBox[{"\<\"open\"\>", "\[Rule]", "0.0008902`"}]}], 
+           "\[RightAssociation]"}]}], "}"}], ",", "\<\"PRizh7z\"\>"}], 
+       "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_CandleStick_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"charts\"\>", "\[Rule]", 
+              RowBox[{"{", 
                RowBox[{
-                 TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox[
-                  TemplateBox[{"\"TCP\"", 
-                    TagBox[
-                    "\" (Client)\"", Deploy, DefaultBaseStyle -> "Deploy"]}, 
-                   "RowDefault"], "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox[
-                 "\"de3eebb1-493c-4056-8ba2-3675eb9694b7\"", "SummaryItem"]}],
-                "\[SpanFromLeft]", "\[SpanFromLeft]"}, {
-               RowBox[{
-                 TagBox["\"Endpoint: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox[
-                  RowBox[{"{", "}"}], "SummaryItem"]}], "\[SpanFromLeft]", 
-               "\[SpanFromLeft]"}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}]}, 
-       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
-     "SummaryPanel"],
-    DynamicModuleValues:>{}], "]"}],
-  SocketObject["de3eebb1-493c-4056-8ba2-3675eb9694b7"],
-  Editable->False,
-  SelectWithContents->True,
-  Selectable->False]], "Output",
- CellChangeTimes->{3.956643019614044*^9, 3.956643068100479*^9, 
-  3.956643098721489*^9, 3.956643159996847*^9},
- CellLabel->"Out[6]=",ExpressionUUID->"43b7491f-637b-fc45-9ace-58f4f3cd7c6c"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{"WriteString", "[", 
-  RowBox[{"c", ",", " ", "\"\<1\>\""}], "]"}]], "Code",
- CellChangeTimes->{{3.9566430231111336`*^9, 3.9566430274816265`*^9}},
- CellLabel->"In[7]:=",ExpressionUUID->"60b1532e-e371-494a-95f7-04fae6ce7d35"],
-
-Cell[BoxData[
- RowBox[{"1", "+", "1"}]], "Input",
- CellChangeTimes->{{3.9566430303870697`*^9, 3.9566430309518833`*^9}},
- CellLabel->"In[8]:=",ExpressionUUID->"2240367f-1a87-cf4c-ad87-d4189ebf0cea"]
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731540000", ",", "105110", ",", "105140", ",", "105090",
+                   ",", "105140", ",", "0.62889933`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731600000", ",", "105140", ",", "105160", ",", "105130",
+                   ",", "105160", ",", "0.47071216`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731660000", ",", "105160", ",", "105170", ",", "105150",
+                   ",", "105150", ",", "0.6329413500000001`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731720000", ",", "105160", ",", "105230", ",", "105160",
+                   ",", "105230", ",", "0.62377232`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731780000", ",", "105230", ",", "105240", ",", "105230",
+                   ",", "105230", ",", "0.43440573000000005`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731840000", ",", "105230", ",", "105230", ",", "105200",
+                   ",", "105200", ",", "0.65807482`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731900000", ",", "105200", ",", "105210", ",", "105200",
+                   ",", "105210", ",", "0.18086745`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747731960000", ",", "105200", ",", "105240", ",", "105200",
+                   ",", "105240", ",", "0.43752346`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747732020000", ",", "105230", ",", "105230", ",", "105230",
+                   ",", "105230", ",", "1.20092416`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747732080000", ",", "105230", ",", "105240", ",", "105230",
+                   ",", "105230", ",", "0.40115544999999997`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747732140000", ",", "105230", ",", "105240", ",", "105230",
+                   ",", "105240", ",", "0.44537345`"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "1747732200000", ",", "105230", ",", "105230", ",", "105200",
+                   ",", "105200", ",", "0.69596846`"}], "}"}]}], "}"}]}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747732260000"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747731540000"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"CandleStick\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"d7844ba0\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRizmkd\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"data\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Pricing_Ticker_1\"\>", ",", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"symbol\"\>", "\[Rule]", "\<\"BTC/USD\"\>"}], ",", 
+          RowBox[{"\<\"payload\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"average\"\>", "\[Rule]", "105205"}], ",", 
+             RowBox[{"\<\"high\"\>", "\[Rule]", "106770"}], ",", 
+             RowBox[{"\<\"last\"\>", "\[Rule]", "105200"}], ",", 
+             RowBox[{"\<\"low\"\>", "\[Rule]", "102140"}], ",", 
+             RowBox[{"\<\"intervalEnd\"\>", "\[Rule]", "1747732320000"}], ",", 
+             RowBox[{"\<\"ask\"\>", "\[Rule]", "105210"}], ",", 
+             RowBox[{"\<\"bid\"\>", "\[Rule]", "105200"}], ",", 
+             RowBox[{"\<\"baseVolume\"\>", "\[Rule]", "748.03890124`"}], ",", 
+             RowBox[{"\<\"intervalStart\"\>", "\[Rule]", "1747731600000"}], ",", 
+             RowBox[{"\<\"close\"\>", "\[Rule]", "105200"}], ",", 
+             RowBox[{"\<\"marketId\"\>", "\[Rule]", "1"}]}], 
+            "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"exchange\"\>", "\[Rule]", "\<\"bitfinex\"\>"}], ",", 
+          RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"Ticker\"\>"}], ",", 
+          
+          RowBox[{"\<\"collectorTraceId\"\>", 
+           "\[Rule]", "\<\"44b1f997\"\>"}]}], "\[RightAssociation]"}], 
+        ",", "\<\"PRizn28\"\>"}], "}"}]}], ",", 
+     RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"*\"\>"}], ",", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"event\"\>"}]}], 
+    "\[RightAssociation]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.9567211866343403`*^9},
+ CellLabel->"Out[72]=",ExpressionUUID->"26f09b9c-81d0-644a-b57d-7da57635382f"]
+}, Open  ]]
 },
-WindowSize->{958.5, 483},
-WindowMargins->{{Automatic, 168}, {215.25, Automatic}},
+WindowSize->{1141.5, 690},
+WindowMargins->{{Automatic, 183.75}, {106.5, Automatic}},
 FrontEndVersion->"14.2 for Microsoft Windows (64-bit) (March 14, 2025)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"9db1fb26-09a8-cc42-8b41-d685f8f6d012"
@@ -1133,39 +2963,28 @@ CellTagsIndex->{}
 Notebook[{
 Cell[1460, 33, 1362, 28, 137, "Code",ExpressionUUID->"130ec76b-5311-b540-ae7f-a46b9bfcd2f3"],
 Cell[2825, 63, 534, 11, 120, "Code",ExpressionUUID->"b65593a9-f7b9-f648-96f6-6e9af0e6cd32"],
+Cell[3362, 76, 285, 6, 50, "Code",ExpressionUUID->"0e16b211-ceff-c548-80f9-1fae06daa852"],
 Cell[CellGroupData[{
-Cell[3384, 78, 238, 3, 50, "Code",ExpressionUUID->"0e16b211-ceff-c548-80f9-1fae06daa852"],
-Cell[3625, 83, 24029, 415, 66, "Output",ExpressionUUID->"a8c9b6f2-b58e-014f-bf41-d77e8d1102ca"]
-}, Open  ]],
-Cell[27669, 501, 923, 22, 137, "Code",ExpressionUUID->"20afae46-c533-f24c-ad1d-6412cccfd8ce"],
-Cell[CellGroupData[{
-Cell[28617, 527, 278, 4, 50, "Code",ExpressionUUID->"0b7b1c61-8350-9741-83f6-989724b25356"],
-Cell[28898, 533, 174, 2, 32, "Output",ExpressionUUID->"972ef0a4-742f-424f-b562-ccdd726c0d64"]
+Cell[3672, 86, 286, 5, 50, "Code",ExpressionUUID->"7fe25f14-f067-c741-b828-e029a9cd8765"],
+Cell[3961, 93, 24008, 415, 66, "Output",ExpressionUUID->"62dba18a-8db2-094d-8263-505b1fbd95d3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29109, 540, 327, 6, 50, "Code",ExpressionUUID->"9b20ac60-0ad0-fe4b-9f2e-c8863448097d"],
-Cell[29439, 548, 11329, 231, 59, "Output",ExpressionUUID->"76929d5a-84f9-9744-98b0-5af4e82ac175"]
+Cell[28006, 513, 294, 5, 50, "Code",ExpressionUUID->"3ff2938d-f101-9649-b214-108d12cd19b3"],
+Cell[28303, 520, 24032, 415, 66, "Output",ExpressionUUID->"7e517b5b-ae9c-df42-908e-b7c764e02ce3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[40805, 784, 275, 5, 50, "Code",ExpressionUUID->"821be444-aff6-b648-8582-13ac904b7ca1"],
-Cell[41083, 791, 344, 9, 26, "Message",ExpressionUUID->"33627a9d-e012-304d-9fd6-c5e9bbe2c271"]
+Cell[52372, 940, 213, 3, 50, "Code",ExpressionUUID->"4b985d14-b8bc-bc4f-b88c-d22575a8be72"],
+Cell[52588, 945, 12446, 304, 272, "Output",ExpressionUUID->"598dac19-a54d-164c-98ca-bc906aa83b2b"]
 }, Open  ]],
-Cell[41442, 803, 273, 4, 67, "Code",ExpressionUUID->"f82455e7-73e8-524c-b954-c33b7c367cdf"],
-Cell[41718, 809, 296, 6, 50, "Code",ExpressionUUID->"9656e9f1-ad28-3746-a224-ca463ffb62cf"],
+Cell[65049, 1252, 251, 6, 50, "Code",ExpressionUUID->"59caedc1-a419-9f4f-bbee-a6bfdda570fd"],
+Cell[65303, 1260, 1042, 25, 155, "Code",ExpressionUUID->"72155d3e-c254-fd4c-833f-5f72baf9e2a1"],
+Cell[66348, 1287, 442, 11, 50, "Code",ExpressionUUID->"7c971485-bb9f-0a46-82fc-48b9b29a6227"],
+Cell[66793, 1300, 466, 11, 50, "Code",ExpressionUUID->"5bf17bbf-6728-4048-ae3d-53dd2478f50e"],
+Cell[67262, 1313, 7417, 127, 233, "Input",ExpressionUUID->"efb8e5c8-3719-ff41-afec-299f264295ec"],
 Cell[CellGroupData[{
-Cell[42039, 819, 247, 4, 50, "Code",ExpressionUUID->"1d92ae45-5206-9140-8ecd-60c95c413126"],
-Cell[42289, 825, 267, 4, 32, "Output",ExpressionUUID->"b36b25d3-8a83-a14d-b279-63d6eef25c20"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[42593, 834, 238, 4, 50, "Code",ExpressionUUID->"1d3f5ec5-50f8-5a44-af15-2131fe509b4e"],
-Cell[42834, 840, 934, 18, 51, "Output",ExpressionUUID->"ed044225-97e3-d747-8de7-9dc44a159510"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[43805, 863, 276, 5, 50, "Code",ExpressionUUID->"e8fd2c28-db81-3f40-8ebd-418d870a541d"],
-Cell[44084, 870, 11370, 232, 59, "Output",ExpressionUUID->"43b7491f-637b-fc45-9ace-58f4f3cd7c6c"]
-}, Open  ]],
-Cell[55469, 1105, 247, 4, 50, "Code",ExpressionUUID->"60b1532e-e371-494a-95f7-04fae6ce7d35"],
-Cell[55719, 1111, 197, 3, 28, "Input",ExpressionUUID->"2240367f-1a87-cf4c-ad87-d4189ebf0cea"]
+Cell[74704, 1444, 262, 6, 50, "Code",ExpressionUUID->"562ca968-a5b8-c54a-bf11-b06782df4646"],
+Cell[74969, 1452, 75078, 1491, 2791, "Output",ExpressionUUID->"26f09b9c-81d0-644a-b57d-7da57635382f"]
+}, Open  ]]
 }
 ]
 *)
